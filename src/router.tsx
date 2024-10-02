@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage } from "./pages";
+import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage } from "./pages";
 import { App } from "./components";
 
 export const router = createBrowserRouter([
@@ -8,12 +8,12 @@ export const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				index: true,
-				element: <LandingPage />
+				path: "/about",
+				element: <AboutPage />
 			},
 			{
-				path: "/games",
-				element: <SearchPage />,
+				path: "/editgame/:id",
+				element: <EditGamePage />
 			},
 			{
 				path: "/favourites",
@@ -24,12 +24,16 @@ export const router = createBrowserRouter([
 				element: <GameDetailsPage />
 			},
 			{
-				path: "/account/:id",
-				element: <UserAccountPage />
+				index: true,
+				element: <LandingPage />
 			},
             {
 				path: "/login",
 				element: <LoginPage />
+			},
+			{
+				path: "*",
+				element: <NotFound />,
 			},
             {
 				path: "/register",
@@ -39,14 +43,14 @@ export const router = createBrowserRouter([
 				path: "/request",
 				element: <RequestPage />
 			},
-            {
-				path: "/about",
-				element: <AboutPage />
+			{
+				path: "/games",
+				element: <SearchPage />,
 			},
 			{
-				path: "*",
-				element: <NotFound />,
-			},
+				path: "/account/:id",
+				element: <UserAccountPage />
+			}
 		],
 	},
 ]);

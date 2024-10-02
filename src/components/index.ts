@@ -4,6 +4,8 @@ export * from "./Footer";
 export * from "./GameCard";
 export * from "./Header";
 export * from "./LoginForm";
+export * from "./Logo";
+export * from "./NavBar";
 export * from "./RegisterForm";
 export * from "./SearchForm";
 export * from "./SearchResult";
