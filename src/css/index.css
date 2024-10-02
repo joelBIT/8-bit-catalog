@@ -1,4 +1,14 @@
 @import url("./App.css");
+@import url("./FavouriteButton.css");
+@import url("./Footer.css");
+@import url("./GameCard.css");
+@import url("./Header.css");
+@import url("./SearchForm.css");
+@import url("./SearchResult.css");
+
+/******************
+* General Styling *
+******************/
 
 :root {
     margin: 0;
