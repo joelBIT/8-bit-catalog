@@ -1,5 +1,9 @@
 import { ReactElement } from "react";
 
 export function AboutPage(): ReactElement {
-    return <>About Page</>;
+    return (
+        <main id="aboutPage">
+            <h1>About Page</h1>
+        </main>
+    );
 }

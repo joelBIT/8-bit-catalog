@@ -8,9 +8,7 @@ export function App(): ReactElement {
   return (
     <FavouritesContexProvider>
       <Header />
-        <main>
-          <Outlet />
-        </main>
+      <Outlet />
       <Footer />
     </FavouritesContexProvider>
   );

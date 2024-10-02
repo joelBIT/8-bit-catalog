@@ -1,18 +1,50 @@
+@import url("./AboutPage.css");
 @import url("./App.css");
+@import url("./EditGamePage.css");
 @import url("./FavouriteButton.css");
+@import url("./FavouritesPage.css");
 @import url("./Footer.css");
 @import url("./GameCard.css");
+@import url("./GameDetailsPage.css");
 @import url("./Header.css");
+@import url("./LandingPage.css");
+@import url("./LoginForm.css");
+@import url("./LoginPage.css");
+@import url("./RegisterForm.css");
+@import url("./RegisterPage.css");
+@import url("./RequestPage.css");
 @import url("./SearchForm.css");
+@import url("./SearchPage.css");
 @import url("./SearchResult.css");
+@import url("./UserAccountPage.css");
 
 /******************
 * General Styling *
 ******************/
 
-:root {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    color: white;
+
+    header, footer {
+        flex: 1;
+        background-color: #101010;
+    }
+
+    main {
+        flex: 5;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.7;
+    }
 }
+

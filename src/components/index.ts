@@ -3,5 +3,7 @@ export * from "./FavouriteButton";
 export * from "./Footer";
 export * from "./GameCard";
 export * from "./Header";
+export * from "./LoginForm";
+export * from "./RegisterForm";
 export * from "./SearchForm";
 export * from "./SearchResult";
