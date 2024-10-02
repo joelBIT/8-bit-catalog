@@ -1,8 +1,12 @@
 import { ReactElement, useContext } from "react";
 import { FavouritesContext } from "../contexts/FavouritesContextProvider";
 
-export function FavouritesPage(): ReactElement {
+export function FavouriteButton(): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
-
-    return <>Favourites Page {favouritesList}</>;
+    
+    return (
+        <button 
+            onClick={() => setFavouritesList([...favouritesList, {}])}>
+        </button>
+    );
 }
