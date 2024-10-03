@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.bunny.net/css?family=arima-madurai:400");
+
 @import url("./AboutPage.css");
 @import url("./App.css");
 @import url("./EditGamePage.css");
@@ -25,6 +28,7 @@
 ******************/
 
 :root {
+    --color-white: #f0cca4;
     --color-black: #101010;
     --color-card-light: #D9D9D9;
     --color-link-active: #CC8B21;
@@ -32,18 +36,16 @@
     --color-footer-heading: #D04545;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
 }
 
 #root {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    color: white;
+    color: var(--color-white);
 
     main {
         flex: 5;
@@ -53,3 +55,11 @@ body {
     }
 }
 
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
