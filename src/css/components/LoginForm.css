@@ -1,0 +1,52 @@
+
+#loginCard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-card-light);
+    border-radius: 8px;
+    width: 20rem;
+    height: 15rem;
+    padding: 1rem 5rem 4rem;
+    font-family: "Arima Madurai", display;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    h1 {
+        color: var(--color-black);
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 1rem;
+    }
+
+    #loginForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+            height: 39px;
+            font-size: x-large;
+            padding-left: 1rem;
+            filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+        }
+
+        button {
+            height: 39px;
+            font-size: 20px;
+            border-radius: 8px;
+            background-color: lawngreen;
+            font-weight: 600;
+        }
+    }
+
+    a {
+        color: #064D61;
+        font-size: 20px;
+        font-weight: 600;
+        align-self: end;
+        margin-top: 0.6rem;
+    }
+
+    a:hover {
+        opacity: 0.7;
+    }
+}
