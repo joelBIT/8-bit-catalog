@@ -12,6 +12,10 @@
         a.active {
             color: var(--color-link-active);
         }
+
+        a:hover {
+            opacity: 0.7;
+        }
         
         h4 {
             font-weight: 500;
