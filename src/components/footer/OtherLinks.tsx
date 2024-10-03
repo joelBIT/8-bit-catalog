@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
 
 export function OtherLinks(): ReactElement {
-    return <>Other Links</>;
+    return <h2>Other Links</h2>;
 }
