@@ -5,8 +5,7 @@
     background-color: var(--color-card-light);
     border-radius: 8px;
     width: 20rem;
-    height: 15rem;
-    padding: 1rem 5rem 4rem;
+    padding: 1rem 5rem 3rem;
     font-family: "Arima Madurai", display;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -14,7 +13,7 @@
         color: var(--color-black);
         text-align: center;
         font-size: 36px;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     #loginForm {
@@ -35,6 +34,7 @@
             border-radius: 8px;
             background-color: lawngreen;
             font-weight: 600;
+            margin-top: 1rem;
         }
     }
 
