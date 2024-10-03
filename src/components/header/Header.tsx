@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import { Logo, NavBar } from ".";
 import { NavLink } from "react-router-dom";
+import { Logo, NavBar } from "..";
 
 export function Header(): ReactElement {
     return (

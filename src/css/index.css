@@ -1,27 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
 @import url("https://fonts.bunny.net/css?family=arima-madurai:400");
 
-@import url("./AboutPage.css");
-@import url("./App.css");
-@import url("./EditGamePage.css");
-@import url("./FavouriteButton.css");
-@import url("./FavouritesPage.css");
-@import url("./Footer.css");
-@import url("./GameCard.css");
-@import url("./GameDetailsPage.css");
-@import url("./Header.css");
-@import url("./LandingPage.css");
-@import url("./LoginForm.css");
-@import url("./LoginPage.css");
-@import url("./Logo.css");
-@import url("./NavBar.css");
-@import url("./RegisterForm.css");
-@import url("./RegisterPage.css");
-@import url("./RequestPage.css");
-@import url("./SearchForm.css");
-@import url("./SearchPage.css");
-@import url("./SearchResult.css");
-@import url("./UserAccountPage.css");
+@import url("./components/App.css");
+@import url("./components/FavouriteButton.css");
+@import url("./components/GameCard.css");
+@import url("./components/LoginForm.css");
+@import url("./components/RegisterForm.css");
+@import url("./components/SearchForm.css");
+@import url("./components/SearchResult.css");
+@import url("./footer/Contact.css");
+@import url("./footer/Footer.css");
+@import url("./footer/OtherLinks.css");
+@import url("./footer/SiteLinks.css");
+@import url("./header/Header.css");
+@import url("./header/Logo.css");
+@import url("./header/NavBar.css");
+@import url("./pages/AboutPage.css");
+@import url("./pages/EditGamePage.css");
+@import url("./pages/FavouritesPage.css");
+@import url("./pages/GameDetailsPage.css");
+@import url("./pages/LandingPage.css");
+@import url("./pages/LoginPage.css");
+@import url("./pages/RegisterPage.css");
+@import url("./pages/RequestPage.css");
+@import url("./pages/SearchPage.css");
+@import url("./pages/UserAccountPage.css");
 
 /******************
 * General Styling *
