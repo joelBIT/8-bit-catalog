@@ -1,9 +1,10 @@
 import { ReactElement } from "react";
+import { SearchForm } from "../components";
 
 export function SearchPage(): ReactElement {
     return (
         <main id="searchPage">
-            <h1>Search Page</h1>
+            <SearchForm />
         </main>
     );
 }

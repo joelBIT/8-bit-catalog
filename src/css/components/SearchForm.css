@@ -1,0 +1,22 @@
+
+#searchForm {
+    display: flex;
+    flex-direction: column;
+    
+    h1 {
+        font-family: "Rancho", cursive;
+        font-size: 50px;
+        font-weight: 500;
+        margin: 1rem 0;
+        align-self: center;
+    }
+
+    .searchFilters {
+        display: flex;
+        gap: 3rem;
+
+        select {
+            font-size: 20px;
+        }
+    }
+}
