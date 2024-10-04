@@ -1,10 +1,18 @@
 import { ReactElement, useEffect } from "react";
 import games from '../assets/database/nes_games.json';
 import { HeroCard } from "../components";
+import { createGame } from "../utils";
 
 export function LandingPage(): ReactElement {
+
     useEffect(() => {
-        console.log(games.find(game => game.id === 112));
+        if (!localStorage.getItem('games')) {
+            const cartridges = games.map(game => {
+                return createGame(game);
+            });
+    
+            localStorage.setItem('games', JSON.stringify(cartridges));
+        }
     });
 
     return (
