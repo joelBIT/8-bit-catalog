@@ -8,6 +8,7 @@ export * from "./GameCard";
 export * from "./header/Header";
 export * from "./header/Logo";
 export * from "./header/NavBar";
+export * from "./HeroCard";
 export * from "./LoginForm";
 export * from "./RegisterForm";
 export * from "./SearchForm";
