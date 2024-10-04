@@ -4,10 +4,10 @@ export function createGame(game: any) {
         id: game.id,
         title: game.title,
         category: game.category,
-        cover: game.cover ? game.cover : "notavailable.jpg",
+        cover: game.cover,
         publisher: game.publisher,
         developer: game.developer,
-        players: 1,
+        players: game.players,
         releaseYear: game.releaseYear
     }
 }
