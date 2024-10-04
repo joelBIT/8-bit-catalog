@@ -1,4 +1,7 @@
 
 #landingPage {
     background-image: url("../../assets/backgrounds/nes-controller-in-black.webp");
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
