@@ -24,9 +24,9 @@
         a {
             font-family: "Single Day", cursive;
             width: fit-content;
-            color: #064D61;
-            font-size: 25px;
-            font-weight: 600;
+            color: var(--color-black);
+            font-size: 45px;
+            font-weight: 500;
             align-self: end;
         }
 

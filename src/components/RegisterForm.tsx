@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 export function RegisterForm(): ReactElement {
     return (
         <section id="registerCard">
-            <h1>Register</h1>
+            <h1>Create Account</h1>
             <form id="registerForm">
                 <input id="registerUsername" type="text" placeholder="Username" required />
                 <input id="registerEmail" type="email" placeholder="Email" required />
