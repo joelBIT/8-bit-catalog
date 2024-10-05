@@ -5,6 +5,7 @@
     border-radius: 8px;
     background-color: var(--color-card-light);
     width: 18rem;
+    height: 100%;
 
     figure {
         border-top-left-radius: 8px;
