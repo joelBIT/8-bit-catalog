@@ -14,10 +14,15 @@ export function SearchForm(): ReactElement {
     return (
         <section id="searchForm">
             <h1>Search Games</h1>
-            <article className="searchFilters">
+            <article id="searchFilters">
                 <Select title={"Category"} list={getSearchFilterList("category")} />
                 <Select title={"Publisher"} list={getSearchFilterList("publisher")} />
                 <Select title={"Developer"} list={getSearchFilterList("developer")} />
+            </article>
+
+            <article id="searchInput">
+                <input id="searchTitle" type="text" placeholder="Game Title"/>
+                <button onClick={() => console.log('search game')}>Search</button>
             </article>
         </section>
     );
