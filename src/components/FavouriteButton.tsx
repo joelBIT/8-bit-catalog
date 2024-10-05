@@ -6,7 +6,9 @@ export function FavouriteButton( {game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
     const isFavorite = favouritesList.some(favourite => favourite.id === game.id);
 
-    function handleFavourites() {
+    function handleFavourites(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        event.preventDefault();
+
         if (isFavorite) {
             setFavouritesList(favouritesList.filter(favourite => favourite.id !== game.id));
         } else {
@@ -17,7 +19,7 @@ export function FavouriteButton( {game}: {game: Game}): ReactElement {
     return (
         <button 
             className={ isFavorite ? "favouriteButton" : "noFavouriteButton" } 
-            onClick={() => handleFavourites()}>
+            onClick={(event) => handleFavourites(event)}>
         </button>
     );
 }
