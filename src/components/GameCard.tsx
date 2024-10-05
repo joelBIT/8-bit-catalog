@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Game } from "../interfaces";
+import { FavouriteButton } from "./FavouriteButton";
 
 export function GameCard( {game}: {game: Game}): ReactElement {
     return (
@@ -9,7 +10,7 @@ export function GameCard( {game}: {game: Game}): ReactElement {
             </figure>
             <article id="gameCardTitle">
                 <h1>{game.title}</h1>
-                <button onClick={() => console.log('favourite')}>Like</button>
+                <FavouriteButton game={game} />
             </article>
         </section>
     );

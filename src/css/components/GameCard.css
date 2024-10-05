@@ -28,16 +28,17 @@
             color: var(--color-black);
             font-size: calc(1.5vw + 12px);
             font-weight: 100;
-            margin: 1rem;
+            margin: 1rem 0 1rem 1rem;
             align-content: center;
         }
 
         button {
             height: 3rem;
-            width: 3rem;
+            min-width: 3rem;
             align-self: self-end;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
+            background-color: var(--color-card-light);
         }
     }
 }
