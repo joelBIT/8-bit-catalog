@@ -1,0 +1,21 @@
+
+#searchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    #resultHeading {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-family: "Arima Madurai", display;
+        font-size: 30px;
+    }
+    
+    #gameCards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 0 2rem;
+    }
+}

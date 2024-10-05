@@ -1,7 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, useRef } from "react";
 import { Select } from ".";
 
-export function SearchForm(): ReactElement {
+export function SearchForm( {search}: {search: (query: string) => void} ): ReactElement {
+    const searchRef = useRef<HTMLInputElement>(null);
 
     function getSearchFilterList(property: string): string[] {
         const games = localStorage.getItem('games') || "[]";
@@ -9,6 +10,12 @@ export function SearchForm(): ReactElement {
         cartridges.sort();
         cartridges = cartridges.filter((element: any) => element != null);
         return Array.from(new Set(cartridges));
+    }
+
+    function executeSearch() {
+        if (searchRef.current) {
+            search(searchRef.current.value);
+        }
     }
 
     return (
@@ -21,8 +28,8 @@ export function SearchForm(): ReactElement {
             </article>
 
             <article id="searchInput">
-                <input id="searchTitle" type="text" placeholder="Game Title"/>
-                <button onClick={() => console.log('search game')}>Search</button>
+                <input id="searchTitle" type="text" placeholder="Game Title" ref={searchRef}/>
+                <button onClick={() => executeSearch()}>Search</button>
             </article>
         </section>
     );
