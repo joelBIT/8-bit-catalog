@@ -1,0 +1,52 @@
+
+#searchForm {
+    display: flex;
+    flex-direction: column;
+    
+    h1 {
+        font-family: "Rancho", cursive;
+        font-size: 50px;
+        font-weight: 500;
+        margin: 1rem 0;
+        align-self: center;
+    }
+
+    #searchFilters {
+        display: flex;
+        gap: 3rem;
+        font-family: "Arima Madurai", display;
+
+        select {
+            font-size: 20px;
+            padding: 0.1rem;
+        }
+    }
+
+    #searchInput {
+        display: flex;
+        align-self: center;
+        margin-top: 3rem;
+        gap: 2rem;
+        align-items: center;
+
+        input {
+            height: 39px;
+            font-size: x-large;
+            padding-left: 1rem;
+            filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+            font-family: "Arima Madurai", display;
+        }
+
+        button {
+            padding: 0.2rem 0.6rem;
+            font-size: 1.4rem;
+            border-radius: 8px;
+            border: solid;
+            font-family: "Arima Madurai", display;
+        }
+
+        button:active { 
+            transform: scale(0.90); 
+        } 
+    }
+}

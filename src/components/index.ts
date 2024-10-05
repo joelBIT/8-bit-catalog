@@ -13,3 +13,4 @@ export * from "./LoginForm";
 export * from "./RegisterForm";
 export * from "./SearchForm";
 export * from "./SearchResult";
+export * from "./Select";
