@@ -1,5 +1,9 @@
 import { ReactElement } from "react";
 
 export function GameCard(): ReactElement {
-    return <>Game Card</>;
+    return (
+        <section className="gameCard">
+            
+        </section>
+    );
 }
