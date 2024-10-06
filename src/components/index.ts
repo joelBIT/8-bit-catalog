@@ -10,6 +10,7 @@ export * from "./header/Logo";
 export * from "./header/NavBar";
 export * from "./HeroCard";
 export * from "./LoginForm";
+export * from "./Pagination";
 export * from "./RegisterForm";
 export * from "./SearchForm";
 export * from "./SearchResult";

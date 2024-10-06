@@ -1,0 +1,28 @@
+
+#pagination {
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    gap: 1rem;
+    align-items: center;
+
+    #pageNumber {
+        display: flex;
+        gap: 1rem;
+        font-family: "Arima Madurai", display;
+        font-size: 30px;
+        font-weight: 600;
+
+        p {
+            font-weight: 100;
+        }
+    }
+
+    button {
+        padding: 0.2rem 0.6rem 0;
+        font-size: 1.4rem;
+        border-radius: 8px;
+        border: solid;
+        font-family: "Arima Madurai", display;
+    }
+}
