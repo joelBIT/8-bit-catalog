@@ -13,11 +13,11 @@ export function SearchResult( {result, showHeading}: {result: Game[], showHeadin
         totalPages = Math.floor(result.length / PAGINATION_PAGE_SIZE) + 1;
     }, [result]);
 
-    function from() {
+    function from(): number {
         return (currentPage-1) * PAGINATION_PAGE_SIZE;
     }
 
-    function to() {
+    function to(): number {
         return (currentPage-1) * PAGINATION_PAGE_SIZE + PAGINATION_PAGE_SIZE;
     }
     

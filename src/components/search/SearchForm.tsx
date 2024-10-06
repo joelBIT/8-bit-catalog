@@ -4,9 +4,9 @@ import { DEFAULT_OPTION_VALUE } from "../../utils";
 
 export function SearchForm( {search}: {search: Function} ): ReactElement {
     const searchRef = useRef<HTMLInputElement>(null);
-    const [category, setCategory] = useState(DEFAULT_OPTION_VALUE);
-    const [publisher, setPublisher] = useState(DEFAULT_OPTION_VALUE);
-    const [developer, setDeveloper] = useState(DEFAULT_OPTION_VALUE);
+    const [category, setCategory] = useState<string>(DEFAULT_OPTION_VALUE);
+    const [publisher, setPublisher] = useState<string>(DEFAULT_OPTION_VALUE);
+    const [developer, setDeveloper] = useState<string>(DEFAULT_OPTION_VALUE);
 
     function createFilterList(property: string): string[] {
         const games = localStorage.getItem('games') || "[]";
@@ -16,13 +16,13 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
         return Array.from(new Set(cartridges));
     }
 
-    function executeSearch() {
+    function executeSearch(): void {
         if (searchRef.current) {
             search(searchRef.current.value, category, publisher, developer);
         }
     }
 
-    function searchIfEnter(event: KeyboardEvent<HTMLInputElement>) {
+    function searchIfEnter(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Enter') {
             executeSearch();
         }

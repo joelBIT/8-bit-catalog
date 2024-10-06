@@ -2,11 +2,11 @@ import { ReactElement } from "react";
 
 export function Pagination({ currentPage, setCurrentPage, totalPages }: { currentPage: number, setCurrentPage: Function, totalPages: number }): ReactElement {
 
-    function nextPage() {
+    function nextPage(): void {
         setCurrentPage((page: number) => page + 1);
     }
 
-    function previousPage() {
+    function previousPage(): void {
         setCurrentPage((page: number) => page - 1);
     }
 

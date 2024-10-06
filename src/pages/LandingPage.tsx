@@ -5,7 +5,7 @@ import { createGame } from "../utils";
 import { Game } from "../interfaces";
 
 export function LandingPage(): ReactElement {
-    const [randomGame, setRandomGame] = useState({} as Game);
+    const [randomGame, setRandomGame] = useState<Game>({} as Game);
 
     useEffect(() => {
         if (!localStorage.getItem('games')) {
@@ -21,7 +21,7 @@ export function LandingPage(): ReactElement {
         addRandomGame();
     }, []);
 
-    function addRandomGame() {
+    function addRandomGame(): void {
         const games = localStorage.getItem('games') || "[]";
         const cartridges = JSON.parse(games);
   

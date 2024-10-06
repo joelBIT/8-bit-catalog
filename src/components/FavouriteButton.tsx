@@ -6,7 +6,7 @@ export function FavouriteButton( {game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
     const isFavorite = favouritesList.some(favourite => favourite.id === game.id);
 
-    function handleFavourites(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    function handleFavourites(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
         event.preventDefault();
 
         if (isFavorite) {
