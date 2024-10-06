@@ -3,4 +3,21 @@ header {
     display: flex;
     flex: 1;
     background-color: var(--color-black);
+
+    #logoLink {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        gap: 1rem;
+
+        h1 {
+            font-family: "Irish Grover", system-ui;
+            letter-spacing: 0.2rem;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+    }
 }
