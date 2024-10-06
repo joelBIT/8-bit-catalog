@@ -12,6 +12,14 @@ export function SearchResult( {result, showHeading}: {result: Game[], showHeadin
         setCurrentPage(1);
         totalPages = Math.floor(result.length / PAGINATION_PAGE_SIZE) + 1;
     }, [result]);
+
+    function from() {
+        return (currentPage-1) * PAGINATION_PAGE_SIZE;
+    }
+
+    function to() {
+        return (currentPage-1) * PAGINATION_PAGE_SIZE + PAGINATION_PAGE_SIZE;
+    }
     
     return (
         <section id="searchResult">
@@ -19,7 +27,7 @@ export function SearchResult( {result, showHeading}: {result: Game[], showHeadin
             {totalPages > 1 ? <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} /> : <></>}
 
             <section id="gameCards">
-                {result.slice((currentPage-1) * PAGINATION_PAGE_SIZE, (currentPage-1) * PAGINATION_PAGE_SIZE + PAGINATION_PAGE_SIZE).map((game, index) => <GameCard key={index} game={game} />)}
+                {result.slice(from(), to()).map((game, index) => <GameCard key={index} game={game} />)}
             </section>
 
             {totalPages > 1 ? <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} /> : <></>}
