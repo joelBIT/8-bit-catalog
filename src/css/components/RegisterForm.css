@@ -2,7 +2,7 @@
 #registerCard {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-card-light);
+    background-color: var(--color-form);
     border-radius: 8px;
     width: 20rem;
     padding: 1rem 5rem 4rem;

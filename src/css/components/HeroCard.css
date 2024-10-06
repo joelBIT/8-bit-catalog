@@ -1,7 +1,7 @@
 
 #heroCard {
     display: flex;
-    background-color: var(--color-card-light);
+    background-color: var(--color-nintendo-gray);
     border-radius: 8px;
     width: 50rem;
     padding: 1rem;
