@@ -1,10 +1,14 @@
-import { KeyboardEvent, ReactElement, useRef } from "react";
+import { KeyboardEvent, ReactElement, useRef, useState } from "react";
 import { Select } from ".";
+import { DEFAULT_OPTION_VALUE } from "../utils";
 
-export function SearchForm( {search}: {search: (query: string) => void} ): ReactElement {
+export function SearchForm( {search}: {search: Function} ): ReactElement {
     const searchRef = useRef<HTMLInputElement>(null);
+    const [category, setCategory] = useState(DEFAULT_OPTION_VALUE);
+    const [publisher, setPublisher] = useState(DEFAULT_OPTION_VALUE);
+    const [developer, setDeveloper] = useState(DEFAULT_OPTION_VALUE);
 
-    function getSearchFilterList(property: string): string[] {
+    function createFilterList(property: string): string[] {
         const games = localStorage.getItem('games') || "[]";
         let cartridges = JSON.parse(games).map((game: { [x: string]: any; }) => game[property]);
         cartridges.sort();
@@ -14,7 +18,7 @@ export function SearchForm( {search}: {search: (query: string) => void} ): React
 
     function executeSearch() {
         if (searchRef.current) {
-            search(searchRef.current.value);
+            search(searchRef.current.value, category, publisher, developer);
         }
     }
 
@@ -28,9 +32,9 @@ export function SearchForm( {search}: {search: (query: string) => void} ): React
         <section id="searchForm">
             <h1>Search Games</h1>
             <article id="searchFilters">
-                <Select title={"Category"} list={getSearchFilterList("category")} />
-                <Select title={"Publisher"} list={getSearchFilterList("publisher")} />
-                <Select title={"Developer"} list={getSearchFilterList("developer")} />
+                <Select title={"Category"} list={createFilterList("category")} getOption={setCategory} />
+                <Select title={"Publisher"} list={createFilterList("publisher")} getOption={setPublisher} />
+                <Select title={"Developer"} list={createFilterList("developer")} getOption={setDeveloper} />
             </article>
 
             <article id="searchInput">

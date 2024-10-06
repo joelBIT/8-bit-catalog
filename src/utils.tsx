@@ -11,3 +11,5 @@ export function createGame(game: any) {
         releaseYear: game.releaseYear
     }
 }
+
+export const DEFAULT_OPTION_VALUE = "All";
