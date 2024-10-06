@@ -5,9 +5,9 @@ import { DEFAULT_OPTION_VALUE } from "../utils";
 
 export function SearchPage(): ReactElement {
     const [searchResult, setSearchResult] = useState<Game[]>([]);
-    const [showHeading, setShowHeading] = useState(false);
+    const [showHeading, setShowHeading] = useState<boolean>(false);
     
-    function search(title: string, category: string, publisher: string, developer: string) {
+    function search(title: string, category: string, publisher: string, developer: string): void {
         const games = localStorage.getItem("games") || "[]";
         let result = JSON.parse(games);
 
@@ -20,7 +20,7 @@ export function SearchPage(): ReactElement {
         setSearchResult(result);
     }
 
-    function filter(list: Game[], filter: string, value: string) {
+    function filter(list: Game[], filter: string, value: string): Game[] {
         if (value !== DEFAULT_OPTION_VALUE) {
             return list.filter((game: { [x: string]: any; }) => game[filter]?.toLowerCase().includes(value.toLocaleLowerCase()));
         } else {
