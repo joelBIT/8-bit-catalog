@@ -1,4 +1,4 @@
-import { ReactElement, useRef } from "react";
+import { KeyboardEvent, ReactElement, useRef } from "react";
 import { Select } from ".";
 
 export function SearchForm( {search}: {search: (query: string) => void} ): ReactElement {
@@ -18,6 +18,12 @@ export function SearchForm( {search}: {search: (query: string) => void} ): React
         }
     }
 
+    function searchIfEnter(event: KeyboardEvent<HTMLInputElement>) {
+        if (event.key === 'Enter') {
+            executeSearch();
+        }
+    }
+
     return (
         <section id="searchForm">
             <h1>Search Games</h1>
@@ -28,7 +34,7 @@ export function SearchForm( {search}: {search: (query: string) => void} ): React
             </article>
 
             <article id="searchInput">
-                <input id="searchTitle" type="text" placeholder="Game Title" ref={searchRef}/>
+                <input id="searchTitle" type="text" placeholder="Game Title" ref={searchRef} onKeyDown={event => searchIfEnter(event)} />
                 <button onClick={() => executeSearch()}>Search</button>
             </article>
         </section>
