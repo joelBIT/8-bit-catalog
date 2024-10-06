@@ -23,6 +23,8 @@
         display: flex;
         justify-content: space-between;
         height: 100%;
+        border-radius: 8px;
+        background-color: var(--color-card-light);
         
         h1 {
             font-family: "Rancho", cursive;
