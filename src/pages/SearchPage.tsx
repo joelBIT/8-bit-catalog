@@ -10,18 +10,10 @@ export function SearchPage(): ReactElement {
     function search(title: string, category: string, publisher: string, developer: string) {
         const games = localStorage.getItem("games") || "[]";
         let result = JSON.parse(games);
-        if (category !== DEFAULT_OPTION_VALUE) {
-            result = filter(result, "category", category);
-        }
 
-        if (publisher !== DEFAULT_OPTION_VALUE) {
-            result = filter(result, "publisher", publisher);
-        }
-
-        if (developer !== DEFAULT_OPTION_VALUE) {
-            result = filter(result, "developer", developer);
-        }
-
+        result = filter(result, "category", category);
+        result = filter(result, "publisher", publisher);
+        result = filter(result, "developer", developer);
         result = filter(result, "title", title);
         
         setShowHeading(true);
@@ -29,7 +21,11 @@ export function SearchPage(): ReactElement {
     }
 
     function filter(list: Game[], filter: string, value: string) {
-        return list.filter((game: { [x: string]: any; }) => game[filter]?.toLowerCase().includes(value.toLocaleLowerCase()));
+        if (value !== DEFAULT_OPTION_VALUE) {
+            return list.filter((game: { [x: string]: any; }) => game[filter]?.toLowerCase().includes(value.toLocaleLowerCase()));
+        } else {
+            return list;
+        }
     }
 
     return (
