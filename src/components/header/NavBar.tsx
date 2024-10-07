@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
 
 export function NavBar(): ReactElement {
-    const {isAuthenticated} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     
     return (
         <nav id="navbar">
@@ -23,9 +23,15 @@ export function NavBar(): ReactElement {
                         <h2>Favourites</h2>
                     </NavLink>
                 </li>
+
+                { user.isAuthenticated ? <li><NavLink to={`/account/${user.id}`}>
+                                            <span className="material-symbols-outlined">account_circle</span>
+                                        </NavLink>
+                                    </li> : <></> }
+
                 <li className="iconElement">
-                    <NavLink className="loginLink" to={isAuthenticated ? "/logout" : "/login"}>
-                        <span className="material-symbols-outlined">{isAuthenticated ? "logout" : "login"}</span>
+                    <NavLink className="loginLink" to={user.isAuthenticated ? "/logout" : "/login"}>
+                        <span className="material-symbols-outlined">{user.isAuthenticated ? "logout" : "login"}</span>
                     </NavLink>
                 </li>
             </ul>

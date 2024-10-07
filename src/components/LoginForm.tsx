@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { User } from "../interfaces";
 
 export function LoginForm(): ReactElement {
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const usernameRef = useRef<HTMLInputElement>({} as HTMLInputElement);
     const passwordRef = useRef<HTMLInputElement>({} as HTMLInputElement);
@@ -37,9 +37,8 @@ export function LoginForm(): ReactElement {
     }
 
     function authenticated(user: User) {
-        setIsAuthenticated(true);
         user.isAuthenticated = true;
-        localStorage.setItem('activeUser', JSON.stringify(user));
+        setUser(user);
         navigate(`/account/${user.id}`);
     }
 

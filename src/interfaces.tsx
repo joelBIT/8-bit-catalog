@@ -25,8 +25,8 @@ export interface FavouritesContextProvider {
 }
 
 export interface AuthContextProvider {
-    isAuthenticated: boolean;
-    setIsAuthenticated: (isAuthenticated: boolean) => void;
+    user: User;
+    setUser: (user: User) => void;
 }
 
 export interface ContextProviderChildren {

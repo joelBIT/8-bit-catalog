@@ -15,3 +15,13 @@ export function createGame(game: any) {
 export const DEFAULT_OPTION_VALUE = "All";
 
 export const PAGINATION_PAGE_SIZE = 15;
+
+export function createAnonymousUser() {
+   return {
+        id: -1,
+        username: "anonymous",
+        isAuthenticated: false,
+        password: "",
+        email: ""
+    }
+}
