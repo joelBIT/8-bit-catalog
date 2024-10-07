@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage } from "./pages";
+import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage } from "./pages";
 import { App } from "./components";
 
 export const router = createBrowserRouter([
@@ -30,6 +30,10 @@ export const router = createBrowserRouter([
             {
 				path: "/login",
 				element: <LoginPage />
+			},
+			{
+				path: "/logout",
+				element: <LogoutPage />
 			},
 			{
 				path: "*",

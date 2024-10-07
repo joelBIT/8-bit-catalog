@@ -5,6 +5,7 @@ export * from "./FavouritesPage";
 export * from "./GameDetailsPage";
 export * from "./LandingPage";
 export * from "./LoginPage";
+export * from "./LogoutPage";
 export * from "./NotFound";
 export * from "./RegisterPage";
 export * from "./RequestPage";

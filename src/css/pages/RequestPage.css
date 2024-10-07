@@ -1,4 +1,10 @@
 
 #requestPage {
     background-image: url("../../assets/backgrounds/nes-controller-in-black.webp");
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        margin-top: 3rem;
+    }
 }
