@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
+@import url("./components/AccountForm.css");
 @import url("./components/App.css");
 @import url("./components/FavouriteButton.css");
 @import url("./components/GameCard.css");
