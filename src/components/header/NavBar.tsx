@@ -1,7 +1,10 @@
-import { ReactElement } from "react";
+import { ReactElement, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
 
 export function NavBar(): ReactElement {
+    const {isAuthenticated} = useContext(AuthContext);
+    
     return (
         <nav id="navbar">
             <ul>
@@ -20,9 +23,9 @@ export function NavBar(): ReactElement {
                         <h2>Favourites</h2>
                     </NavLink>
                 </li>
-                <li className="loginIconElement">
-                    <NavLink className="loginLink" to="/login">
-                        <span className="material-symbols-outlined">login</span>
+                <li className="iconElement">
+                    <NavLink className="loginLink" to={isAuthenticated ? "/logout" : "/login"}>
+                        <span className="material-symbols-outlined">{isAuthenticated ? "logout" : "login"}</span>
                     </NavLink>
                 </li>
             </ul>
