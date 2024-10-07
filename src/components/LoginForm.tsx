@@ -1,4 +1,4 @@
-import { ReactElement, useContext, useRef } from "react";
+import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { User } from "../interfaces";
@@ -6,13 +6,14 @@ import { User } from "../interfaces";
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const usernameRef = useRef<HTMLInputElement>({} as HTMLInputElement);
-    const passwordRef = useRef<HTMLInputElement>({} as HTMLInputElement);
 
-    function login() {
+    function login(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const form = event.target as HTMLFormElement;
+
         try {
-            const user = getUserIfExists(usernameRef.current?.value);
-            comparePasswords(user, passwordRef.current?.value);
+            const user = getUserIfExists(form.username.value);
+            comparePasswords(user, form.password.value);
             authenticated(user);
         } catch (error: any) {
             console.log(error);
@@ -45,10 +46,10 @@ export function LoginForm(): ReactElement {
     return (
         <section id="loginCard">
             <h1>Log in</h1>
-            <form id="loginForm">
-                <input id="loginUsername" type="text" placeholder="Username" required ref={usernameRef} />
-                <input id="loginPassword" type="password" placeholder="Password" autoComplete="false" required ref={passwordRef} />
-                <button onClick={() => login()}>Login</button>
+            <form id="loginForm" onSubmit={event => login(event)}>
+                <input id="username" type="text" placeholder="Username" autoComplete="false" required />
+                <input id="password" type="password" placeholder="Password" autoComplete="false" required />
+                <button type="submit">Login</button>
             </form>
             <Link to="/register">Create an Account</Link>
         </section>
