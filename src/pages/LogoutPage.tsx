@@ -1,17 +1,13 @@
 import { ReactElement, useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
+import { createAnonymousUser } from "../utils";
 
 export function LogoutPage(): ReactElement {
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setUser } = useContext(AuthContext);
 
     useEffect(() => {
-        logout();
+        setUser(createAnonymousUser());
     }, []);
-
-    function logout() {
-        localStorage.removeItem('activeUser');
-        setIsAuthenticated(false);
-      }
 
     return (
         <main id="logoutPage">

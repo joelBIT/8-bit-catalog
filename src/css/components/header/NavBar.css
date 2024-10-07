@@ -12,7 +12,7 @@
         margin-right: 2rem;
 
         li {
-            a:not(.loginLink) {
+            a {
                 font-family: "Rancho", cursive;
                 font-size: calc(1vw + 1vh + 2vmin);
                 

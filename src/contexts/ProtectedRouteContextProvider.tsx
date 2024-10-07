@@ -1,13 +1,14 @@
 import { createContext, ReactElement, useState } from "react";
-import { AuthContextProvider, ContextProviderChildren } from "../interfaces";
+import { AuthContextProvider, ContextProviderChildren, User } from "../interfaces";
+import { createAnonymousUser } from "../utils";
 
 export const AuthContext = createContext<AuthContextProvider>({} as AuthContextProvider);
 
 export function ProtectedRouteContextProvider({children}: ContextProviderChildren): ReactElement {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [user, setUser] = useState<User>(createAnonymousUser());
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+        <AuthContext.Provider value={{ user, setUser }}>
             {children}
         </AuthContext.Provider>
     );
