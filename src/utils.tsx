@@ -1,5 +1,6 @@
+import { Game, Role } from "./interfaces";
 
-export function createGame(game: any) {
+export function createGame(game: Game) {
     return {
         id: game.id,
         title: game.title,
@@ -20,17 +21,19 @@ export function createAnonymousUser() {
    return {
         id: -1,
         username: "anonymous",
+        role: 'User' as Role,
         isAuthenticated: false,
         password: "",
         email: ""
     }
 }
 
-export function createNewUser(id: number, username: string, password: string, email: string) {
+export function createNewUser(id: number, username: string, password: string, email: string, role: Role) {
     return {
         id: id,
         username : username,
         password : password,
+        role: role,
         email: email,
         isAuthenticated: false
       }

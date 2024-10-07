@@ -14,6 +14,7 @@ export interface Game {
 export interface User {
     id: number,
     username: string,
+    role: Role,
     isAuthenticated: boolean,
     password: string,
     email: string
@@ -32,3 +33,5 @@ export interface AuthContextProvider {
 export interface ContextProviderChildren {
     children: ReactNode;
 }
+
+export type Role = 'Admin' | 'User';
