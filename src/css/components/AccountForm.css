@@ -3,6 +3,7 @@
     margin: 3rem 0;
     display: flex;
     flex-wrap: wrap;
+    width: 80vw;
 
     input[type="radio"] {
         display: none;
@@ -19,8 +20,8 @@
     label {
         font-family: "Arima Madurai", display;
         color: var(--color-black);
-        font-size: 30px;
-        padding: 25px;
+        font-size: 1.5rem;
+        padding: 1rem;
         background: var(--color-form);
         font-weight: bold;
         border-top-left-radius: 0.5rem;
@@ -38,41 +39,57 @@
         display: none;
         text-align: left;
         padding: 2rem;
-        border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
+        border-radius: 0.5rem;
+        border-top-left-radius: 0;
 
         h1 {
+            display: contents;
             margin: 1rem 0;
             color: var(--color-black);
             font-family: "Arima Madurai", display;
+            font-size: 27px;
         }
 
         #accountInformation {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
-            input {
-                height: 39px;
-                font-size: x-large;
-                padding-left: 1rem;
-                filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
-                max-width: 50%;
+            #message {
+                color: darkgreen;
+                grid-column: 2 / 3;
             }
 
-            button {
-                height: 39px;
-                font-size: 20px;
-                border-radius: 8px;
-                background-color: lawngreen;
-                font-weight: 600;
-                margin-top: 1rem;
-                max-width: 50%;
+            #errorMessage {
+                color: red;
+                grid-column: 2 / 3;
             }
 
-            button:hover {
-                opacity: 0.7;
+            #accountInformationForm {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+    
+                input {
+                    height: 39px;
+                    font-size: x-large;
+                    padding-left: 1rem;
+                    filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+                    max-width: 50%;
+                }
+    
+                button {
+                    height: 39px;
+                    font-size: 20px;
+                    border-radius: 8px;
+                    background-color: lawngreen;
+                    font-weight: 600;
+                    margin-top: 1rem;
+                    max-width: 50%;
+                }
+    
+                button:hover {
+                    opacity: 0.7;
+                }
             }
         }
     }

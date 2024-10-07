@@ -1,8 +1,10 @@
-import { FormEvent, ReactElement, useContext } from "react";
+import { FormEvent, ReactElement, useContext, useState } from "react";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 
 export function AccountForm(): ReactElement {
     const { user, setUser } = useContext(AuthContext);
+    const [ message, setMessage ] = useState("");
+    const [ errorMessage, setErrorMessage ] = useState("");
 
     function saveChanges(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -21,8 +23,12 @@ export function AccountForm(): ReactElement {
             user.password = password;
             setUser(user);
             resetForm(form);
+            setMessage("Account successfully updated");
+            setTimeout(() => setMessage(""), 5000);
         } catch (error: any) {
-            console.log(error);
+            setErrorMessage(error.message);
+            resetForm(form);
+            setTimeout(() => setErrorMessage(""), 5000);
         }
     }
 
@@ -39,13 +45,18 @@ export function AccountForm(): ReactElement {
             <label htmlFor="account">Account</label>
 
             <div className="tab">
-                <h1>Update account information</h1>
-                <form id="accountInformation" onSubmit={event => saveChanges(event)}>
-                    <input id="email" type="email" placeholder={user.email} autoComplete="false" required />
-                    <input id="password" type="password" placeholder="Password" autoComplete="false" required />
-                    <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
-                    <button type="submit">Save</button>
-                </form>
+                <section id="accountInformation">
+                    <form id="accountInformationForm" onSubmit={event => saveChanges(event)}>
+                        <h1>Update account information</h1>
+                        <input id="email" type="email" placeholder={user.email} autoComplete="false" required />
+                        <input id="password" type="password" placeholder="Password" autoComplete="false" required />
+                        <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
+                        <button type="submit">Save</button>
+                    </form>
+
+                    { message ? <h1 id="message">{message}</h1> : <></> }
+                    { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
+                </section>
             </div>
 
             <input type="radio" id="addGame" name="tabs" />
