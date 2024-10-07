@@ -7,7 +7,7 @@ export function Select({title, list, getOption}: {title: string, list: string[],
     return (
         <section>
             <h2>{title}</h2>
-            <select ref={ref} onChange={() => getOption(ref.current ? ref.current.value : DEFAULT_OPTION_VALUE)}>
+            <select id={`${title}`} ref={ref} onChange={() => getOption(ref.current ? ref.current.value : DEFAULT_OPTION_VALUE)}>
                 <option value={DEFAULT_OPTION_VALUE}>{DEFAULT_OPTION_VALUE}</option>
                 {list.map((element, index) => <option key={index} value={element}>{element}</option>)}
             </select>

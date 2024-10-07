@@ -25,3 +25,13 @@ export function createAnonymousUser() {
         email: ""
     }
 }
+
+export function createNewUser(id: number, username: string, password: string, email: string) {
+    return {
+        id: id,
+        username : username,
+        password : password,
+        email: email,
+        isAuthenticated: false
+      }
+}
