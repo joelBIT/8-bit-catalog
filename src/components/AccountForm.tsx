@@ -20,9 +20,17 @@ export function AccountForm(): ReactElement {
             user.email = email;
             user.password = password;
             setUser(user);
+            resetForm(form);
         } catch (error: any) {
             console.log(error);
         }
+    }
+
+    function resetForm(form: HTMLFormElement) {
+        form.email.value = "";
+        form.email.placeholder = user.email;
+        form.password.value = "";
+        form.passwordRepeat.value = "";
     }
 
     return (
