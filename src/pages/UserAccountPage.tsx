@@ -1,4 +1,5 @@
 import { ReactElement, useContext } from "react";
+import { AccountForm } from "../components/AccountForm";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 
 export function UserAccountPage(): ReactElement {
@@ -6,7 +7,8 @@ export function UserAccountPage(): ReactElement {
 
     return (
         <main id="accountPage">
-            <h1>{user.username} Account Page</h1>
+            <h1>Logged in as {user.username}</h1>
+            <AccountForm />
         </main>
     );
 }

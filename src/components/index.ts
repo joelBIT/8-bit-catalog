@@ -1,3 +1,4 @@
+export * from "./AccountForm";
 export * from "./App";
 export * from "./FavouriteButton";
 export * from "./footer/Contact";

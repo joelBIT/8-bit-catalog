@@ -1,0 +1,79 @@
+
+#accountForm {
+    margin: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label + .tab {
+        display: block;
+    }
+
+    input[type="radio"]:checked + label {
+        background-color: var(--color-nintendo-gray);
+    }
+
+    label {
+        font-family: "Arima Madurai", display;
+        color: var(--color-black);
+        font-size: 30px;
+        padding: 25px;
+        background: var(--color-form);
+        font-weight: bold;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    .tab {
+        width: 100%;
+        background-color: var(--color-nintendo-gray);
+        order: 1;
+        display: none;
+        text-align: left;
+        padding: 2rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+        h1 {
+            margin: 1rem 0;
+            color: var(--color-black);
+            font-family: "Arima Madurai", display;
+        }
+
+        #accountInformation {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            input {
+                height: 39px;
+                font-size: x-large;
+                padding-left: 1rem;
+                filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+                max-width: 50%;
+            }
+
+            button {
+                height: 39px;
+                font-size: 20px;
+                border-radius: 8px;
+                background-color: lawngreen;
+                font-weight: 600;
+                margin-top: 1rem;
+                max-width: 50%;
+            }
+
+            button:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
