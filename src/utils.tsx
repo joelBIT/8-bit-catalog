@@ -34,3 +34,12 @@ export const fileTypes = [
     'image/webp',
     `image/x-icon`
 ];
+
+/**
+ * Generates a new game ID by adding 1 to the current maximum id.
+ * 
+ * @returns     a generated ID for a new game
+ */
+export function generateGameId(): number {
+    return getAllGames().map(game => game.id).reduce((a, b) => a > b ? a : b, 0) + 1;
+}
