@@ -1,11 +1,11 @@
 
-.favouriteButton {
+.isFavourite {
     background-image: url("src/assets/isFavourite.png");
     background-size: cover;
     border: none;
 }
 
-.noFavouriteButton {
+.noFavourite {
     background-image: url("src/assets/noFavourite.png");
     background-size: cover;
     border: none;

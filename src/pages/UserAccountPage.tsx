@@ -8,6 +8,9 @@ export function UserAccountPage(): ReactElement {
     const navigate = useNavigate();
     let { id } = useParams<string>();
 
+    /**
+     * Navigate to Forbidden Page if the current user ID is different than the ID supplied in params.
+     */
     useEffect(() => {
         if (id && user.id !== parseInt(id)) {
             navigate("/403");

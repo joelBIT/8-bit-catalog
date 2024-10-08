@@ -35,7 +35,7 @@
             align-content: center;
         }
 
-        button {
+        .favouriteButton {
             height: 3rem;
             min-width: 3rem;
             align-self: self-end;
