@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import { HeroCard } from "../components";
-import { createGameData, getAllGames } from "../utils";
+import { createGameData, getAllGames } from "../data";
 import { Game } from "../interfaces";
 
 export function LandingPage(): ReactElement {

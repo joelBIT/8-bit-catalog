@@ -1,6 +1,7 @@
 import { KeyboardEvent, ReactElement, useRef, useState } from "react";
 import { Select } from "..";
-import { DEFAULT_OPTION_VALUE, getAllGames } from "../../utils";
+import { DEFAULT_OPTION_VALUE } from "../../utils";
+import { getAllGames } from "../../data";
 
 export function SearchForm( {search}: {search: Function} ): ReactElement {
     const searchRef = useRef<HTMLInputElement>(null);

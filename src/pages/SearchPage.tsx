@@ -2,6 +2,7 @@ import { ReactElement, useState } from "react";
 import { SearchForm, SearchResult } from "../components";
 import { Game } from "../interfaces";
 import { DEFAULT_OPTION_VALUE } from "../utils";
+import { getAllGames } from "../data";
 
 export function SearchPage(): ReactElement {
     const [searchResult, setSearchResult] = useState<Game[]>([]);
@@ -18,16 +19,15 @@ export function SearchPage(): ReactElement {
      * @param developer     the developer of games
      */
     function search(title: string, category: string, publisher: string, developer: string): void {
-        const games = localStorage.getItem("games") || "[]";
-        let result = JSON.parse(games);
+        let games = getAllGames();
 
-        result = filter(result, "category", category);
-        result = filter(result, "publisher", publisher);
-        result = filter(result, "developer", developer);
-        result = result.filter((game: { [title: string]: string; }) => game.title?.toLowerCase().includes(title.toLocaleLowerCase()));
+        games = filter(games, "category", category);
+        games = filter(games, "publisher", publisher);
+        games = filter(games, "developer", developer);
+        games = games.filter(game => game.title?.toLowerCase().includes(title.toLocaleLowerCase()));
         
         setShowHeading(true);
-        setSearchResult(result);
+        setSearchResult(games);
     }
 
     /**
