@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, ReactElement, useState } from "react";
 import { Select } from ".";
-import { createFilterList, fileTypes, getPlayersList } from "../utils";
-import { createGame, generateGameId, storeGame } from "../data";
+import { createFilterList, fileTypes, generateGameId, getPlayersList } from "../utils";
+import { createGame, storeGame } from "../data";
 
 export function AddGameForm(): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");

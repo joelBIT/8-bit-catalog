@@ -101,12 +101,3 @@ export function storeGame(game: Game): void {
     games.push(game);
     storeAllGames(games);
 }
-
-/**
- * Should be changed due to the fact that games can be deleted.
- * 
- * @returns     a generated ID for a new game
- */
-export function generateGameId(): number {
-    return getAllGames().length;
-}
