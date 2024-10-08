@@ -25,10 +25,12 @@
 @import url("./pages/AboutPage.css");
 @import url("./pages/EditGamePage.css");
 @import url("./pages/FavouritesPage.css");
+@import url("./pages/Forbidden.css");
 @import url("./pages/GameDetailsPage.css");
 @import url("./pages/LandingPage.css");
 @import url("./pages/LoginPage.css");
 @import url("./pages/LogoutPage.css");
+@import url("./pages/NotFound.css");
 @import url("./pages/RegisterPage.css");
 @import url("./pages/RequestPage.css");
 @import url("./pages/SearchPage.css");
