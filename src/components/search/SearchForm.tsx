@@ -1,6 +1,6 @@
 import { KeyboardEvent, ReactElement, useRef, useState } from "react";
 import { Select } from "..";
-import { DEFAULT_OPTION_VALUE } from "../../utils";
+import { DEFAULT_OPTION_VALUE, getAllGames } from "../../utils";
 
 export function SearchForm( {search}: {search: Function} ): ReactElement {
     const searchRef = useRef<HTMLInputElement>(null);
@@ -16,11 +16,10 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
      * @returns             a list containing option values of a game property sorted alphabetically
      */
     function createFilterList(property: string): string[] {
-        const games = localStorage.getItem('games') || "[]";
-        let cartridges = JSON.parse(games).map((game: { [x: string]: any; }) => game[property]);
-        cartridges.sort();
-        cartridges = cartridges.filter((element: any) => element != null);
-        return Array.from(new Set(cartridges));
+        let games = getAllGames().map((game: { [x: string]: any; }) => game[property]);
+        games.sort();
+        games = games.filter((element: any) => element != null);
+        return Array.from(new Set(games));
     }
 
     /**
