@@ -1,0 +1,45 @@
+
+#accountTabs {
+    margin: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label + .tab {
+        display: block;
+    }
+
+    input[type="radio"]:checked + label {
+        background-color: var(--color-form);
+    }
+
+    label {
+        font-family: "Arima Madurai", display;
+        color: var(--color-black);
+        font-size: 1.5rem;
+        padding: 1rem;
+        background: white;
+        font-weight: bold;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    .tab {
+        width: 100%;
+        background-color: var(--color-form);
+        order: 1;
+        display: none;
+        text-align: left;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border-top-left-radius: 0;
+    }
+}

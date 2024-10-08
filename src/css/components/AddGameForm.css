@@ -1,0 +1,113 @@
+
+#addGameInformation {
+    display: flex;
+    flex-direction: column;
+
+    #addGameHeading {
+        margin: 0;
+        text-align: center;
+        color: var(--color-black);
+        font-family: "Arima Madurai", display;
+        font-size: 40px;
+    }
+
+    #message {
+        color: darkgreen;
+        grid-column: 1;
+        grid-row: 7;
+    }
+
+    #errorMessage {
+        color: red;
+        grid-column: 1;
+        grid-row: 7;
+    }
+
+    #addGameForm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 3rem;
+
+        input {
+            grid-column: 1;
+            height: 39px;
+            font-size: x-large;
+            padding-left: 1rem;
+            filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+            max-width: 50%;
+        }
+
+        button {
+            grid-column: 2;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            background-color: lawngreen;
+            font-weight: 600;
+            margin-top: 1rem;
+            justify-self: end;
+            padding: 0.5rem 1rem;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        #coverSection {
+            grid-column: 2;
+            grid-row: 1;
+            align-items: center;
+            color: var(--color-black);
+            font-size: larger;
+            padding-left: 0;
+
+            input {
+                font-size: large;
+                align-content: center;
+            }
+        }
+
+        #description {
+            grid-column: 1 / 3;
+            height: 8rem;
+            width: 100%;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        #playersSection, #categorySection, #coverSection, #releasedSection {
+            display: flex;
+            grid-column: 2;
+            align-items: center;
+            grid-row: 2;
+            gap: 1rem;
+
+            h2 {
+                color: var(--color-black);
+                font-size: 2rem;
+                font-family: "Arima Madurai", display;
+                font-weight: 100;
+            }
+
+            select {
+                font-size: 20px;
+                padding: 0.2rem;
+                height: 2.5rem;
+            }
+        }
+
+        #categorySection {
+            grid-column: 1;
+            grid-row: 4;
+        }
+
+        #coverSection {
+            grid-row: 1;
+        }
+
+        #releasedSection {
+            grid-row: 3;
+            align-items: self-start;
+        }
+    }
+}

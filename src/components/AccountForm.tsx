@@ -40,33 +40,17 @@ export function AccountForm(): ReactElement {
     }
 
     return (
-        <section id="accountForm">
-            <input type="radio" id="account" name="tabs" defaultChecked />
-            <label htmlFor="account">Account</label>
+        <section id="accountInformation">
+            <form id="accountForm" onSubmit={event => saveChanges(event)}>
+                <h1>Update account information</h1>
+                <input id="email" type="email" placeholder={user.email} autoComplete="false" required />
+                <input id="password" type="password" placeholder="Password" autoComplete="false" required />
+                <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
+                <button type="submit">Save</button>
+            </form>
 
-            <div className="tab">
-                <section id="accountInformation">
-                    <form id="accountInformationForm" onSubmit={event => saveChanges(event)}>
-                        <h1>Update account information</h1>
-                        <input id="email" type="email" placeholder={user.email} autoComplete="false" required />
-                        <input id="password" type="password" placeholder="Password" autoComplete="false" required />
-                        <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
-                        <button type="submit">Save</button>
-                    </form>
-
-                    { message ? <h1 id="message">{message}</h1> : <></> }
-                    { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
-                </section>
-            </div>
-
-            <input type="radio" id="addGame" name="tabs" />
-            <label htmlFor="addGame">Add game</label>
-            <div className="tab">
-                <section id="addGameForm">
-                    
-                    
-                </section>
-            </div>
+            { message ? <h1 id="message">{message}</h1> : <></> }
+            { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
         </section>
     );
 }
