@@ -42,9 +42,13 @@ export function createAnonymousUser(): User {
     return user;
 }
 
- export function getAllGames(): Game[] {
+export function getAllGames(): Game[] {
     const games = localStorage.getItem('games') || "[]";
     return JSON.parse(games);
+}
+
+export function storeAllGames(games: Game[]): void {
+    localStorage.setItem('games', JSON.stringify(games));
 }
 
 /**
@@ -57,14 +61,14 @@ export function createGameData() {
             game.cover = game.cover ? game.cover : "notavailable.jpg";
             game.players = game.players ? game.players : 1;
             game.releaseYear = game.releaseYear ? game.releaseYear : 1000;
-            return createGame(game);
+            return copyGame(game);
         });
 
-        localStorage.setItem('games', JSON.stringify(cartridges));
+        storeAllGames(cartridges);
     }
 }
 
-export function createGame(game: Game) {
+export function copyGame(game: Game) {
     return {
         id: game.id,
         title: game.title,
@@ -75,4 +79,34 @@ export function createGame(game: Game) {
         players: game.players,
         releaseYear: game.releaseYear
     }
+}
+
+export function createGame(id: number, title: string, category: string, publisher: string, developer: string, 
+                                releaseYear: number, description: string, players = 1, cover = "notavailable.jpg") {
+    return {
+        id: id,
+        title: title,
+        category: category,
+        cover: cover,
+        publisher: publisher,
+        developer: developer,
+        players: players,
+        description: description,
+        releaseYear: releaseYear
+    }
+}
+
+export function storeGame(game: Game): void {
+    const games = getAllGames();
+    games.push(game);
+    storeAllGames(games);
+}
+
+/**
+ * Should be changed due to the fact that games can be deleted.
+ * 
+ * @returns     a generated ID for a new game
+ */
+export function generateGameId(): number {
+    return getAllGames().length;
 }

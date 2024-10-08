@@ -1,10 +1,12 @@
-import { FormEvent, ReactElement, useState } from "react";
+import { ChangeEvent, FormEvent, ReactElement, useState } from "react";
 import { Select } from ".";
-import { createFilterList } from "../utils";
+import { createFilterList, fileTypes, getPlayersList } from "../utils";
+import { createGame, generateGameId, storeGame } from "../data";
 
 export function AddGameForm(): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
     const [ category, setCategory ] = useState<string>("Action");
+    const [ file, setFile ] = useState<File | null>(null);
     const [ message, setMessage ] = useState("");
     const [ errorMessage, setErrorMessage ] = useState("");
 
@@ -13,13 +15,17 @@ export function AddGameForm(): ReactElement {
         const form = event.target as HTMLFormElement;
 
         try {
+            const game = createGame(generateGameId(), form.gameTitle.value, category, form.publisher.value, 
+                                        form.developer.value, form.releaseDate.value.substring(0, 4), form.description.value, parseInt(players));
+            storeGame(game);
             setMessage("Game successfully added");
             setTimeout(() => setMessage(""), 5000);
         } catch (error: any) {
             setErrorMessage(error.message);
-            resetForm(form);
             setTimeout(() => setErrorMessage(""), 5000);
         }
+
+        resetForm(form);
     }
 
     function resetForm(form: HTMLFormElement) {
@@ -27,6 +33,12 @@ export function AddGameForm(): ReactElement {
         form.gameTitle.value = "";
         form.description.value = "";
         form.publisher.value = "";
+    }
+
+    function handleFile(event: ChangeEvent<HTMLInputElement>) {
+        if (event.target.files) {
+            setFile(event.target.files[0]);
+        }
     }
 
     return (
@@ -42,10 +54,10 @@ export function AddGameForm(): ReactElement {
 
                 <section id="coverSection">
                     <h2>Cover</h2>
-                    <input id="gameCover" type="file" accept="image/png, image/jpeg, image/webp" required />
+                    <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                 </section>
-                
-                <Select title={"Players"} list={["1", "2", "3", "4", "5", "6"]} defaultOption={false} getOption={setPlayers} />
+
+                <Select title={"Players"} list={getPlayersList()} defaultOption={false} getOption={setPlayers} />
 
                 <section id="releasedSection">
                     <h2>Released</h2>
