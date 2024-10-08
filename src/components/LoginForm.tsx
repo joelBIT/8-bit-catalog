@@ -2,6 +2,7 @@ import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { User } from "../interfaces";
+import { getUserIfExists } from "../data";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -18,17 +19,6 @@ export function LoginForm(): ReactElement {
         } catch (error: any) {
             console.log(error);
         }
-    }
-
-    function getUserIfExists(username: string) {
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
-        const user = users.find((user: { username: string; }) => user.username === username);
-    
-        if (!user) {
-            throw new Error(`User ${username} does not exist`);
-        }
-    
-        return user;
     }
 
     function comparePasswords(user: User, password: string) {

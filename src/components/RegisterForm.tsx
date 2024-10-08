@@ -1,6 +1,6 @@
 import { FormEvent, ReactElement, useContext } from "react";
 import { User } from "../interfaces";
-import { createNewUser } from "../utils";
+import { createNewUser, getAllUsers, storeAllUsers } from "../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 
@@ -16,8 +16,7 @@ export function RegisterForm(): ReactElement {
             const username = form.username.value;
             const password = form.password.value;
             const passwordRepeat = form.passwordRepeat.value;
-      
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const users = getAllUsers();
       
             if (users.find((user: { username: string; }) => user.username === username)) {
                 throw new Error(`User ${username} already exists!`);
@@ -37,7 +36,7 @@ export function RegisterForm(): ReactElement {
         const user = createNewUser(users.length, form.username.value, form.password.value, form.email.value, 'User');
       
         users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
+        storeAllUsers(users);
         authenticated(user);
     }
 

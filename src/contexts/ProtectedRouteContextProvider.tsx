@@ -1,6 +1,6 @@
 import { createContext, ReactElement, useState } from "react";
 import { AuthContextProvider, ContextProviderChildren, User } from "../interfaces";
-import { createAnonymousUser } from "../utils";
+import { createAnonymousUser } from "../data";
 
 export const AuthContext = createContext<AuthContextProvider>({} as AuthContextProvider);
 
