@@ -1,4 +1,5 @@
 export * from "./AccountForm";
+export * from "./AccountTabs";
 export * from "./App";
 export * from "./FavouriteButton";
 export * from "./footer/Contact";

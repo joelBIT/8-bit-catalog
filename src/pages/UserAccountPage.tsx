@@ -1,5 +1,5 @@
 import { ReactElement, useContext, useEffect } from "react";
-import { AccountForm } from "../components/AccountForm";
+import { AccountTabs } from "../components/AccountTabs";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -17,7 +17,7 @@ export function UserAccountPage(): ReactElement {
     return (
         <main id="accountPage">
             <h1>Logged in as {user.username}</h1>
-            <AccountForm />
+            <AccountTabs />
         </main>
     );
 }
