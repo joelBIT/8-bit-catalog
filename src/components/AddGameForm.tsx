@@ -21,18 +21,11 @@ export function AddGameForm(): ReactElement {
             setMessage("Game successfully added");
             setTimeout(() => setMessage(""), 5000);
         } catch (error: any) {
-            setErrorMessage(error.message);
+            setErrorMessage("Could not create new game");
             setTimeout(() => setErrorMessage(""), 5000);
         }
 
-        resetForm(form);
-    }
-
-    function resetForm(form: HTMLFormElement) {
-        form.developer.value = "";
-        form.gameTitle.value = "";
-        form.description.value = "";
-        form.publisher.value = "";
+        form.reset();
     }
 
     function handleFile(event: ChangeEvent<HTMLInputElement>) {
@@ -43,7 +36,7 @@ export function AddGameForm(): ReactElement {
 
     return (
         <section id="addGameInformation">
-            <h1 id="addGameHeading">Add Game</h1>
+            <h1>Add Game</h1>
             <form id="addGameForm" onSubmit={event => saveChanges(event)}>
   
                 <input id="gameTitle" type="text" placeholder="Game title" autoComplete="false" required />
@@ -64,11 +57,10 @@ export function AddGameForm(): ReactElement {
                     <input id="releaseDate" type="date" required />
                 </section>
                 
+                { message ? <h1 id="message">{message}</h1> : <></> }
+                { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
                 <button type="submit">Save</button>
             </form>
-
-            { message ? <h1 id="message">{message}</h1> : <></> }
-            { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
         </section>
     );
 }
