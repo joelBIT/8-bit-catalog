@@ -26,6 +26,10 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setPublisher(game.publisher);
     }, [game]);
 
+    /**
+     * Updates all Game properties and store the updated game in the list of all games. Then a
+     * user is redirected to the details page of the updated game.
+     */
     function saveChanges(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 

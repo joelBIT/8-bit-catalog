@@ -2,7 +2,6 @@ import { getAllGames } from "./data";
 
 export const ALL_OPTION_VALUE = "All";
 export const ACTION_OPTION_VALUE = "Action";
-
 export const PAGINATION_PAGE_SIZE = 15;
 
 /**
@@ -19,10 +18,17 @@ export function createFilterList(property: string): string[] {
     return Array.from(new Set(games));
 }
 
+/**
+ * 
+ * @returns   a list containing the choosable options for players in a game.
+ */
 export function getPlayersList(): string[] {
     return ["1", "2", "3", "4", "5", "6"];
 }
 
+/**
+ * The types of files that a user is permitted to upload.
+ */
 export const fileTypes = [
     'image/apng',
     'image/bmp',

@@ -22,35 +22,28 @@ export function AccountForm(): ReactElement {
             user.email = email;
             user.password = password;
             setUser(user);
-            resetForm(form);
             setMessage("Account successfully updated");
             setTimeout(() => setMessage(""), 5000);
         } catch (error: any) {
             setErrorMessage(error.message);
-            resetForm(form);
             setTimeout(() => setErrorMessage(""), 5000);
         }
-    }
 
-    function resetForm(form: HTMLFormElement) {
-        form.email.value = "";
-        form.email.placeholder = user.email;
-        form.password.value = "";
-        form.passwordRepeat.value = "";
+        form.reset();
     }
 
     return (
         <section id="accountInformation">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
-                <h1>Update account information</h1>
+                <h1 id="updateAccountHeading">Update account information</h1>
                 <input id="email" type="email" placeholder={user.email} autoComplete="false" required />
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />
                 <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
+
+                { message ? <h1 id="message">{message}</h1> : <></> }
+                { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
                 <button type="submit">Save</button>
             </form>
-
-            { message ? <h1 id="message">{message}</h1> : <></> }
-            { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
         </section>
     );
 }
