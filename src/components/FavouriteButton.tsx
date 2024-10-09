@@ -24,7 +24,7 @@ export function FavouriteButton( {game}: {game: Game}): ReactElement {
     
     return (
         <button 
-            className={ isFavorite ? "favouriteButton" : "noFavouriteButton" } 
+            className={ isFavorite ? "favouriteButton isFavourite" : "favouriteButton noFavourite" } 
             onClick={(event) => handleFavourites(event)}>
         </button>
     );

@@ -8,7 +8,8 @@ export interface Game {
     category: string,
     releaseYear: number,
     cover: string,
-    players: number
+    players: number,
+    description: string
 }
 
 export interface User {

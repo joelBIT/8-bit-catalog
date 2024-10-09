@@ -8,6 +8,7 @@ export * from "./footer/Footer";
 export * from "./footer/OtherLinks";
 export * from "./footer/SiteLinks";
 export * from "./GameCard";
+export * from "./GameDetailsCard";
 export * from "./header/Header";
 export * from "./header/Logo";
 export * from "./header/NavBar";

@@ -60,6 +60,7 @@ export function createGameData() {
         const cartridges = games.map((game: any) => {
             game.cover = game.cover ? game.cover : "notavailable.jpg";
             game.players = game.players ? game.players : 1;
+            game.description = game.description ? game.description : "";
             game.releaseYear = game.releaseYear ? game.releaseYear : 1000;
             return copyGame(game);
         });
@@ -75,6 +76,7 @@ export function copyGame(game: Game) {
         category: game.category,
         cover: game.cover,
         publisher: game.publisher,
+        description: game.description,
         developer: game.developer,
         players: game.players,
         releaseYear: game.releaseYear
@@ -100,4 +102,13 @@ export function storeGame(game: Game): void {
     const games = getAllGames();
     games.push(game);
     storeAllGames(games);
+}
+
+export function getGame(id: number): Game {
+    const game =  getAllGames().find(game => game.id === id);
+    if (!game) {
+        throw new Error(`Game with id ${id} does not exist`);
+    }
+
+    return game;
 }
