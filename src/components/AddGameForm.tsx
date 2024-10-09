@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, ReactElement, useState } from "react";
 import { Select } from ".";
-import { createFilterList, fileTypes, generateGameId, getPlayersList } from "../utils";
+import { ACTION_OPTION_VALUE, createFilterList, fileTypes, generateGameId, getPlayersList } from "../utils";
 import { createGame, storeGame } from "../data";
 
 export function AddGameForm(): ReactElement {
@@ -49,7 +49,7 @@ export function AddGameForm(): ReactElement {
                 <input id="gameTitle" type="text" placeholder="Game title" autoComplete="false" required />
                 <input id="developer" type="text" placeholder="Developer" autoComplete="false" required />
                 <input id="publisher" type="text" placeholder="Publisher" autoComplete="false" required />
-                <Select title={"Category"} list={createFilterList("category")} defaultOption={false} getOption={setCategory} />
+                <Select title={"Category"} list={createFilterList("category")} defaultOption={ACTION_OPTION_VALUE} getOption={setCategory} />
                 <textarea id="description" form="addGameForm" placeholder="Description" autoComplete="false" required />
 
                 <section id="coverSection">
@@ -57,7 +57,7 @@ export function AddGameForm(): ReactElement {
                     <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                 </section>
 
-                <Select title={"Players"} list={getPlayersList()} defaultOption={false} getOption={setPlayers} />
+                <Select title={"Players"} list={getPlayersList()} defaultOption={"1"} getOption={setPlayers} />
 
                 <section id="releasedSection">
                     <h2>Released</h2>

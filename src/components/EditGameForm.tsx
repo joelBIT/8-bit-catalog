@@ -76,7 +76,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                     <input id="gameTitle" type="text" value={title} onChange={handleTitle} placeholder="Game title" autoComplete="false" required />
                     <input id="developer" type="text" value={developer} onChange={handleDeveloper} placeholder="Developer" autoComplete="false" required />
                     <input id="publisher" type="text" value={publisher} onChange={handlePublisher} placeholder="Publisher" autoComplete="false" required />
-                    <Select title={"Category"} list={createFilterList("category")} defaultOption={false} getOption={setCategory} />
+                    <Select title={"Category"} list={createFilterList("category")} defaultOption={game.category} getOption={setCategory} />
                     <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder="Description" autoComplete="false" required />
 
                     <section id="coverSection">
@@ -84,7 +84,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                         <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                     </section>
 
-                    <Select title={"Players"} list={getPlayersList()} defaultOption={false} getOption={setPlayers} />
+                    <Select title={"Players"} list={getPlayersList()} defaultOption={String(game.players)} getOption={setPlayers} />
 
                     <section id="releasedSection">
                         <h2>Released</h2>

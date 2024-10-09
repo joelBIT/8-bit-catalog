@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
 import { SearchForm, SearchResult } from "../components";
 import { Game } from "../interfaces";
-import { DEFAULT_OPTION_VALUE } from "../utils";
+import { ALL_OPTION_VALUE } from "../utils";
 import { getAllGames } from "../data";
 
 export function SearchPage(): ReactElement {
@@ -39,7 +39,7 @@ export function SearchPage(): ReactElement {
      * @returns             a list of games matching the filter value
      */
     function filter(list: Game[], filter: string, value: string): Game[] {
-        if (value !== DEFAULT_OPTION_VALUE) {
+        if (value !== ALL_OPTION_VALUE) {
             return list.filter((game: { [x: string]: any; }) => game[filter]?.toLowerCase() === value.toLocaleLowerCase());
         } else {
             return list;
