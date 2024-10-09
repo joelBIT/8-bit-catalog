@@ -31,11 +31,7 @@
 
             input {
                 grid-column: 1;
-                height: 39px;
-                font-size: x-large;
-                padding-left: 1rem;
                 margin-right: 2rem;
-                filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
             }
 
             #coverSection {

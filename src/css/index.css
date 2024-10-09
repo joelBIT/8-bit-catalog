@@ -86,3 +86,11 @@ a {
 a:hover, button:hover {
     cursor: pointer;
 }
+
+input {
+    height: 39px;
+    font-size: x-large;
+    padding-left: 1rem;
+    filter: drop-shadow(rgb(0, 0, 0, 0.25) 4px 4px 4px);
+    font-family: "Arima Madurai", display;
+}

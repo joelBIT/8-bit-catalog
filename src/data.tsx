@@ -1,5 +1,5 @@
 import { Game, Role, User } from "./interfaces";
-import games from './assets/database/nes_games.json';
+import games from './assets/database/games.json';
 
 export function getAllUsers(): User[] {
     return JSON.parse(localStorage.getItem('users') || '[]');
