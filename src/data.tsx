@@ -112,3 +112,9 @@ export function getGame(id: number): Game {
 
     return game;
 }
+
+export function deleteGame(id: number): void {
+    const games = getAllGames();
+    const updatedList = games.filter(game => game.id !== id);
+    storeAllGames(updatedList);
+}
