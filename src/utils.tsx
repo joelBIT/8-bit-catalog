@@ -1,6 +1,7 @@
 import { getAllGames } from "./data";
 
-export const DEFAULT_OPTION_VALUE = "All";
+export const ALL_OPTION_VALUE = "All";
+export const ACTION_OPTION_VALUE = "Action";
 
 export const PAGINATION_PAGE_SIZE = 15;
 

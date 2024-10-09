@@ -118,3 +118,10 @@ export function deleteGame(id: number): void {
     const updatedList = games.filter(game => game.id !== id);
     storeAllGames(updatedList);
 }
+
+export function updateGame(updatedGame: Game): void {
+    const games = getAllGames();
+    const updatedList = games.filter(game => game.id !== updatedGame.id);
+    updatedList.push(updatedGame);
+    storeAllGames(updatedList);
+}
