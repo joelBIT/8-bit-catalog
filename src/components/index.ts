@@ -2,6 +2,7 @@ export * from "./AccountForm";
 export * from "./AccountTabs";
 export * from "./AddGameForm";
 export * from "./App";
+export * from "./EditGameForm";
 export * from "./FavouriteButton";
 export * from "./footer/Contact";
 export * from "./footer/Footer";
