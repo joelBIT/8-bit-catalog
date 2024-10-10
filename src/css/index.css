@@ -101,11 +101,34 @@ select {
 }
 
 textarea {
+    box-sizing: border-box;
     height: 8rem;
-    width: 100%;
     font-size: 1.2rem;
     margin-top: 1rem;
     padding-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+fieldset {
+    padding: 2rem;
+    border: 5px solid;
+    margin: 2rem;
+    border-color: var(--color-bar-purple);
+    border-radius: 8px;
+
+    legend {
+        font-size: 3rem;
+        font-family: "Silkscreen", sans-serif;
+        text-align: center;
+    }
+}
+
+.successMessage {
+    color: darkgreen;
+}
+
+.errorMessage {
+    color: red;
 }
 
 /************************

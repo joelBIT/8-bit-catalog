@@ -40,8 +40,8 @@ export function AccountForm(): ReactElement {
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />
                 <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
 
-                { message ? <h1 id="message">{message}</h1> : <></> }
-                { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
+                { message ? <h4 className="successMessage">{message}</h4> : <></> }
+                { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
                 <button className="accountButton" type="submit">Save</button>
             </form>
         </section>

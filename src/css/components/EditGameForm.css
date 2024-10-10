@@ -1,7 +1,6 @@
 
 #editGameDetails {
     display: flex;
-    width: 80vw;
     background-color: var(--color-black);
     color: var(--color-white);
     margin: 3rem 0;
@@ -9,18 +8,6 @@
 
     fieldset {
         display: grid;
-        width: 100%;
-        padding: 2rem;
-        border: 5px solid;
-        margin: 2rem;
-        border-color: var(--color-bar-purple);
-        border-radius: 8px;
-
-        legend {
-            font-size: 3rem;
-            font-family: "Silkscreen", sans-serif;
-            text-align: center;
-        }
 
         #editGameForm {
             display: grid;
@@ -59,7 +46,6 @@
                 gap: 1rem;
 
                 h2 {
-                    
                     font-size: 2rem;
                     font-family: "Arima Madurai", display;
                     font-weight: 100;
