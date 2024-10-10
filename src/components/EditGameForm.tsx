@@ -71,7 +71,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setDate(parseInt(event.target.value.slice(0, 4)));
     }
 
-    function setPlayersString(players: string): void {
+    function handlePlayers(players: string): void {
         setPlayers(parseInt(players));
     }
     
@@ -92,7 +92,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                         <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                     </section>
 
-                    { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={getPlayersList()[0]} getOption={setPlayersString} /> : <></> }
+                    { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={handlePlayers} /> : <></> }
 
                     <section id="releasedSection">
                         <h2>Released</h2>
