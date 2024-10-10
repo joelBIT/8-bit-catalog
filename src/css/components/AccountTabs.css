@@ -55,5 +55,13 @@
             grid-row: 5;
             justify-self: end;
         }
+
+        .successMessage, .errorMessage {
+            grid-column: 2;
+            margin-top: 1rem;
+            font-size: 1.7rem;
+            text-align: center;
+            align-content: center;
+        }
     }
 }
