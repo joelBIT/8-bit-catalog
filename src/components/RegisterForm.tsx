@@ -54,7 +54,7 @@ export function RegisterForm(): ReactElement {
                 <input id="email" type="email" placeholder="Email" autoComplete="false" required />
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />
                 <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
-                <button type="submit">Register</button>
+                <button className="accountButton" type="submit">Register</button>
             </form>
         </section>
     );

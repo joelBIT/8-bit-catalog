@@ -105,6 +105,15 @@ input {
     border-width: thin;
 }
 
+.accountButton {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background-color: lawngreen;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
 button:hover {
     opacity: 0.7;
 }

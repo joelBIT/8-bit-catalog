@@ -59,7 +59,7 @@ export function AddGameForm(): ReactElement {
                 
                 { message ? <h1 id="message">{message}</h1> : <></> }
                 { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
-                <button type="submit">Save</button>
+                <button className="accountButton" type="submit">Save</button>
             </form>
         </section>
     );

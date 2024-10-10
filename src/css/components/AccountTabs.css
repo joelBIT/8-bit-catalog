@@ -53,13 +53,7 @@
         button {
             grid-column: 2;
             grid-row: 5;
-            font-size: 1.5rem;
-            border-radius: 8px;
-            background-color: lawngreen;
-            font-weight: 600;
-            margin-top: 1rem;
             justify-self: end;
-            padding: 0.5rem 1rem;
         }
     }
 }
