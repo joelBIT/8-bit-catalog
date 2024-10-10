@@ -21,3 +21,13 @@ header {
         }
     }
 }
+
+@media (max-width: 930px) {
+    header {
+        #logoLink { 
+            h1 {
+                font-size: 1rem;
+            }
+        }
+    }
+}

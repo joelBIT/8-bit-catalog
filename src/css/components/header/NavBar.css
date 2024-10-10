@@ -40,3 +40,46 @@
         }
     }
 }
+
+@media (max-width: 1250px) {
+    #navbar {
+        ul {
+            gap: 2rem;
+
+            li {
+                a {
+                    font-size: 2rem;
+                }
+
+                .material-symbols-outlined {
+                    font-size: calc(2vw + 1vh + 2vmin);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    #navbar {
+        ul {
+            gap: 1rem;
+            margin-right: 0.3rem;
+
+            li {
+                align-content: center;
+
+                a {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    /**
+        Hamburger menu
+    */
+}

@@ -7,3 +7,15 @@
         border-radius: 100%;
     }
 }
+
+@media (max-width: 1100px) {
+    #logo {
+        width: 10rem;
+    }
+}
+
+@media (max-width: 780px) {
+    #logo {
+        display: none;
+    }
+}
