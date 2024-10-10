@@ -85,7 +85,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                     <input id="developer" type="text" value={developer} onChange={handleDeveloper} placeholder="Developer" autoComplete="false" required />
                     <input id="publisher" type="text" value={publisher} onChange={handlePublisher} placeholder="Publisher" autoComplete="false" required />
                     { category ? <Select title={"Category"} list={createFilterList("category")} defaultOption={category} getOption={setCategory} /> : <></> }
-                    <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder="Description" autoComplete="false" required />
+                    <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder=" Description" autoComplete="false" required />
 
                     <section id="coverSection">
                         <h2>Cover</h2>

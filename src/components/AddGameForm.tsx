@@ -43,14 +43,14 @@ export function AddGameForm(): ReactElement {
                 <input id="developer" type="text" placeholder="Developer" autoComplete="false" required />
                 <input id="publisher" type="text" placeholder="Publisher" autoComplete="false" required />
                 <Select title={"Category"} list={createFilterList("category")} defaultOption={ACTION_OPTION_VALUE} getOption={setCategory} />
-                <textarea id="description" form="addGameForm" placeholder="Description" autoComplete="false" required />
+                <textarea id="description" form="addGameForm" placeholder=" Description" autoComplete="false" required />
 
                 <section id="coverSection">
                     <h2>Cover</h2>
                     <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                 </section>
 
-                <Select title={"Players"} list={getPlayersList()} defaultOption={"1"} getOption={setPlayers} />
+                <Select title={"Players"} list={getPlayersList()} defaultOption={getPlayersList()[0]} getOption={setPlayers} />
 
                 <section id="releasedSection">
                     <h2>Released</h2>
