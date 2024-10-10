@@ -46,7 +46,7 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
 
             <article id="searchInput">
                 <input id="searchTitle" type="text" placeholder="Game Title" ref={searchRef} onKeyDown={event => searchIfEnter(event)} />
-                <button onClick={() => executeSearch()}>Search</button>
+                <button className="gameButton" onClick={() => executeSearch()}>Search</button>
             </article>
         </section>
     );

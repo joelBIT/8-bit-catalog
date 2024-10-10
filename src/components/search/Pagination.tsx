@@ -12,9 +12,9 @@ export function Pagination({ currentPage, setCurrentPage, totalPages }: { curren
 
     return (
         <section id="pagination">
-            <button id="previous" onClick={() => previousPage()} disabled={currentPage > 1 ? false : true}>Previous</button>
+            <button id="previous" className="gameButton" onClick={() => previousPage()} disabled={currentPage > 1 ? false : true}>Previous</button>
             <div id="pageNumber">Page <p>{currentPage} / {totalPages} </p></div>
-            <button id="next" onClick={() => nextPage()} disabled={currentPage < totalPages ? false : true}>Next</button>
+            <button id="next" className="gameButton" onClick={() => nextPage()} disabled={currentPage < totalPages ? false : true}>Next</button>
         </section>
     );
 }
