@@ -108,6 +108,21 @@ textarea {
     padding-top: 0.5rem;
 }
 
+fieldset {
+    width: 100%;
+    padding: 2rem;
+    border: 5px solid;
+    margin: 2rem;
+    border-color: var(--color-bar-purple);
+    border-radius: 8px;
+
+    legend {
+        font-size: 3rem;
+        font-family: "Silkscreen", sans-serif;
+        text-align: center;
+    }
+}
+
 /************************
 * Common Button Classes *
 ************************/
