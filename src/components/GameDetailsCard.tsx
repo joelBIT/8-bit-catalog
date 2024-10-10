@@ -4,6 +4,7 @@ import { FavouriteButton } from ".";
 import { deleteGame } from "../data";
 import { FavouritesContext } from "../contexts/FavouritesContextProvider";
 import { useNavigate } from "react-router-dom";
+import { COVER_URL } from "../utils";
 
 export function GameDetailsCard({game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
@@ -28,7 +29,7 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                 <legend>Game Details</legend>
 
                 <figure>
-                    <img src={`../src/assets/covers/${game.cover}`} alt="Game Cover" />
+                    <img src={`../${COVER_URL}/${game.cover}`} alt="Game Cover" />
                 </figure>
                 
                 <article id="gameDetails">

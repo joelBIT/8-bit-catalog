@@ -14,13 +14,8 @@
     #searchFilters {
         display: flex;
         gap: 3rem;
-        font-family: "Arima Madurai", display;
         align-self: center;
-
-        select {
-            font-size: 20px;
-            padding: 0.2rem;
-        }
+        font-family: "Arima Madurai", display;
     }
 
     #searchInput {
