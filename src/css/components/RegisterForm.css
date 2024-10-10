@@ -22,3 +22,10 @@
         gap: 1rem;
     }
 }
+
+@media (max-width: 500px) {
+    #registerCard {
+        width: 15rem;
+        padding: 2rem;
+    }
+}
