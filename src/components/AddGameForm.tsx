@@ -43,7 +43,7 @@ export function AddGameForm(): ReactElement {
                 <input id="publisher" type="text" placeholder="Publisher" autoComplete="false" required />
 
                 <Select title={"Category"} list={createFilterList("category")} defaultOption={ACTION_OPTION_VALUE} getOption={setCategory} />
-                <textarea id="description" form="addGameForm" placeholder=" Description" autoComplete="false" required />
+                <textarea id="description" form="addGameForm" placeholder="Description" autoComplete="false" required />
 
                 <section id="coverSection">
                     <h2>Cover</h2>

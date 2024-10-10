@@ -11,7 +11,7 @@
 
         input {
             grid-column: 1;
-            margin-right: 2rem;
+            width: 90%;
         }
 
         button {
@@ -50,6 +50,10 @@
         #releasedSection {
             grid-row: 3;
             align-items: self-start;
+            
+            #releaseDate {
+                width: auto;
+            }
         }
 
         .successMessage, .errorMessage {
