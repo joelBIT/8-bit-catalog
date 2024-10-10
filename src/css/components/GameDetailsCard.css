@@ -1,10 +1,9 @@
 
 #gameDetailsCard {
     display: flex;
-    width: 80vw;
     background-color: var(--color-black);
     color: var(--color-white);
-    margin: 3rem 0;
+    margin: 3rem 10rem;
     border-radius: 8px;
 
     fieldset {
@@ -83,6 +82,8 @@
 
 @media (max-width: 1000px) {
     #gameDetailsCard {
+        margin: 3rem 5rem;
+
         fieldset {
             display: flex;
             flex-direction: column;
