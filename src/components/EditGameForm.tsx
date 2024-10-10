@@ -99,8 +99,8 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                         <input id="releaseDate" type="date" value={`${date}-01-01`} onChange={handleDate} required />
                     </section>
                     
-                    <button id="cancelButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
-                    <button id="saveButton" type="submit">Save</button>
+                    <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
+                    <button id="saveButton" className="gameButton" type="submit">Save</button>
                 </form>
             </fieldset>
         </section>

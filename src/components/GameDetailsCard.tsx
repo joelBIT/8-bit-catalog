@@ -38,11 +38,11 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                     <h2>Players: <p>{game.players}</p></h2>
                     <h2>Publisher: <p>{game.publisher}</p></h2>
                     <h2>Developer: <p>{game.developer}</p></h2>
-                    <button id="editButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button>
+                    <button id="editButton" className="gameButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button>
                 </article>
                 <h3>{game.description}</h3>
 
-                <button id="deleteButton" onClick={() => removeGame()}>Delete</button>
+                <button id="deleteButton" className="gameButton" onClick={() => removeGame()}>Delete</button>
                 <FavouriteButton game={game} />
             </fieldset>
         </section>

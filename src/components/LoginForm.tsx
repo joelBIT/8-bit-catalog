@@ -39,7 +39,7 @@ export function LoginForm(): ReactElement {
             <form id="loginForm" onSubmit={event => login(event)}>
                 <input id="username" type="text" placeholder="Username" autoComplete="false" required />
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />
-                <button type="submit">Login</button>
+                <button className="accountButton" type="submit">Login</button>
             </form>
             <Link to="/register">Create an Account</Link>
         </section>
