@@ -18,3 +18,9 @@
         }
     }
 }
+
+@media (max-width: 500px) {
+    #pagination {
+        flex-direction: column;
+    }
+}

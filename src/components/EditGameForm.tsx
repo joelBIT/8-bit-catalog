@@ -92,15 +92,17 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                         <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
                     </section>
 
-                    { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={setPlayersString} /> : <></> }
+                    { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={getPlayersList()[0]} getOption={setPlayersString} /> : <></> }
 
                     <section id="releasedSection">
                         <h2>Released</h2>
                         <input id="releaseDate" type="date" value={`${date}-01-01`} onChange={handleDate} required />
                     </section>
                     
-                    <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
-                    <button id="saveButton" className="gameButton" type="submit">Save</button>
+                    <div>
+                        <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
+                        <button id="saveButton" className="gameButton" type="submit">Save</button>
+                    </div>
                 </form>
             </fieldset>
         </section>

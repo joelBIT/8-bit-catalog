@@ -43,8 +43,10 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                 </article>
                 <h3>{game.description}</h3>
 
-                <button id="deleteButton" className="gameButton" onClick={() => removeGame()}>Delete</button>
-                <FavouriteButton game={game} />
+                <div>
+                    <button id="deleteButton" className="gameButton" onClick={() => removeGame()}>Delete</button>
+                    <FavouriteButton game={game} />
+                </div>
             </fieldset>
         </section>
     );
