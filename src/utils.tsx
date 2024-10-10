@@ -3,6 +3,7 @@ import { getAllGames } from "./data";
 export const ALL_OPTION_VALUE = "All";
 export const ACTION_OPTION_VALUE = "Action";
 export const PAGINATION_PAGE_SIZE = 15;
+export const COVER_URL = "src/assets/covers";
 
 /**
  * Creates a list of option values for a Select filter. The list of option values is sorted

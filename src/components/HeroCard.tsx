@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
+import { COVER_URL } from "../utils";
 
 export function HeroCard({title, cover, id}: {title: string, cover: string, id: number}): ReactElement {
     return (
@@ -10,7 +11,7 @@ export function HeroCard({title, cover, id}: {title: string, cover: string, id: 
             </article>
             
             <figure>
-                <img src={`src/assets/covers/${cover}`} alt="Random Game Cover" />
+                <img src={`${COVER_URL}/${cover}`} alt="Random Game Cover" />
             </figure>
         </section>
     );
