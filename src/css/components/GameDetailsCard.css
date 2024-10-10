@@ -68,10 +68,6 @@
             background-color: var(--color-nintendo-gray-light);
             border-width: thin;
         }
-    
-        #deleteButton:hover, #editButton:hover {
-            opacity: 0.7;
-        }
 
         #editButton {
             align-self: end;

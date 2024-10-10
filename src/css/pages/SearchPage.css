@@ -15,10 +15,6 @@
         border-width: thin;
     }
 
-    button:hover {
-        opacity: 0.7;
-    }
-
     button:active { 
         transform: scale(0.90); 
     }

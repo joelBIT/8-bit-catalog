@@ -102,10 +102,6 @@
                 background-color: var(--color-nintendo-gray-light);
                 border-width: thin;
             }
-        
-            #cancelButton:hover, #saveButton:hover {
-                opacity: 0.7;
-            }
     
             #saveButton {
                 grid-column: 2;
