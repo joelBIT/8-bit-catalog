@@ -34,16 +34,6 @@
             margin: 1rem 0 1rem 1rem;
             align-content: center;
         }
-
-        .favouriteButton {
-            height: 3rem;
-            min-width: 3rem;
-            align-self: self-end;
-            margin-right: 0.8rem;
-            margin-bottom: 0.8rem;
-            background-color: var(--color-nintendo-gray);
-            border: none;
-        }
     }
 }
 

@@ -114,6 +114,16 @@ input {
     margin-top: 1rem;
 }
 
+.favouriteButton {
+    height: 3rem;
+    min-width: 3rem;
+    align-self: self-end;
+    margin-right: 0.8rem;
+    margin-bottom: 0.8rem;
+    background-color: var(--color-nintendo-gray);
+    border: none;
+}
+
 button:hover {
     opacity: 0.7;
 }

@@ -72,15 +72,8 @@
         }
 
         .favouriteButton {
-            height: 3rem;
-            min-width: 3rem;
-            width: fit-content;
             justify-self: end;
-            margin-right: 0.8rem;
-            margin-bottom: 0.8rem;
             background-color: var(--color-black);
-            border: none;
-            background-size: cover;
         }
 
         .isFavourite {
