@@ -45,6 +45,13 @@
             margin: 2rem 0;
         }
 
+        div {
+            display: flex;
+            grid-column: 1 / 3;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         #deleteButton, #editButton {
             grid-column: 1;
             width: fit-content;
@@ -60,8 +67,8 @@
         }
 
         .favouriteButton {
-            justify-self: end;
             background-color: var(--color-black);
+            margin: 0;
         }
 
         .isFavourite {
@@ -70,6 +77,37 @@
         
         .noFavourite {
             background-image: url("../src/assets/noFavouriteWhite.png");
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    #gameDetailsCard {
+        fieldset {
+            display: flex;
+            flex-direction: column;
+
+            figure {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #gameDetailsCard {
+        fieldset {
+            padding: 1rem;
+
+            #gameDetails {
+                h2 {
+                    font-size: 1.2rem;
+                }
+            }
+
+            legend {
+                font-size: 2.5rem;
+            }
         }
     }
 }

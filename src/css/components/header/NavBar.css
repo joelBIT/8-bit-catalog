@@ -72,6 +72,10 @@
                     font-size: 1.8rem;
                 }
             }
+
+            .iconElement {
+                align-content: end;
+            }
         }
     }
 }
