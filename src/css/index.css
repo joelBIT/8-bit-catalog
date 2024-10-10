@@ -123,6 +123,14 @@ fieldset {
     }
 }
 
+.successMessage {
+    color: darkgreen;
+}
+
+.errorMessage {
+    color: red;
+}
+
 /************************
 * Common Button Classes *
 ************************/

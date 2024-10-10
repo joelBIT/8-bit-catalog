@@ -38,10 +38,10 @@ export function AddGameForm(): ReactElement {
         <section id="addGameInformation">
             <h1>Add Game</h1>
             <form id="addGameForm" onSubmit={event => saveChanges(event)}>
-  
                 <input id="gameTitle" type="text" placeholder="Game title" autoComplete="false" required />
                 <input id="developer" type="text" placeholder="Developer" autoComplete="false" required />
                 <input id="publisher" type="text" placeholder="Publisher" autoComplete="false" required />
+
                 <Select title={"Category"} list={createFilterList("category")} defaultOption={ACTION_OPTION_VALUE} getOption={setCategory} />
                 <textarea id="description" form="addGameForm" placeholder=" Description" autoComplete="false" required />
 
@@ -57,8 +57,8 @@ export function AddGameForm(): ReactElement {
                     <input id="releaseDate" type="date" required />
                 </section>
                 
-                { message ? <h1 id="message">{message}</h1> : <></> }
-                { errorMessage ? <h1 id="errorMessage">{errorMessage}</h1> : <></> }
+                { message ? <h4 className="successMessage">{message}</h4> : <></> }
+                { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
                 <button className="accountButton" type="submit">Save</button>
             </form>
         </section>
