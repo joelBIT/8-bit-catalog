@@ -22,3 +22,26 @@
         }
     }
 }
+
+@media (max-width: 650px) {
+    #accountInformation {
+        #accountForm {
+            display: flex;
+            flex-direction: column;
+
+            #updateAccountHeading {
+                margin-bottom: 1rem;
+            }
+
+            input {
+                width: 100%;
+                align-self: center;
+            }
+
+            .accountButton {
+                width: fit-content;
+                align-self: end;
+            }
+        }
+    }
+}

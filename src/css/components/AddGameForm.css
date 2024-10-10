@@ -61,3 +61,29 @@
         }
     }
 }
+
+@media (max-width: 870px) {
+    #addGameInformation {
+        #addGameForm {
+            display: flex;
+            flex-direction: column;
+
+            .accountButton {
+                width: fit-content;
+                align-self: end;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    #addGameInformation {
+        #addGameForm {
+            #playersSection, #categorySection, #coverSection, #releasedSection {
+                flex-direction: column;
+                align-self: center;
+                align-items: center;
+            }
+        }
+    }
+}
