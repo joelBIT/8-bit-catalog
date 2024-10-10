@@ -1,5 +1,5 @@
 import { ReactElement, useRef } from "react";
-import { ALL_OPTION_VALUE } from "../../utils";
+import { ALL_OPTION_VALUE } from "../utils";
 
 export function Select({title, list, defaultOption, getOption}: {title: string, list: string[], defaultOption: string, getOption: (option: string) => void}): ReactElement {
     const ref = useRef<HTMLSelectElement>(null);

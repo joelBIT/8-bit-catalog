@@ -18,5 +18,5 @@ export * from "./LoginForm";
 export * from "./search/Pagination";
 export * from "./search/SearchForm";
 export * from "./search/SearchResult";
-export * from "./search/Select";
+export * from "./Select";
 export * from "./RegisterForm";
