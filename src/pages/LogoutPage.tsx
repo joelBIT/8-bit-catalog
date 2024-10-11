@@ -1,11 +1,12 @@
 import { ReactElement, useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
-import { createAnonymousUser } from "../data";
+import { createAnonymousUser, setActiveUser } from "../data";
 
 export function LogoutPage(): ReactElement {
     const { setUser } = useContext(AuthContext);
 
     useEffect(() => {
+        setActiveUser(createAnonymousUser());
         setUser(createAnonymousUser());
     }, []);
 

@@ -9,6 +9,12 @@ export function storeAllUsers(users: User[]): void {
     localStorage.setItem('users', JSON.stringify(users));
 }
 
+export function updateUser(updatedUser: User): void {
+    const users = getAllUsers().filter(user => user.id !== updatedUser.id);
+    users.push(updatedUser);
+    storeAllUsers(users);
+}
+
 export function createAnonymousUser(): User {
     return {
          id: -1,
@@ -124,4 +130,13 @@ export function updateGame(updatedGame: Game): void {
     const updatedList = games.filter(game => game.id !== updatedGame.id);
     updatedList.push(updatedGame);
     storeAllGames(updatedList);
+}
+
+export function getActiveUser(): User {
+    const activeUser = localStorage.getItem('activeUser') || "{}";
+    return JSON.parse(activeUser);
+}
+
+export function setActiveUser(user: User): void {
+    localStorage.setItem('activeUser', JSON.stringify(user));
 }
