@@ -34,5 +34,3 @@ export interface AuthContextProvider {
 export interface ContextProviderChildren {
     children: ReactNode;
 }
-
-export type Role = 'Admin' | 'User';

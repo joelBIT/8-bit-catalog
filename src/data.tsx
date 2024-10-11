@@ -1,4 +1,4 @@
-import { Game, Role, User } from "./interfaces";
+import { Game, User } from "./interfaces";
 import games from './assets/database/games.json';
 
 export function getAllUsers(): User[] {
