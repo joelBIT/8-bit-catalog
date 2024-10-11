@@ -11,7 +11,7 @@ export function AccountTabs(): ReactElement {
         <section id="accountTabs">
             <Tab id={"account"} label={"Account"} body={<AccountForm  />} checked={true} />
             
-            { user.role === 'Admin' ? <Tab id={"addGame"} label={"Add game"} body={<AddGameForm />} checked={false} /> : <></> }
+            { user.isAdmin ? <Tab id={"addGame"} label={"Add game"} body={<AddGameForm />} checked={false} /> : <></> }
         </section>
     );
 }

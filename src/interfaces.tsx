@@ -15,7 +15,7 @@ export interface Game {
 export interface User {
     id: number,
     username: string,
-    role: Role,
+    isAdmin: boolean,
     isAuthenticated: boolean,
     password: string,
     email: string
