@@ -13,19 +13,19 @@ export function createAnonymousUser(): User {
     return {
          id: -1,
          username: "anonymous",
-         role: 'User' as Role,
+         isAdmin: false,
          isAuthenticated: false,
          password: "",
          email: ""
      }
  }
  
- export function createNewUser(id: number, username: string, password: string, email: string, role: Role): User {
+ export function createNewUser(id: number, username: string, password: string, email: string, isAdmin: boolean): User {
      return {
          id: id,
          username : username,
          password : password,
-         role: role,
+         isAdmin: isAdmin,
          email: email,
          isAuthenticated: false
      }

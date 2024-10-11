@@ -5,18 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
-@import url("./components/AccountForm.css");
-@import url("./components/AccountTabs.css");
-@import url("./components/AddGameForm.css");
-@import url("./components/App.css");
-@import url("./components/EditGameForm.css");
-@import url("./components/FavouriteButton.css");
-@import url("./components/GameCard.css");
-@import url("./components/GameDetailsCard.css");
-@import url("./components/HeroCard.css");
-@import url("./components/LoginForm.css");
-@import url("./components/RegisterForm.css");
-@import url("./components/Select.css");
+@import url("./components/account/AccountForm.css");
+@import url("./components/account/AccountTabs.css");
+@import url("./components/account/AddGameForm.css");
 @import url("./components/footer/Contact.css");
 @import url("./components/footer/Footer.css");
 @import url("./components/footer/OtherLinks.css");
@@ -28,6 +19,15 @@
 @import url("./components/search/Pagination.css");
 @import url("./components/search/SearchForm.css");
 @import url("./components/search/SearchResult.css");
+@import url("./components/App.css");
+@import url("./components/EditGameForm.css");
+@import url("./components/FavouriteButton.css");
+@import url("./components/GameCard.css");
+@import url("./components/GameDetailsCard.css");
+@import url("./components/HeroCard.css");
+@import url("./components/LoginForm.css");
+@import url("./components/RegisterForm.css");
+@import url("./components/Select.css");
 @import url("./pages/AboutPage.css");
 @import url("./pages/EditGamePage.css");
 @import url("./pages/FavouritesPage.css");

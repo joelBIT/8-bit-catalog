@@ -33,7 +33,7 @@ export function RegisterForm(): ReactElement {
     }
 
     function registerUser(users: User[], form: HTMLFormElement) {
-        const user = createNewUser(users.length, form.username.value, form.password.value, form.email.value, 'User');
+        const user = createNewUser(users.length, form.username.value, form.password.value, form.email.value, false);
       
         users.push(user);
         storeAllUsers(users);

@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useContext, useState } from "react";
-import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
 
 export function AccountForm(): ReactElement {
     const { user, setUser } = useContext(AuthContext);
