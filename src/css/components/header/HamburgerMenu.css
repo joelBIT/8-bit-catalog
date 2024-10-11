@@ -1,0 +1,17 @@
+
+#hamburger {
+	display: block;
+
+	button {
+		background-color: var(--color-black);
+
+		span {
+			font-size: 39px;
+			background-color: var(--color-white);
+			border-radius: 0.5rem;
+			padding-left: 6px;
+			padding-right: 6px;
+			margin: 0.5rem;
+		}
+	}
+}

@@ -49,7 +49,7 @@ export function RegisterForm(): ReactElement {
     return (
         <section id="registerCard">
             <h1>Create Account</h1>
-            <form id="registerForm" onSubmit={event => register(event)}>
+            <form id="registerForm" onSubmit={register}>
                 <input id="username" type="text" placeholder="Username" autoComplete="false" required />
                 <input id="email" type="email" placeholder="Email" autoComplete="false" required />
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />

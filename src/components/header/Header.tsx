@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { NavLink } from "react-router-dom";
-import { Logo, NavBar } from "..";
+import { HamburgerMenu, Logo, NavBar } from "..";
 
 export function Header(): ReactElement {
     return (
@@ -9,6 +9,7 @@ export function Header(): ReactElement {
                 <Logo /><h1>The 8-bit Catalog</h1>
             </NavLink>
             <NavBar />
+            <HamburgerMenu />
         </header>
     );
 }
