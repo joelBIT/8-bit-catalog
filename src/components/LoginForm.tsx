@@ -36,7 +36,7 @@ export function LoginForm(): ReactElement {
     return (
         <section id="loginCard">
             <h1>Log in</h1>
-            <form id="loginForm" onSubmit={event => login(event)}>
+            <form id="loginForm" onSubmit={login}>
                 <input id="username" type="text" placeholder="Username" autoComplete="false" required />
                 <input id="password" type="password" placeholder="Password" autoComplete="false" required />
                 <button className="accountButton" type="submit">Login</button>

@@ -20,6 +20,10 @@ header {
             transition: transform 0.3s ease;
         }
     }
+
+    #hamburger {
+        display: none;
+    }
 }
 
 @media (max-width: 930px) {
@@ -29,5 +33,53 @@ header {
                 font-size: 1rem;
             }
         }
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        flex-flow: row-reverse;
+        padding-bottom: 1rem;
+
+        #hamburger {
+            display: block;
+            width: 100%;
+            margin-top: 2rem;
+            margin-left: 2rem;
+
+            button {
+                border: none;
+            }
+
+            > a {
+                vertical-align: super;
+                margin-bottom: 0.5rem;
+                text-align: end;
+            }
+
+            #navbar {
+                display: contents;
+
+                ul {
+                    flex-direction: column;
+                    margin-left: 2rem;
+
+                    li {
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+
+        #logoLink {
+            display: block;
+            margin-top: 3rem;
+            max-height: 5rem;
+        }
+    }
+
+    #navbar {
+        display: none;
     }
 }
