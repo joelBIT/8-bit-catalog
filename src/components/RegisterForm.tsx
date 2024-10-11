@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useContext } from "react";
-import { createNewUser, getAllUsers, setActiveUser } from "../data";
+import { createNewUser, setActiveUser, userExists } from "../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { generateUserId } from "../utils";
@@ -16,9 +16,8 @@ export function RegisterForm(): ReactElement {
             const username = form.username.value;
             const password = form.password.value;
             const passwordRepeat = form.passwordRepeat.value;
-            const users = getAllUsers();
       
-            if (users.find((user: { username: string; }) => user.username === username)) {
+            if (userExists(username)) {
                 throw new Error(`User ${username} already exists!`);
             }
       
@@ -26,7 +25,7 @@ export function RegisterForm(): ReactElement {
                 throw new Error('Passwords do not match!');
             }
       
-            registerUser(generateUserId(), form.username.value, form.password.value, form.email.value);
+            registerUser(generateUserId(), username, password, form.email.value);
         } catch (error: any) {
             console.log(error);
         }

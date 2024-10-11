@@ -43,15 +43,18 @@ export function createAnonymousUser(): User {
     return user;
  }
 
- export function getUserIfExists(username: string): User {
-    const users = getAllUsers();
-    const user = users.find((user: { username: string; }) => user.username === username);
-
-    if (!user) {
+ export function getUser(username: string): User {
+    const user = getAllUsers().find((user: { username: string; }) => user.username === username);
+    if (user) {
+        return user;
+    } else {
         throw new Error(`User ${username} does not exist`);
     }
+}
 
-    return user;
+export function userExists(username: string): boolean {
+    const users = getAllUsers();
+    return users.find((user: { username: string; }) => user.username === username) ? true : false;
 }
 
 export function getAllGames(): Game[] {

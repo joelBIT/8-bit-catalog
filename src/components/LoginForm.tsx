@@ -2,7 +2,7 @@ import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { User } from "../interfaces";
-import { getUserIfExists, setActiveUser } from "../data";
+import { getUser, setActiveUser } from "../data";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -13,20 +13,18 @@ export function LoginForm(): ReactElement {
         const form = event.target as HTMLFormElement;
 
         try {
-            const user = getUserIfExists(form.username.value);
-            comparePasswords(user, form.password.value);
+            const user = getUser(form.username.value);
+            
+            if(user.password !== form.password.value) {
+                throw new Error('Incorrect password');
+            }
+
             authenticate(user);
         } catch (error: any) {
             console.log(error);
         }
     }
-
-    function comparePasswords(user: User, password: string) {
-        if(user.password !== password) {
-            throw new Error('Incorrect password');
-        }
-    }
-
+    
     function authenticate(user: User) {
         user.isAuthenticated = true;
         setActiveUser(user);
