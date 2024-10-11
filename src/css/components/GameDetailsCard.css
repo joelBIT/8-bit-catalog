@@ -70,6 +70,10 @@
             margin: 0;
         }
 
+        .singleButton {
+            justify-content: end;
+        }
+
         .isFavourite {
             background-image: url("../src/assets/isFavourite.png");
         }
