@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from "react";
 import { Game } from "../interfaces";
 import { useNavigate } from "react-router-dom";
-import { Select } from ".";
-import { createFilterList, fileTypes, getPlayersList } from "../utils";
+import { FileInput, Select } from ".";
+import { createFilterList, getPlayersList } from "../utils";
 import { updateGame } from "../data";
 
 export function EditGameForm({game}: {game: Game}): ReactElement {
@@ -61,12 +61,6 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setTitle(event.target.value);
     }
 
-    function handleFile(event: ChangeEvent<HTMLInputElement>) {
-        if (event.target.files) {
-            setFile(event.target.files[0]);
-        }
-    }
-
     function handleDate(event: ChangeEvent<HTMLInputElement>) {
         setDate(parseInt(event.target.value.slice(0, 4)));
     }
@@ -87,10 +81,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                     { category ? <Select title={"Category"} list={createFilterList("category")} defaultOption={category} getOption={setCategory} /> : <></> }
                     <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder="Description" autoComplete="false" required />
 
-                    <section id="coverSection">
-                        <h2>Cover</h2>
-                        <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
-                    </section>
+                    <FileInput id={"gameCover"} label={"Cover"} setFile={setFile}/>
 
                     { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={handlePlayers} /> : <></> }
 
