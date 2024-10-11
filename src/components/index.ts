@@ -4,6 +4,7 @@ export * from "./account/AddGameForm";
 export * from "./App";
 export * from "./EditGameForm";
 export * from "./FavouriteButton";
+export * from "./FileInput";
 export * from "./footer/Contact";
 export * from "./footer/Footer";
 export * from "./footer/OtherLinks";

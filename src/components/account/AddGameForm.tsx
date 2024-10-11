@@ -1,6 +1,6 @@
-import { ChangeEvent, FormEvent, ReactElement, useState } from "react";
-import { Select } from "..";
-import { ACTION_OPTION_VALUE, createFilterList, fileTypes, generateGameId, getPlayersList } from "../../utils";
+import { FormEvent, ReactElement, useState } from "react";
+import { FileInput, Select } from "..";
+import { ACTION_OPTION_VALUE, createFilterList, generateGameId, getPlayersList } from "../../utils";
 import { createGame, storeGame } from "../../data";
 
 export function AddGameForm(): ReactElement {
@@ -28,12 +28,6 @@ export function AddGameForm(): ReactElement {
         form.reset();
     }
 
-    function handleFile(event: ChangeEvent<HTMLInputElement>) {
-        if (event.target.files) {
-            setFile(event.target.files[0]);
-        }
-    }
-
     return (
         <section id="addGameInformation">
             <h1>Add Game</h1>
@@ -45,10 +39,7 @@ export function AddGameForm(): ReactElement {
                 <Select title={"Category"} list={createFilterList("category")} defaultOption={ACTION_OPTION_VALUE} getOption={setCategory} />
                 <textarea id="description" form="addGameForm" placeholder="Description" autoComplete="false" required />
 
-                <section id="coverSection">
-                    <h2>Cover</h2>
-                    <input id="gameCover" type="file" accept={fileTypes.toString()} onChange={handleFile} required />
-                </section>
+                <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
 
                 <Select title={"Players"} list={getPlayersList()} defaultOption={getPlayersList()[0]} getOption={setPlayers} />
 
