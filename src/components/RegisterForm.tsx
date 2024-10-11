@@ -1,8 +1,8 @@
 import { FormEvent, ReactElement, useContext } from "react";
-import { User } from "../interfaces";
-import { createNewUser, getAllUsers, setActiveUser, storeAllUsers } from "../data";
+import { createNewUser, getAllUsers, setActiveUser } from "../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
+import { generateUserId } from "../utils";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -26,22 +26,15 @@ export function RegisterForm(): ReactElement {
                 throw new Error('Passwords do not match!');
             }
       
-            registerUser(users, form);
+            registerUser(generateUserId(), form.username.value, form.password.value, form.email.value);
         } catch (error: any) {
             console.log(error);
         }
     }
 
-    function registerUser(users: User[], form: HTMLFormElement) {
-        const user = createNewUser(users.length, form.username.value, form.password.value, form.email.value, false);
+    function registerUser(id: number, username: string, password: string, email: string) {
+        const user = createNewUser(id, username, password, email, false);
       
-        users.push(user);
-        storeAllUsers(users);
-        authenticated(user);
-    }
-
-    function authenticated(user: User) {
-        user.isAuthenticated = true;
         setActiveUser(user);
         setUser(user);
         navigate(`/account/${user.id}`);
