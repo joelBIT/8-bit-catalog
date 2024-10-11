@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FileInput, Select } from ".";
 import { createFilterList, getPlayersList } from "../utils";
 import { updateGame } from "../data";
+import { DateInput } from "./DateInput";
 
 export function EditGameForm({game}: {game: Game}): ReactElement {
     const navigate = useNavigate();
@@ -61,10 +62,6 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setTitle(event.target.value);
     }
 
-    function handleDate(event: ChangeEvent<HTMLInputElement>) {
-        setDate(parseInt(event.target.value.slice(0, 4)));
-    }
-
     function handlePlayers(players: string): void {
         setPlayers(parseInt(players));
     }
@@ -78,17 +75,13 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                     <input id="gameTitle" type="text" value={title} onChange={handleTitle} placeholder="Game title" autoComplete="false" required />
                     <input id="developer" type="text" value={developer} onChange={handleDeveloper} placeholder="Developer" autoComplete="false" required />
                     <input id="publisher" type="text" value={publisher} onChange={handlePublisher} placeholder="Publisher" autoComplete="false" required />
+
                     { category ? <Select title={"Category"} list={createFilterList("category")} defaultOption={category} getOption={setCategory} /> : <></> }
                     <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder="Description" autoComplete="false" required />
 
-                    <FileInput id={"gameCover"} label={"Cover"} setFile={setFile}/>
-
+                    <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
                     { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={handlePlayers} /> : <></> }
-
-                    <section id="releasedSection">
-                        <h2>Released</h2>
-                        <input id="releaseDate" type="date" value={`${date}-01-01`} onChange={handleDate} required />
-                    </section>
+                    <DateInput id={"releaseDate"} label={"Released"} setDate={setDate} />
                     
                     <div>
                         <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
