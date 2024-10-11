@@ -1,6 +1,6 @@
 import { FormEvent, ReactElement, useContext } from "react";
 import { User } from "../interfaces";
-import { createNewUser, getAllUsers, storeAllUsers } from "../data";
+import { createNewUser, getAllUsers, setActiveUser, storeAllUsers } from "../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 
@@ -42,6 +42,7 @@ export function RegisterForm(): ReactElement {
 
     function authenticated(user: User) {
         user.isAuthenticated = true;
+        setActiveUser(user);
         setUser(user);
         navigate(`/account/${user.id}`);
     }

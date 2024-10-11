@@ -2,7 +2,7 @@ import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
 import { User } from "../interfaces";
-import { getUserIfExists } from "../data";
+import { getUserIfExists, setActiveUser } from "../data";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -29,6 +29,7 @@ export function LoginForm(): ReactElement {
 
     function authenticated(user: User) {
         user.isAuthenticated = true;
+        setActiveUser(user);
         setUser(user);
         navigate(`/account/${user.id}`);
     }
