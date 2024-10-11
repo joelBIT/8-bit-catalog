@@ -27,14 +27,20 @@ export function createAnonymousUser(): User {
  }
  
  export function createNewUser(id: number, username: string, password: string, email: string, isAdmin: boolean): User {
-     return {
+     const user =  {
          id: id,
          username : username,
          password : password,
          isAdmin: isAdmin,
          email: email,
-         isAuthenticated: false
+         isAuthenticated: true
      }
+
+    const users = getAllUsers();
+    users.push(user);
+    storeAllUsers(users);
+
+    return user;
  }
 
  export function getUserIfExists(username: string): User {

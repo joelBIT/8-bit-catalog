@@ -15,7 +15,7 @@ export function LoginForm(): ReactElement {
         try {
             const user = getUserIfExists(form.username.value);
             comparePasswords(user, form.password.value);
-            authenticated(user);
+            authenticate(user);
         } catch (error: any) {
             console.log(error);
         }
@@ -27,7 +27,7 @@ export function LoginForm(): ReactElement {
         }
     }
 
-    function authenticated(user: User) {
+    function authenticate(user: User) {
         user.isAuthenticated = true;
         setActiveUser(user);
         setUser(user);
