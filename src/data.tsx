@@ -151,3 +151,7 @@ export function getActiveUser(): User {
 export function setActiveUser(user: User): void {
     localStorage.setItem('activeUser', JSON.stringify(user));
 }
+
+export function activeUserExists(): boolean {
+    return localStorage.getItem('activeUser') ? true : false;
+}
