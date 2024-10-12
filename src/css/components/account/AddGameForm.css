@@ -62,6 +62,16 @@
     }
 }
 
+@media (max-width: 1110px) {
+    #addGameInformation {
+        #addGameForm {
+            .successMessage, .errorMessage {
+                grid-column: 1;
+            }
+        }
+    }
+}
+
 @media (max-width: 870px) {
     #addGameInformation {
         #addGameForm {
