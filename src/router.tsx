@@ -23,6 +23,10 @@ export const router = createBrowserRouter([
 				element: <FavouritesPage />,
 			},
 			{
+				path: "/403",
+				element: <Forbidden />,
+			},
+			{
 				path: "/gamedetails/:id",
 				element: <GameDetailsPage />
 			},
@@ -41,10 +45,6 @@ export const router = createBrowserRouter([
 			{
 				path: "*",
 				element: <NotFound />,
-			},
-			{
-				path: "/403",
-				element: <Forbidden />,
 			},
             {
 				path: "/register",

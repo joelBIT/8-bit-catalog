@@ -30,7 +30,7 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
      * @param list      list of options in filter list
      * @returns         list of options in filter list including the 'All' option
      */
-    function addAllOption(list: string[]) {
+    function addAllOption(list: string[]): string[] {
         list.unshift(ALL_OPTION_VALUE);
         return list;
     }

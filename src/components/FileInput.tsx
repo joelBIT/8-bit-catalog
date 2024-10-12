@@ -3,7 +3,7 @@ import { fileTypes } from "../utils";
 
 export function FileInput({ id, label, setFile }: { id: string, label: string, setFile: (arg0: File) => void}): ReactElement {
     
-    function handleFile(event: ChangeEvent<HTMLInputElement>) {
+    function handleFile(event: ChangeEvent<HTMLInputElement>): void {
         if (event.target.files) {
             setFile(event.target.files[0]);
         }

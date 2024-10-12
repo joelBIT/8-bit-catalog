@@ -2,7 +2,7 @@ import { ReactElement, useState } from "react";
 import { NavBar } from "..";
 
 export function HamburgerMenu(): ReactElement {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     
     return (
         <nav id="hamburger">

@@ -9,10 +9,10 @@ export function AddGameForm(): ReactElement {
     const [ category, setCategory ] = useState<string>("Action");
     const [ date, setDate ] = useState<string>("");
     const [ file, setFile ] = useState<File | null>(null);
-    const [ message, setMessage ] = useState("");
-    const [ errorMessage, setErrorMessage ] = useState("");
+    const [ message, setMessage ] = useState<string>("");
+    const [ errorMessage, setErrorMessage ] = useState<string>("");
 
-    function saveChanges(event: FormEvent<HTMLFormElement>) {
+    function saveChanges(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
 

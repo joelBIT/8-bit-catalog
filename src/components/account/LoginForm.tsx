@@ -1,14 +1,14 @@
 import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
-import { User } from "../interfaces";
-import { getUser, setActiveUser } from "../data";
+import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
+import { User } from "../../interfaces";
+import { getUser, setActiveUser } from "../../data";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    function login(event: FormEvent<HTMLFormElement>) {
+    function login(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
 
@@ -25,7 +25,7 @@ export function LoginForm(): ReactElement {
         }
     }
     
-    function authenticate(user: User) {
+    function authenticate(user: User): void {
         user.isAuthenticated = true;
         setActiveUser(user);
         setUser(user);

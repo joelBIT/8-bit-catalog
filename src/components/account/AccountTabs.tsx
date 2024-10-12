@@ -9,7 +9,6 @@ export function AccountTabs(): ReactElement {
     return (
         <section id="accountTabs">
             <Tab id={"account"} label={"Account"} body={<AccountForm  />} checked={true} />
-            
             { getActiveUser().isAdmin ? <Tab id={"addGame"} label={"Add game"} body={<AddGameForm />} checked={false} /> : <></> }
         </section>
     );

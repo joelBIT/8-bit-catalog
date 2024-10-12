@@ -2,10 +2,10 @@ import { FormEvent, ReactElement, useState } from "react";
 import { getActiveUser, setActiveUser, updateUser } from "../../data";
 
 export function AccountForm(): ReactElement {
-    const [ message, setMessage ] = useState("");
-    const [ errorMessage, setErrorMessage ] = useState("");
+    const [ message, setMessage ] = useState<string>("");
+    const [ errorMessage, setErrorMessage ] = useState<string>("");
 
-    function saveChanges(event: FormEvent<HTMLFormElement>) {
+    function saveChanges(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
         const user = getActiveUser();
