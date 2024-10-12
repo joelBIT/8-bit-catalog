@@ -17,6 +17,7 @@ export * from "./header/Logo";
 export * from "./header/NavBar";
 export * from "./HeroCard";
 export * from "./LoginForm";
+export * from "./Modal";
 export * from "./search/Pagination";
 export * from "./search/SearchForm";
 export * from "./search/SearchResult";

@@ -1,6 +1,6 @@
-import { ReactElement, useContext } from "react";
+import { ReactElement, useContext, useState } from "react";
 import { Game } from "../interfaces";
-import { FavouriteButton } from ".";
+import { FavouriteButton, Modal } from ".";
 import { deleteGame, getActiveUser } from "../data";
 import { FavouritesContext } from "../contexts/FavouritesContextProvider";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import { COVER_URL } from "../utils";
 export function GameDetailsCard({game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
     const navigate = useNavigate();
+    const [ showModal, setShowModal ] = useState<boolean>(false);
 
     /**
      * When a game is deleted it is first removed from the favourites list (if being a favourite) and
@@ -44,8 +45,9 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                 <h3>{game.description}</h3>
 
                 <div className={ getActiveUser().isAdmin ? "" : "singleButton" }>
-                    { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => removeGame()}>Delete</button> : <></> }
+                    { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => setShowModal(true)}>Delete</button> : <></> }
                     <FavouriteButton game={game}/>
+                    { showModal ? <Modal title={game.title} showModal={setShowModal} confirm={() => removeGame()} /> : <></> }
                 </div>
             </fieldset>
         </section>
