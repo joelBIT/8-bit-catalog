@@ -76,7 +76,7 @@ export function createGameData() {
             game.cover = game.cover ? game.cover : "notavailable.jpg";
             game.players = game.players ? game.players : 1;
             game.description = game.description ? game.description : "";
-            game.releaseYear = game.releaseYear ? game.releaseYear : 1000;
+            game.releaseDate = game.releaseDate ? game.releaseDate : "";
             return copyGame(game);
         });
 
@@ -94,12 +94,13 @@ export function copyGame(game: Game) {
         description: game.description,
         developer: game.developer,
         players: game.players,
-        releaseYear: game.releaseYear
+        releaseYear: game.releaseYear,
+        releaseDate: game.releaseDate
     }
 }
 
 export function createGame(id: number, title: string, category: string, publisher: string, developer: string, 
-                                releaseYear: number, description: string, players = 1, cover = "notavailable.jpg") {
+                                releaseYear: number, releaseDate: string, description: string, players = 1, cover = "notavailable.jpg") {
     return {
         id: id,
         title: title,
@@ -109,7 +110,8 @@ export function createGame(id: number, title: string, category: string, publishe
         developer: developer,
         players: players,
         description: description,
-        releaseYear: releaseYear
+        releaseYear: releaseYear,
+        releaseDate: releaseDate
     }
 }
 

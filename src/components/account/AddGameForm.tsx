@@ -7,7 +7,7 @@ import { DateInput } from "../DateInput";
 export function AddGameForm(): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
     const [ category, setCategory ] = useState<string>("Action");
-    const [ date, setDate ] = useState<number>(0);
+    const [ date, setDate ] = useState<string>("");
     const [ file, setFile ] = useState<File | null>(null);
     const [ message, setMessage ] = useState("");
     const [ errorMessage, setErrorMessage ] = useState("");
@@ -18,7 +18,7 @@ export function AddGameForm(): ReactElement {
 
         try {
             const game = createGame(generateGameId(), form.gameTitle.value, category, form.publisher.value, 
-                                        form.developer.value, form.releaseDate.value.substring(0, 4), form.description.value, parseInt(players));
+                                        form.developer.value, parseInt(date.slice(0, 4)), date, form.description.value, parseInt(players));
             storeGame(game);
             setMessage("Game successfully added");
             setTimeout(() => setMessage(""), 5000);
@@ -28,6 +28,7 @@ export function AddGameForm(): ReactElement {
         }
 
         form.reset();
+        setDate("");
     }
 
     return (
@@ -43,7 +44,7 @@ export function AddGameForm(): ReactElement {
 
                 <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
                 <Select title={"Players"} list={getPlayersList()} defaultOption={getPlayersList()[0]} getOption={setPlayers} />
-                <DateInput id={"releaseDate"} label={"Released"} setDate={setDate} />
+                <DateInput id={"releaseDate"} label={"Released"} value={date} setDate={setDate} />
                 
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
