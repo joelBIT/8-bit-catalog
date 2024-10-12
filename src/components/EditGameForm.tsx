@@ -33,7 +33,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
      * Updates all Game properties and store the updated game in the list of all games. Then a
      * user is redirected to the details page of the updated game.
      */
-    function saveChanges(event: FormEvent<HTMLFormElement>) {
+    function saveChanges(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
 
         game.title = title;
@@ -48,19 +48,19 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         navigate(`/gamedetails/${game.id}`);
     }
 
-    function handleDescription(event: ChangeEvent<HTMLTextAreaElement>) {
+    function handleDescription(event: ChangeEvent<HTMLTextAreaElement>): void {
         setDescription(event.target.value);
     }
 
-    function handleDeveloper(event: ChangeEvent<HTMLInputElement>) {
+    function handleDeveloper(event: ChangeEvent<HTMLInputElement>): void {
         setDeveloper(event.target.value);
     }
 
-    function handlePublisher(event: ChangeEvent<HTMLInputElement>) {
+    function handlePublisher(event: ChangeEvent<HTMLInputElement>): void {
         setPublisher(event.target.value);
     }
 
-    function handleTitle(event: ChangeEvent<HTMLInputElement>) {
+    function handleTitle(event: ChangeEvent<HTMLInputElement>): void {
         setTitle(event.target.value);
     }
 

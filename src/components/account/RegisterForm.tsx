@@ -1,14 +1,14 @@
 import { FormEvent, ReactElement, useContext } from "react";
-import { createNewUser, setActiveUser, userExists } from "../data";
+import { createNewUser, setActiveUser, userExists } from "../../data";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
-import { generateUserId } from "../utils";
+import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
+import { generateUserId } from "../../utils";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    function register(event: FormEvent<HTMLFormElement>) {
+    function register(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
 
@@ -31,7 +31,7 @@ export function RegisterForm(): ReactElement {
         }
     }
 
-    function registerUser(id: number, username: string, password: string, email: string) {
+    function registerUser(id: number, username: string, password: string, email: string): void {
         const user = createNewUser(id, username, password, email, false);
       
         setActiveUser(user);

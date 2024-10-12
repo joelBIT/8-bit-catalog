@@ -1,6 +1,5 @@
 export * from "./AboutPage";
 export * from "./EditGamePage";
-export * from "./ErrorPage";
 export * from "./FavouritesPage";
 export * from "./Forbidden";
 export * from "./GameDetailsPage";

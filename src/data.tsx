@@ -70,7 +70,7 @@ export function storeAllGames(games: Game[]): void {
  * A check is done to see if local storage contains the game objects. If data is missing, game data 
  * is read from a json file and transformed into Game objects before being added to local storage.
  */
-export function createGameData() {
+export function createGameData(): void {
     if (!localStorage.getItem('games')) {
         const cartridges = games.map((game: any) => {
             game.cover = game.cover ? game.cover : "notavailable.jpg";
@@ -84,7 +84,7 @@ export function createGameData() {
     }
 }
 
-export function copyGame(game: Game) {
+export function copyGame(game: Game): Game {
     return {
         id: game.id,
         title: game.title,
@@ -100,7 +100,7 @@ export function copyGame(game: Game) {
 }
 
 export function createGame(id: number, title: string, category: string, publisher: string, developer: string, 
-                                releaseYear: number, releaseDate: string, description: string[], players = 1, cover = "notavailable.jpg") {
+                                releaseYear: number, releaseDate: string, description: string[], players = 1, cover = "notavailable.jpg"): Game {
     return {
         id: id,
         title: title,
