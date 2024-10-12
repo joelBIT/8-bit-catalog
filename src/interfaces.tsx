@@ -7,6 +7,7 @@ export interface Game {
     developer: string,
     category: string,
     releaseYear: number,
+    releaseDate: string,
     cover: string,
     players: number,
     description: string

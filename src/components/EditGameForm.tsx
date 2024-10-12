@@ -12,7 +12,8 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
     const [ category, setCategory ] = useState<string>(game.category);
     const [ title, setTitle ] = useState<string>(game.title);
     const [ file, setFile ] = useState<File>();
-    const [ date, setDate ] = useState<number>(game.releaseYear);
+    const [ date, setDate ] = useState<string>(game.releaseDate);
+    const [ year, setYear ] = useState<number>(game.releaseYear);
     const [ developer, setDeveloper ] = useState<string>(game.developer);
     const [ publisher, setPublisher ] = useState<string>(game.publisher);
     const [ description, setDescription ] = useState<string>(game.description);
@@ -21,7 +22,8 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setTitle(game.title);
         setPlayers(game.players);
         setCategory(game.category);
-        setDate(game.releaseYear);
+        setDate(game.releaseDate);
+        setYear(game.releaseYear);
         setDescription(game.description);
         setDeveloper(game.developer);
         setPublisher(game.publisher);
@@ -40,7 +42,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         game.description = description;
         game.developer = developer;
         game.publisher = publisher;
-        game.releaseYear = date;
+        game.releaseDate = date;
 
         updateGame(game);
         navigate(`/gamedetails/${game.id}`);
@@ -65,6 +67,10 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
     function handlePlayers(players: string): void {
         setPlayers(parseInt(players));
     }
+
+    function getDate(): string {
+        return date ? date : `${year}-01-01`;
+    }
     
     return (
         <section id="editGameDetails">
@@ -81,7 +87,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
 
                     <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
                     { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={handlePlayers} /> : <></> }
-                    <DateInput id={"releaseDate"} label={"Released"} setDate={setDate} />
+                    <DateInput id={"releaseDate"} label={"Released"} value={getDate()} setDate={setDate} />
                     
                     <div>
                         <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
