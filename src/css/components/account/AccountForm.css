@@ -23,6 +23,16 @@
     }
 }
 
+@media (max-width: 1200px) {
+    #accountInformation {
+        #accountForm {
+            .successMessage, .errorMessage {
+                grid-column: 1;
+            }
+        }
+    }
+}
+
 @media (max-width: 650px) {
     #accountInformation {
         #accountForm {
