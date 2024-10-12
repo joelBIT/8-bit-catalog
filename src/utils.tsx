@@ -60,3 +60,11 @@ export function generateGameId(): number {
 export function generateUserId(): number {
     return getAllUsers().map(user => user.id).reduce((a, b) => a > b ? a : b, 0) + 1;
 }
+
+export function joinParagraphs(text: string[]): string {
+    return text ? text.join("\n\n") : text;
+}
+
+export function createParagraphs(text: string): string[] {
+    return text.split('\n').filter((element: string) => element !== "");
+}

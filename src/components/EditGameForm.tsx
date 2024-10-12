@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from "react
 import { Game } from "../interfaces";
 import { useNavigate } from "react-router-dom";
 import { FileInput, Select } from ".";
-import { createFilterList, getPlayersList } from "../utils";
+import { createFilterList, createParagraphs, getPlayersList, joinParagraphs } from "../utils";
 import { updateGame } from "../data";
 import { DateInput } from "./DateInput";
 
@@ -16,7 +16,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
     const [ year, setYear ] = useState<number>(game.releaseYear);
     const [ developer, setDeveloper ] = useState<string>(game.developer);
     const [ publisher, setPublisher ] = useState<string>(game.publisher);
-    const [ description, setDescription ] = useState<string>(game.description);
+    const [ description, setDescription ] = useState<string>(joinParagraphs(game.description));
 
     useEffect(() => {
         setTitle(game.title);
@@ -24,7 +24,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         setCategory(game.category);
         setDate(game.releaseDate);
         setYear(game.releaseYear);
-        setDescription(game.description);
+        setDescription(joinParagraphs(game.description));
         setDeveloper(game.developer);
         setPublisher(game.publisher);
     }, [game]);
@@ -39,7 +39,7 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         game.title = title;
         game.category = category;
         game.players = players;
-        game.description = description;
+        game.description = createParagraphs(description);
         game.developer = developer;
         game.publisher = publisher;
         game.releaseDate = date;

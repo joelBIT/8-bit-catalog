@@ -105,7 +105,8 @@ select {
 
 textarea {
     box-sizing: border-box;
-    height: 8rem;
+    resize: none;
+    min-height: 15rem;
     font-size: 1.2rem;
     margin-top: 1rem;
     padding-top: 0.5rem;

@@ -1,6 +1,6 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { FileInput, Select } from "..";
-import { ACTION_OPTION_VALUE, createFilterList, generateGameId, getPlayersList } from "../../utils";
+import { ACTION_OPTION_VALUE, createFilterList, createParagraphs, generateGameId, getPlayersList } from "../../utils";
 import { createGame, storeGame } from "../../data";
 import { DateInput } from "../DateInput";
 
@@ -17,8 +17,9 @@ export function AddGameForm(): ReactElement {
         const form = event.target as HTMLFormElement;
 
         try {
+            const description = createParagraphs(form.description.value);
             const game = createGame(generateGameId(), form.gameTitle.value, category, form.publisher.value, 
-                                        form.developer.value, parseInt(date.slice(0, 4)), date, form.description.value, parseInt(players));
+                                        form.developer.value, parseInt(date.slice(0, 4)), date, description, parseInt(players));
             storeGame(game);
             setMessage("Game successfully added");
             setTimeout(() => setMessage(""), 5000);
