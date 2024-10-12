@@ -51,7 +51,8 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                 <legend>Edit Details</legend>
 
                 <form id="editGameForm" onSubmit={event => saveChanges(event)}>
-                    <input id="gameTitle" 
+                    <input 
+                        id="gameTitle" 
                         type="text" 
                         value={title} 
                         onChange={(e) => setTitle(e.target.value)} 
@@ -59,7 +60,8 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                         autoComplete="false" 
                         required 
                     />
-                    <input id="developer" 
+                    <input 
+                        id="developer" 
                         type="text" 
                         value={developer} 
                         onChange={(e) => setDeveloper(e.target.value)} 
@@ -67,7 +69,8 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                         autoComplete="false" 
                         required 
                     />
-                    <input id="publisher" 
+                    <input 
+                        id="publisher" 
                         type="text" 
                         value={publisher} 
                         onChange={(e) => setPublisher(e.target.value)} 
@@ -76,13 +79,15 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                         required 
                     />
 
-                    { category ? <Select title={"Category"} 
-                                        list={createFilterList("category")} 
-                                        defaultOption={category} 
-                                        getOption={setCategory} 
+                    { category ? <Select 
+                                    title={"Category"} 
+                                    list={createFilterList("category")} 
+                                    defaultOption={category} 
+                                    getOption={setCategory} 
                                 /> : <></> }
                     
-                    <textarea id="description" 
+                    <textarea 
+                        id="description" 
                         form="addGameForm" 
                         value={description} 
                         onChange={(e) => setDescription(e.target.value)} 
@@ -93,10 +98,11 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
 
                     <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
 
-                    { players ? <Select title={"Players"} 
-                                        list={getPlayersList()} 
-                                        defaultOption={players.toString()} 
-                                        getOption={handlePlayers} 
+                    { players ? <Select 
+                                    title={"Players"} 
+                                    list={getPlayersList()} 
+                                    defaultOption={players.toString()} 
+                                    getOption={handlePlayers} 
                                 /> : <></> }
                     
                     <DateInput id={"releaseDate"} label={"Released"} value={getDate()} setDate={setDate} />

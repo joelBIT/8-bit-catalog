@@ -37,12 +37,32 @@ export function AccountForm(): ReactElement {
         <section id="accountInformation">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
                 <h1 id="updateAccountHeading">Update account information</h1>
-                <input id="email" type="email" placeholder={getActiveUser().email} autoComplete="false" required />
-                <input id="password" type="password" placeholder="Password" autoComplete="false" required />
-                <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
+
+                <input 
+                    id="email" 
+                    type="email" 
+                    placeholder={getActiveUser().email} 
+                    autoComplete="false" 
+                    required 
+                />
+                <input 
+                    id="password" 
+                    type="password" 
+                    placeholder="Password" 
+                    autoComplete="false" 
+                    required 
+                />
+                <input 
+                    id="passwordRepeat" 
+                    type="password" 
+                    placeholder="Re-type Password" 
+                    autoComplete="false" 
+                    required 
+                />
 
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
+                
                 <button className="accountButton" type="submit">Save</button>
             </form>
         </section>
