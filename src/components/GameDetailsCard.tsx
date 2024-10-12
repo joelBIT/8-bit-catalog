@@ -42,8 +42,11 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                     <h2>Developer: <p>{game.developer}</p></h2>
                     { getActiveUser().isAdmin ? <button id="editButton" className="gameButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button> : <></> }
                 </article>
-                <h3>{game.description}</h3>
 
+                <article id="description">
+                    { game.description ? game.description.map((paragraph, index) => <p key={index}>{paragraph}</p>) : <></> }
+                </article>
+                
                 <div className={ getActiveUser().isAdmin ? "" : "singleButton" }>
                     { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => setShowModal(true)}>Delete</button> : <></> }
                     <FavouriteButton game={game}/>

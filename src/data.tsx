@@ -75,7 +75,7 @@ export function createGameData() {
         const cartridges = games.map((game: any) => {
             game.cover = game.cover ? game.cover : "notavailable.jpg";
             game.players = game.players ? game.players : 1;
-            game.description = game.description ? game.description : "";
+            game.description = game.description ? game.description : [];
             game.releaseDate = game.releaseDate ? game.releaseDate : "";
             return copyGame(game);
         });
@@ -100,7 +100,7 @@ export function copyGame(game: Game) {
 }
 
 export function createGame(id: number, title: string, category: string, publisher: string, developer: string, 
-                                releaseYear: number, releaseDate: string, description: string, players = 1, cover = "notavailable.jpg") {
+                                releaseYear: number, releaseDate: string, description: string[], players = 1, cover = "notavailable.jpg") {
     return {
         id: id,
         title: title,
