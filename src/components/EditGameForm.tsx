@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from "react";
+import { FormEvent, ReactElement, useState } from "react";
 import { Game } from "../interfaces";
 import { useNavigate } from "react-router-dom";
 import { FileInput, Select } from ".";
@@ -6,28 +6,17 @@ import { createFilterList, createParagraphs, getPlayersList, joinParagraphs } fr
 import { updateGame } from "../data";
 import { DateInput } from "./DateInput";
 
-export function EditGameForm({game}: {game: Game}): ReactElement {
+export function EditGameForm({ game }: { game: Game }): ReactElement {
     const navigate = useNavigate();
     const [ players, setPlayers ] = useState<number>(game.players);
     const [ category, setCategory ] = useState<string>(game.category);
     const [ title, setTitle ] = useState<string>(game.title);
     const [ file, setFile ] = useState<File>();
     const [ date, setDate ] = useState<string>(game.releaseDate);
-    const [ year, setYear ] = useState<number>(game.releaseYear);
+    const [ year ] = useState<number>(game.releaseYear);
     const [ developer, setDeveloper ] = useState<string>(game.developer);
     const [ publisher, setPublisher ] = useState<string>(game.publisher);
     const [ description, setDescription ] = useState<string>(joinParagraphs(game.description));
-
-    useEffect(() => {
-        setTitle(game.title);
-        setPlayers(game.players);
-        setCategory(game.category);
-        setDate(game.releaseDate);
-        setYear(game.releaseYear);
-        setDescription(joinParagraphs(game.description));
-        setDeveloper(game.developer);
-        setPublisher(game.publisher);
-    }, [game]);
 
     /**
      * Updates all Game properties and store the updated game in the list of all games. Then a
@@ -48,22 +37,6 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
         navigate(`/gamedetails/${game.id}`);
     }
 
-    function handleDescription(event: ChangeEvent<HTMLTextAreaElement>): void {
-        setDescription(event.target.value);
-    }
-
-    function handleDeveloper(event: ChangeEvent<HTMLInputElement>): void {
-        setDeveloper(event.target.value);
-    }
-
-    function handlePublisher(event: ChangeEvent<HTMLInputElement>): void {
-        setPublisher(event.target.value);
-    }
-
-    function handleTitle(event: ChangeEvent<HTMLInputElement>): void {
-        setTitle(event.target.value);
-    }
-
     function handlePlayers(players: string): void {
         setPlayers(parseInt(players));
     }
@@ -78,15 +51,60 @@ export function EditGameForm({game}: {game: Game}): ReactElement {
                 <legend>Edit Details</legend>
 
                 <form id="editGameForm" onSubmit={event => saveChanges(event)}>
-                    <input id="gameTitle" type="text" value={title} onChange={handleTitle} placeholder="Game title" autoComplete="false" required />
-                    <input id="developer" type="text" value={developer} onChange={handleDeveloper} placeholder="Developer" autoComplete="false" required />
-                    <input id="publisher" type="text" value={publisher} onChange={handlePublisher} placeholder="Publisher" autoComplete="false" required />
+                    <input 
+                        id="gameTitle" 
+                        type="text" 
+                        value={title} 
+                        onChange={(e) => setTitle(e.target.value)} 
+                        placeholder="Game title" 
+                        autoComplete="false" 
+                        required 
+                    />
+                    <input 
+                        id="developer" 
+                        type="text" 
+                        value={developer} 
+                        onChange={(e) => setDeveloper(e.target.value)} 
+                        placeholder="Developer" 
+                        autoComplete="false" 
+                        required 
+                    />
+                    <input 
+                        id="publisher" 
+                        type="text" 
+                        value={publisher} 
+                        onChange={(e) => setPublisher(e.target.value)} 
+                        placeholder="Publisher" 
+                        autoComplete="false" 
+                        required 
+                    />
 
-                    { category ? <Select title={"Category"} list={createFilterList("category")} defaultOption={category} getOption={setCategory} /> : <></> }
-                    <textarea id="description" form="addGameForm" value={description} onChange={handleDescription} placeholder="Description" autoComplete="false" required />
+                    { category ? <Select 
+                                    title={"Category"} 
+                                    list={createFilterList("category")} 
+                                    defaultOption={category} 
+                                    getOption={setCategory} 
+                                /> : <></> }
+                    
+                    <textarea 
+                        id="description" 
+                        form="addGameForm" 
+                        value={description} 
+                        onChange={(e) => setDescription(e.target.value)} 
+                        placeholder="Description" 
+                        autoComplete="false" 
+                        required 
+                    />
 
                     <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
-                    { players ? <Select title={"Players"} list={getPlayersList()} defaultOption={players.toString()} getOption={handlePlayers} /> : <></> }
+
+                    { players ? <Select 
+                                    title={"Players"} 
+                                    list={getPlayersList()} 
+                                    defaultOption={players.toString()} 
+                                    getOption={handlePlayers} 
+                                /> : <></> }
+                    
                     <DateInput id={"releaseDate"} label={"Released"} value={getDate()} setDate={setDate} />
                     
                     <div>
