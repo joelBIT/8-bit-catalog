@@ -1,5 +1,6 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
 import { getActiveUser, getGame } from "../data";
+import { Game } from "../interfaces";
 
 /**
  * A user is redirected if not an admin due to regular users not being allowed to edit games.
@@ -8,18 +9,14 @@ import { getActiveUser, getGame } from "../data";
  * @param param0    the ID of a game
  * @returns         a Game object if one exists with the supplied ID
  */
-export function EditGameLoader({params}: LoaderFunctionArgs<string>): any {
+export function EditGameLoader({ params }: LoaderFunctionArgs<string>): Game | Response {
     
     if (!getActiveUser().isAdmin) {
         return redirect("/403");
     }
 
     if (params.id) {
-        try {
-            return getGame(parseInt(params.id));
-        } catch (error) {
-            console.log(error);
-        }
+        return getGame(parseInt(params.id));
     }
     
     return redirect("*");

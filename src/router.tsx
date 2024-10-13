@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden, ErrorPage } from "./pages";
 import { App } from "./components";
-import { EditGameLoader, RandomGameLoader, UserAccountLoader } from "./loaders";
+import { EditGameLoader, GameDetailsLoader, RandomGameLoader, UserAccountLoader } from "./loaders";
 
 
 export const router = createBrowserRouter([
@@ -29,7 +29,9 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/gamedetails/:id",
-				element: <GameDetailsPage />
+				element: <GameDetailsPage />,
+				loader: GameDetailsLoader,
+				errorElement: <ErrorPage />
 			},
 			{
 				index: true,
