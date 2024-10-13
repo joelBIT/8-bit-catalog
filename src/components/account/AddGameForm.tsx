@@ -12,7 +12,7 @@ export function AddGameForm(): ReactElement {
     const [ message, setMessage ] = useState<string>("");
     const [ errorMessage, setErrorMessage ] = useState<string>("");
 
-    function saveChanges(event: FormEvent<HTMLFormElement>): void {
+    function create(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
 
@@ -35,7 +35,7 @@ export function AddGameForm(): ReactElement {
     return (
         <section id="addGameInformation">
             <h1>Add Game</h1>
-            <form id="addGameForm" onSubmit={event => saveChanges(event)}>
+            <form id="addGameForm" onSubmit={create}>
                 <input 
                     id="gameTitle" 
                     type="text" 
@@ -87,7 +87,7 @@ export function AddGameForm(): ReactElement {
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
 
-                <button className="accountButton" type="submit">Save</button>
+                <button className="accountButton" type="submit">Create</button>
             </form>
         </section>
     );
