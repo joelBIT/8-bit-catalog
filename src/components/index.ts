@@ -25,3 +25,4 @@ export * from "./search/Pagination";
 export * from "./search/SearchForm";
 export * from "./search/SearchResult";
 export * from "./Select";
+export * from "./Input";

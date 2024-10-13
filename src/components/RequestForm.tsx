@@ -1,7 +1,7 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { DateInput } from "./DateInput";
 import { ACTION_OPTION_VALUE, createFilterList, createParagraphs, generateGameId, getPlayersList } from "../utils";
-import { FileInput, Select } from ".";
+import { FileInput, Select, Input } from ".";
 import { createGame, createRequest } from "../data";
 
 export function RequestForm(): ReactElement {
@@ -35,27 +35,9 @@ export function RequestForm(): ReactElement {
 
     return (
         <form id="createRequestForm" onSubmit={submit}>
-            <input 
-                id="gameTitle" 
-                type="text" 
-                placeholder="Game title" 
-                autoComplete="false" 
-                required 
-            />
-            <input 
-                id="developer" 
-                type="text" 
-                placeholder="Developer" 
-                autoComplete="false" 
-                required 
-            />
-            <input 
-                id="publisher" 
-                type="text" 
-                placeholder="Publisher" 
-                autoComplete="false" 
-                required 
-            />
+            <Input id={"gameTitle"} type={"text"} placeholder={"Game title"} />
+            <Input id={"developer"} type={"text"} placeholder={"Developer"} />
+            <Input id={"publisher"} type={"text"} placeholder={"Publisher"} />
 
             <Select 
                 title={"Category"} 
