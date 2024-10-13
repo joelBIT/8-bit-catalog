@@ -6,6 +6,7 @@ export * from "./account/RegisterForm";
 export * from "./App";
 export * from "./EditGameForm";
 export * from "./FavouriteButton";
+export * from "./FieldSetFrame";
 export * from "./FileInput";
 export * from "./footer/Contact";
 export * from "./footer/Footer";
