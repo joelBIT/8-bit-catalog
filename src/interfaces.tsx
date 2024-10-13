@@ -22,6 +22,13 @@ export interface User {
     email: string
 }
 
+export interface GameRequest {
+    id: number,
+    game: Game,
+    submitter: User,
+    status: string
+}
+
 export interface FavouritesContextProvider {
     favouritesList: Game[];
     setFavouritesList: (favouritesList: Game[]) => void;

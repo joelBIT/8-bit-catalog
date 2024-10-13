@@ -1,9 +1,10 @@
 import { ReactElement } from "react";
+import { FieldSetFrame, RequestForm } from "../components";
 
 export function RequestPage(): ReactElement {
     return (
         <main id="requestPage">
-            <h1>Request Page</h1>
+            <FieldSetFrame legend={"Create Request"} body={<RequestForm />} />
         </main>
     );
 }

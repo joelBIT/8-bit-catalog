@@ -46,7 +46,7 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
     }
     
     return (
-        <form id="editGameForm" onSubmit={event => saveChanges(event)}>
+        <form id="editGameForm" onSubmit={saveChanges}>
             <input 
                 id="gameTitle" 
                 type="text" 
@@ -84,7 +84,7 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
             
             <textarea 
                 id="description" 
-                form="addGameForm" 
+                form="editGameForm" 
                 value={description} 
                 onChange={(e) => setDescription(e.target.value)} 
                 placeholder="Description" 

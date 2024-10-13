@@ -1,4 +1,4 @@
-import { Game, User } from "./interfaces";
+import { Game, GameRequest, User } from "./interfaces";
 import games from './assets/database/games.json';
 
 export function getAllUsers(): User[] {
@@ -119,6 +119,28 @@ export function createGame(id: number, title: string, category: string, publishe
         releaseYear: releaseYear,
         releaseDate: releaseDate
     }
+}
+
+export function createRequest(game: Game): void {
+    const requests = getAllRequests();
+
+    const request = {
+        id: requests.length,
+        game: game,
+        submitter: getActiveUser(),
+        status: "Pending"
+    }
+
+    requests.push(request);
+    storeAllRequests(requests);
+}
+
+export function getAllRequests() {
+    return JSON.parse(localStorage.getItem('requests') || '[]');
+}
+
+export function storeAllRequests(requests: GameRequest[]) {
+    localStorage.setItem('requests', JSON.stringify(requests));
 }
 
 export function storeGame(game: Game): void {
