@@ -18,7 +18,7 @@
 
             input {
                 grid-column: 1;
-                margin-right: 2rem;
+                width: 90%;
             }
 
             #coverSection {
@@ -64,6 +64,10 @@
             #releasedSection {
                 grid-row: 3;
                 align-items: self-start;
+
+                input {
+                    width: auto;
+                }
             }
 
             div {
