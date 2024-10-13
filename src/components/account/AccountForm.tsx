@@ -1,6 +1,7 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { setActiveUser, updateUser } from "../../data";
 import { User } from "../../interfaces";
+import { Input } from "..";
 
 export function AccountForm({ user }: { user: User }): ReactElement {
     const [ message, setMessage ] = useState<string>("");
@@ -37,28 +38,9 @@ export function AccountForm({ user }: { user: User }): ReactElement {
         <section id="accountInformation">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
                 <h1 id="updateAccountHeading">Update account information</h1>
-
-                <input 
-                    id="email" 
-                    type="email" 
-                    placeholder={user.email} 
-                    autoComplete="false" 
-                    required 
-                />
-                <input 
-                    id="password" 
-                    type="password" 
-                    placeholder="Password" 
-                    autoComplete="false" 
-                    required 
-                />
-                <input 
-                    id="passwordRepeat" 
-                    type="password" 
-                    placeholder="Re-type Password" 
-                    autoComplete="false" 
-                    required 
-                />
+                <Input id={"email"} type={"email"} placeholder={user.email} />
+                <Input id={"password"} type={"password"} placeholder={"Password"} />
+                <Input id={"passwordRepeat"} type={"password"} placeholder={"Re-type Password"} />
 
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }

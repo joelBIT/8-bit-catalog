@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { FileInput, Select } from "..";
+import { FileInput, Select, Input } from "..";
 import { ACTION_OPTION_VALUE, createFilterList, createParagraphs, generateGameId, getPlayersList } from "../../utils";
 import { createGame, storeGame } from "../../data";
 import { DateInput } from "../DateInput";
@@ -36,27 +36,9 @@ export function AddGameForm(): ReactElement {
         <section id="addGameInformation">
             <h1>Add Game</h1>
             <form id="addGameForm" onSubmit={create}>
-                <input 
-                    id="gameTitle" 
-                    type="text" 
-                    placeholder="Game title" 
-                    autoComplete="false" 
-                    required 
-                />
-                <input 
-                    id="developer" 
-                    type="text" 
-                    placeholder="Developer" 
-                    autoComplete="false" 
-                    required 
-                />
-                <input 
-                    id="publisher" 
-                    type="text" 
-                    placeholder="Publisher" 
-                    autoComplete="false" 
-                    required 
-                />
+            <Input id={"gameTitle"} type={"text"} placeholder={"Game title"} />
+            <Input id={"developer"} type={"text"} placeholder={"Developer"} />
+            <Input id={"publisher"} type={"text"} placeholder={"Publisher"} />
 
                 <Select 
                     title={"Category"} 

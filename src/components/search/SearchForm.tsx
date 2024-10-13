@@ -39,13 +39,37 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
         <section id="searchForm">
             <h1>Search Games</h1>
             <article id="searchFilters">
-                <Select title={"Category"} list={addAllOption(createFilterList("category"))} defaultOption={category} getOption={setCategory} />
-                <Select title={"Publisher"} list={addAllOption(createFilterList("publisher"))} defaultOption={publisher} getOption={setPublisher} />
-                <Select title={"Developer"} list={addAllOption(createFilterList("developer"))} defaultOption={developer} getOption={setDeveloper} />
+                <Select 
+                    title={"Category"} 
+                    list={addAllOption(createFilterList("category"))} 
+                    defaultOption={category} 
+                    getOption={setCategory} 
+                />
+                
+                <Select 
+                    title={"Publisher"} 
+                    list={addAllOption(createFilterList("publisher"))} 
+                    defaultOption={publisher} 
+                    getOption={setPublisher} 
+                />
+                
+                <Select 
+                    title={"Developer"} 
+                    list={addAllOption(createFilterList("developer"))} 
+                    defaultOption={developer} 
+                    getOption={setDeveloper} 
+                />
             </article>
 
             <article id="searchInput">
-                <input id="searchTitle" type="text" placeholder="Game Title" ref={searchRef} onKeyDown={event => searchIfEnter(event)} />
+                <input 
+                    id="searchTitle" 
+                    type="text" 
+                    placeholder="Game Title" 
+                    ref={searchRef} 
+                    onKeyDown={event => searchIfEnter(event)} 
+                />
+                
                 <button className="gameButton" onClick={() => executeSearch()}>Search</button>
             </article>
         </section>

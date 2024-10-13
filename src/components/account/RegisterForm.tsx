@@ -2,7 +2,8 @@ import { FormEvent, ReactElement, useContext } from "react";
 import { createNewUser, setActiveUser, userExists } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
-import { generateUserId } from "../../utils";
+import { generateUserId, URL_ACCOUNT_PAGE } from "../../utils";
+import { Input } from "..";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -36,17 +37,18 @@ export function RegisterForm(): ReactElement {
       
         setActiveUser(user);
         setUser(user);
-        navigate(`/account/${user.id}`);
+        navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
     }
 
     return (
         <section id="registerCard">
             <h1>Create Account</h1>
             <form id="registerForm" onSubmit={register}>
-                <input id="username" type="text" placeholder="Username" autoComplete="false" required />
-                <input id="email" type="email" placeholder="Email" autoComplete="false" required />
-                <input id="password" type="password" placeholder="Password" autoComplete="false" required />
-                <input id="passwordRepeat" type="password" placeholder="Re-type Password" autoComplete="false" required />
+                <Input id={"username"} type={"text"} placeholder={"Username"} />
+                <Input id={"email"} type={"email"} placeholder={"Email"} />
+                <Input id={"password"} type={"password"} placeholder={"Password"} />
+                <Input id={"passwordRepeat"} type={"password"} placeholder={"Re-type Password"} />
+
                 <button className="accountButton" type="submit">Register</button>
             </form>
         </section>

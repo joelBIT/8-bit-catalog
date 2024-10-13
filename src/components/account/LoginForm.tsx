@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
 import { User } from "../../interfaces";
 import { getUser, setActiveUser } from "../../data";
+import { Input } from "..";
+import { URL_ACCOUNT_PAGE, URL_REGISTER_PAGE } from "../../utils";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -29,18 +31,19 @@ export function LoginForm(): ReactElement {
         user.isAuthenticated = true;
         setActiveUser(user);
         setUser(user);
-        navigate(`/account/${user.id}`);
+        navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
     }
 
     return (
         <section id="loginCard">
             <h1>Log in</h1>
             <form id="loginForm" onSubmit={login}>
-                <input id="username" type="text" placeholder="Username" autoComplete="false" required />
-                <input id="password" type="password" placeholder="Password" autoComplete="false" required />
+                <Input id={"username"} type={"text"} placeholder={"Username"} />
+                <Input id={"password"} type={"password"} placeholder={"Password"} />
+                
                 <button className="accountButton" type="submit">Login</button>
             </form>
-            <Link to="/register">Create an Account</Link>
+            <Link to={URL_REGISTER_PAGE}>Create an Account</Link>
         </section>
     );
 }
