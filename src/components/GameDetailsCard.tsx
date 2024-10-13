@@ -26,33 +26,29 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
 
     return (
         <section id="gameDetailsCard">
-            <fieldset>
-                <legend>Game Details</legend>
+            <figure>
+                <img src={`../${COVER_URL}/${game.cover}`} alt="Game Cover" />
+            </figure>
+            
+            <article id="gameDetails">
+                <h1>{game.title}</h1>
+                <h2>Category: <p>{game.category}</p></h2>
+                <h2>Released: <p>{game.releaseDate ? game.releaseDate : game.releaseYear}</p></h2>
+                <h2>Players: <p>{game.players}</p></h2>
+                <h2>Publisher: <p>{game.publisher}</p></h2>
+                <h2>Developer: <p>{game.developer}</p></h2>
+                { getActiveUser().isAdmin ? <button id="editButton" className="gameButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button> : <></> }
+            </article>
 
-                <figure>
-                    <img src={`../${COVER_URL}/${game.cover}`} alt="Game Cover" />
-                </figure>
-                
-                <article id="gameDetails">
-                    <h1>{game.title}</h1>
-                    <h2>Category: <p>{game.category}</p></h2>
-                    <h2>Released: <p>{game.releaseDate ? game.releaseDate : game.releaseYear}</p></h2>
-                    <h2>Players: <p>{game.players}</p></h2>
-                    <h2>Publisher: <p>{game.publisher}</p></h2>
-                    <h2>Developer: <p>{game.developer}</p></h2>
-                    { getActiveUser().isAdmin ? <button id="editButton" className="gameButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button> : <></> }
-                </article>
-
-                <article id="description">
-                    { game.description ? game.description.map((paragraph, index) => <p key={index}>{paragraph}</p>) : <></> }
-                </article>
-                
-                <div className={ getActiveUser().isAdmin ? "" : "singleButton" }>
-                    { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => setShowModal(true)}>Delete</button> : <></> }
-                    <FavouriteButton game={game}/>
-                    { showModal ? <Modal title={game.title} showModal={setShowModal} confirm={() => removeGame()} /> : <></> }
-                </div>
-            </fieldset>
+            <article id="description">
+                { game.description ? game.description.map((paragraph, index) => <p key={index}>{paragraph}</p>) : <></> }
+            </article>
+            
+            <div className={ getActiveUser().isAdmin ? "" : "singleButton" }>
+                { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => setShowModal(true)}>Delete</button> : <></> }
+                <FavouriteButton game={game}/>
+                { showModal ? <Modal title={game.title} showModal={setShowModal} confirm={() => removeGame()} /> : <></> }
+            </div>
         </section>
     );
 }
