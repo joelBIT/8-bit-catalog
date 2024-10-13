@@ -1,14 +1,14 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { getActiveUser, setActiveUser, updateUser } from "../../data";
+import { setActiveUser, updateUser } from "../../data";
+import { User } from "../../interfaces";
 
-export function AccountForm(): ReactElement {
+export function AccountForm({ user }: { user: User }): ReactElement {
     const [ message, setMessage ] = useState<string>("");
     const [ errorMessage, setErrorMessage ] = useState<string>("");
 
     function saveChanges(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
-        const user = getActiveUser();
 
         try {
             const email = form.email.value;
@@ -41,7 +41,7 @@ export function AccountForm(): ReactElement {
                 <input 
                     id="email" 
                     type="email" 
-                    placeholder={getActiveUser().email} 
+                    placeholder={user.email} 
                     autoComplete="false" 
                     required 
                 />
