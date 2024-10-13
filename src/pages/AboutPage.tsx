@@ -1,9 +1,26 @@
 import { ReactElement } from "react";
+import { FieldSetFrame } from "../components";
 
 export function AboutPage(): ReactElement {
     return (
         <main id="aboutPage">
-            <h1>About Page</h1>
+            <FieldSetFrame legend={"About"} body={<Text />} />
         </main>
+    );
+}
+
+function Text(): ReactElement {
+    return (
+        <>
+            <p>
+                The purpose of the 8-bit Catalog is to be an as accomplished source of NES games and ROMS as possible.
+                This catalog is continuously updated with new information.
+            </p>
+            <p>
+                It is possible to submit requests for games that are missing in the catalog. After being reviewed
+                by an admin a request can be either denied or accepted. If accepted, the game will be added to
+                the catalog. A submitter will get feedback on a denied request in case the request was created while being authenticated.
+            </p>
+        </>
     );
 }
