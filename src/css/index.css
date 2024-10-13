@@ -31,6 +31,7 @@
 @import url("./components/Select.css");
 @import url("./pages/AboutPage.css");
 @import url("./pages/EditGamePage.css");
+@import url("./pages/ErrorPage.css");
 @import url("./pages/FavouritesPage.css");
 @import url("./pages/Forbidden.css");
 @import url("./pages/GameDetailsPage.css");

@@ -1,17 +1,18 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { COVER_URL } from "../utils";
+import { Game } from "../interfaces";
 
-export function HeroCard({title, cover, id}: {title: string, cover: string, id: number}): ReactElement {
+export function HeroCard({ game }: { game: Game }): ReactElement {
     return (
         <section id="heroCard">
             <article>
-                <h1>{title}</h1>
-                <Link to={`/gamedetails/${id}`}>View Game</Link>
+                <h1>{game.title}</h1>
+                <Link to={`/gamedetails/${game.id}`}>View Game</Link>
             </article>
             
             <figure>
-                <img src={`${COVER_URL}/${cover}`} alt="Random Game Cover" />
+                <img src={`${COVER_URL}/${game.cover}`} alt="Random Game Cover" />
             </figure>
         </section>
     );
