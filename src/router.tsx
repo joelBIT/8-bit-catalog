@@ -2,33 +2,34 @@ import { createBrowserRouter } from "react-router-dom";
 import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden, ErrorPage } from "./pages";
 import { App } from "./components";
 import { EditGameLoader, GameDetailsLoader, RandomGameLoader, UserAccountLoader } from "./loaders";
+import { URL_ABOUT_PAGE, URL_ACCOUNT_PAGE, URL_EDIT_GAME_DETAILS_PAGE, URL_FAVOURITES_PAGE, URL_FORBIDDEN_PAGE, URL_GAME_DETAILS_PAGE, URL_HOME, URL_LOGIN_PAGE, URL_LOGOUT_PAGE, URL_NOT_FOUND_PAGE, URL_REGISTER_PAGE, URL_REQUEST_PAGE, URL_SEARCH_PAGE } from "./utils";
 
 
 export const router = createBrowserRouter([
 	{
-		path: "/",
+		path: URL_HOME,
 		element: <App />,
 		children: [
 			{
-				path: "/about",
+				path: URL_ABOUT_PAGE,
 				element: <AboutPage />
 			},
 			{
-				path: "/editgame/:id",
+				path: `${URL_EDIT_GAME_DETAILS_PAGE}/:id`,
 				element: <EditGamePage />,
 				loader: EditGameLoader,
 				errorElement: <ErrorPage />
 			},
 			{
-				path: "/favourites",
+				path: URL_FAVOURITES_PAGE,
 				element: <FavouritesPage />,
 			},
 			{
-				path: "/403",
+				path: URL_FORBIDDEN_PAGE,
 				element: <Forbidden />,
 			},
 			{
-				path: "/gamedetails/:id",
+				path: `${URL_GAME_DETAILS_PAGE}/:id`,
 				element: <GameDetailsPage />,
 				loader: GameDetailsLoader,
 				errorElement: <ErrorPage />
@@ -40,31 +41,31 @@ export const router = createBrowserRouter([
 				errorElement: <ErrorPage />
 			},
             {
-				path: "/login",
+				path: URL_LOGIN_PAGE,
 				element: <LoginPage />
 			},
 			{
-				path: "/logout",
+				path: URL_LOGOUT_PAGE,
 				element: <LogoutPage />
 			},
 			{
-				path: "*",
+				path: URL_NOT_FOUND_PAGE,
 				element: <NotFound />,
 			},
             {
-				path: "/register",
+				path: URL_REGISTER_PAGE,
 				element: <RegisterPage />
 			},
             {
-				path: "/request",
+				path: URL_REQUEST_PAGE,
 				element: <RequestPage />
 			},
 			{
-				path: "/games",
+				path: URL_SEARCH_PAGE,
 				element: <SearchPage />,
 			},
 			{
-				path: "/account/:id",
+				path: `${URL_ACCOUNT_PAGE}/:id`,
 				element: <UserAccountPage />,
 				loader: UserAccountLoader,
 				errorElement: <ErrorPage />

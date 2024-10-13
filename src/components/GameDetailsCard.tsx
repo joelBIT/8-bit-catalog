@@ -4,7 +4,7 @@ import { FavouriteButton, Modal } from ".";
 import { deleteGame, getActiveUser } from "../data";
 import { FavouritesContext } from "../contexts/FavouritesContextProvider";
 import { useNavigate } from "react-router-dom";
-import { COVER_URL } from "../utils";
+import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE } from "../utils";
 
 export function GameDetailsCard({game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
@@ -37,7 +37,12 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
                 <h2>Players: <p>{game.players}</p></h2>
                 <h2>Publisher: <p>{game.publisher}</p></h2>
                 <h2>Developer: <p>{game.developer}</p></h2>
-                { getActiveUser().isAdmin ? <button id="editButton" className="gameButton" onClick={() => navigate(`/editgame/${game.id}`)}>Edit</button> : <></> }
+                { getActiveUser().isAdmin ? <button 
+                                                id="editButton" 
+                                                className="gameButton" 
+                                                onClick={() => navigate(`${URL_EDIT_GAME_DETAILS_PAGE}/${game.id}`)}>
+                                                    Edit
+                                            </button> : <></> }
             </article>
 
             <article id="description">
@@ -45,7 +50,12 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
             </article>
             
             <div className={ getActiveUser().isAdmin ? "" : "singleButton" }>
-                { getActiveUser().isAdmin ? <button id="deleteButton" className="gameButton" onClick={() => setShowModal(true)}>Delete</button> : <></> }
+                { getActiveUser().isAdmin ? <button 
+                                                id="deleteButton" 
+                                                className="gameButton" 
+                                                onClick={() => setShowModal(true)}>
+                                                    Delete
+                                            </button> : <></> }
                 <FavouriteButton game={game}/>
                 { showModal ? <Modal title={game.title} showModal={setShowModal} confirm={() => removeGame()} /> : <></> }
             </div>

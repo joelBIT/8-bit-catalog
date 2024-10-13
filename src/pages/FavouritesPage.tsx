@@ -8,7 +8,7 @@ export function FavouritesPage(): ReactElement {
     return (
         <main id="favouritesPage">
             <section id="gameCards">
-                {favouritesList.map((game, index) => <GameCard key={index} game={game} />)}
+                { favouritesList.map((game, index) => <GameCard key={index} game={game} />) }
             </section>
         </main>
     );

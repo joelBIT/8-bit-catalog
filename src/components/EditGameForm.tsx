@@ -2,7 +2,7 @@ import { FormEvent, ReactElement, useState } from "react";
 import { Game } from "../interfaces";
 import { useNavigate } from "react-router-dom";
 import { FileInput, Select } from ".";
-import { createFilterList, createParagraphs, getPlayersList, joinParagraphs } from "../utils";
+import { createFilterList, createParagraphs, getPlayersList, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../utils";
 import { updateGame } from "../data";
 import { DateInput } from "./DateInput";
 
@@ -34,7 +34,7 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
         game.releaseDate = date;
 
         updateGame(game);
-        navigate(`/gamedetails/${game.id}`);
+        navigate(`${URL_GAME_DETAILS_PAGE}/${game.id}`);
     }
 
     function handlePlayers(players: string): void {
@@ -104,7 +104,14 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
             <DateInput id={"releaseDate"} label={"Released"} value={getDate()} setDate={setDate} />
             
             <div>
-                <button id="cancelButton" className="gameButton" type="button" onClick={() => navigate(`/gamedetails/${game.id}`)}>Cancel</button>
+                <button 
+                    id="cancelButton" 
+                    className="gameButton" 
+                    type="button" 
+                    onClick={() => navigate(`${URL_GAME_DETAILS_PAGE}/${game.id}`)}>
+                        Cancel
+                </button>
+                
                 <button id="saveButton" className="gameButton" type="submit">Save</button>
             </div>
         </form>

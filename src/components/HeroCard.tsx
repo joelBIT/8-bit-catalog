@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import { COVER_URL } from "../utils";
+import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../utils";
 import { Game } from "../interfaces";
 
 export function HeroCard({ game }: { game: Game }): ReactElement {
@@ -8,7 +8,7 @@ export function HeroCard({ game }: { game: Game }): ReactElement {
         <section id="heroCard">
             <article>
                 <h1>{game.title}</h1>
-                <Link to={`/gamedetails/${game.id}`}>View Game</Link>
+                <Link to={`${URL_GAME_DETAILS_PAGE}/${game.id}`}>View Game</Link>
             </article>
             
             <figure>

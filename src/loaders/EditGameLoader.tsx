@@ -1,6 +1,7 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
 import { getActiveUser, getGame } from "../data";
 import { Game } from "../interfaces";
+import { URL_FORBIDDEN_PAGE, URL_NOT_FOUND_PAGE } from "../utils";
 
 /**
  * A user is redirected if not an admin due to regular users not being allowed to edit games.
@@ -12,12 +13,12 @@ import { Game } from "../interfaces";
 export function EditGameLoader({ params }: LoaderFunctionArgs<string>): Game | Response {
     
     if (!getActiveUser().isAdmin) {
-        return redirect("/403");
+        return redirect(URL_FORBIDDEN_PAGE);
     }
 
     if (params.id) {
         return getGame(parseInt(params.id));
     }
     
-    return redirect("*");
+    return redirect(URL_NOT_FOUND_PAGE);
 }
