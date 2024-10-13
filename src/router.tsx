@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden } from "./pages";
+import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden, ErrorPage } from "./pages";
 import { App } from "./components";
-import { EditGameLoader } from "./loaders/EditGameLoader";
-import { UserAccountLoader } from "./loaders/UserAccountLoader";
+import { EditGameLoader, RandomGameLoader, UserAccountLoader } from "./loaders";
+
 
 export const router = createBrowserRouter([
 	{
@@ -16,7 +16,8 @@ export const router = createBrowserRouter([
 			{
 				path: "/editgame/:id",
 				element: <EditGamePage />,
-				loader: EditGameLoader
+				loader: EditGameLoader,
+				errorElement: <ErrorPage />
 			},
 			{
 				path: "/favourites",
@@ -32,7 +33,9 @@ export const router = createBrowserRouter([
 			},
 			{
 				index: true,
-				element: <LandingPage />
+				element: <LandingPage />,
+				loader: RandomGameLoader,
+				errorElement: <ErrorPage />
 			},
             {
 				path: "/login",
@@ -61,7 +64,8 @@ export const router = createBrowserRouter([
 			{
 				path: "/account/:id",
 				element: <UserAccountPage />,
-				loader: UserAccountLoader
+				loader: UserAccountLoader,
+				errorElement: <ErrorPage />
 			}
 		],
 	},

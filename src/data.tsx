@@ -57,7 +57,13 @@ export function userExists(username: string): boolean {
     return users.find((user: { username: string; }) => user.username === username) ? true : false;
 }
 
+/**
+ * The game data source is created if it does not exist yet. Will be migrated to a database later.
+ * 
+ * @returns list of all games in data source.
+ */
 export function getAllGames(): Game[] {
+    createGameData();
     const games = localStorage.getItem('games') || "[]";
     return JSON.parse(games);
 }
