@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { EditGameForm } from "../components";
+import { EditGameForm, FieldSetFrame } from "../components";
 import { Game } from "../interfaces";
 import { useLoaderData } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export function EditGamePage(): ReactElement {
     
     return (
         <main id="editGamePage">
-            <EditGameForm game={game} />
+            <FieldSetFrame legend={"Edit Details"} body={<EditGameForm game={game} />} />
         </main>
     );
 }

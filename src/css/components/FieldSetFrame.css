@@ -1,0 +1,24 @@
+
+#fieldSetFrame {
+    display: flex;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    margin: 3rem 10rem;
+    border-radius: 8px;
+
+    fieldset {
+        display: grid;
+    }
+}
+
+@media (max-width: 600px) {
+    #fieldSetFrame {
+        fieldset {
+            padding: 1rem;
+
+            legend {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
