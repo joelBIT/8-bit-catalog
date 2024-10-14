@@ -4,7 +4,7 @@ import { FavouriteButton, Modal } from ".";
 import { deleteGame, getActiveUser } from "../data";
 import { FavouritesContext } from "../contexts/FavouritesContextProvider";
 import { useNavigate } from "react-router-dom";
-import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE } from "../utils";
+import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE, URL_SEARCH_PAGE } from "../utils";
 
 export function GameDetailsCard({game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
@@ -21,7 +21,7 @@ export function GameDetailsCard({game}: {game: Game}): ReactElement {
         }
 
         deleteGame(game.id);
-        navigate("/games");
+        navigate(URL_SEARCH_PAGE);
     }
 
     return (

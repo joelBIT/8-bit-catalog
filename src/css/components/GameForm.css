@@ -1,14 +1,20 @@
 
-#editGameForm {
+#gameForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-top: 3rem;
-    color: var(--color-white);
 
     input {
         grid-column: 1;
         width: 90%;
+    }
+
+    #submitButton {
+        grid-column: 2;
+        grid-row: 6;
+        width: fit-content;
+        justify-self: end;
     }
 
     #description {
@@ -41,77 +47,42 @@
     #releasedSection {
         grid-row: 3;
         align-items: self-start;
-
-        input {
+        
+        #releaseDate {
             width: auto;
         }
     }
 
-    div {
-        display: flex;
-        grid-column: 1 / 3;
-        justify-content: space-between;
-        margin-top: 2rem;
+    .successMessage, .errorMessage {
+        grid-row: 6;
+    }
+}
 
-        #cancelButton, #saveButton {
-            width: fit-content;
-        }
-
-        #saveButton {
-            grid-column: 2;
-            justify-self: end;
-        }
-
-        #cancelButton {
+@media (max-width: 1110px) {
+    #gameForm {
+        .successMessage, .errorMessage {
             grid-column: 1;
-            height: fit-content;
         }
     }
 }
 
-@media (max-width: 1150px) {
-    #editGameForm {
+@media (max-width: 870px) {
+    #gameForm {
         display: flex;
         flex-direction: column;
 
-        input {
-            margin: 0;
+        #submitButton {
+            width: fit-content;
+            align-self: end;
         }
     }
 }
 
-@media (max-width: 670px) {
-    #editGameForm {
-        textarea {
-            height: 25rem;
-        }
-
-        input {
-            width: 80%;
-            align-self: center;
-        }
-    }
-}
-
-@media (max-width: 500px) {
-    #editGameForm {
+@media (max-width: 550px) {
+    #gameForm {
         #playersSection, #categorySection, #coverSection, #releasedSection {
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        input {
-            width: 80%;
-            align-self: center;
-        }
-
-        section {
-            display: flex;
             flex-direction: column;
-        }
-
-        #releasedSection {
+            align-self: center;
             align-items: center;
         }
     }

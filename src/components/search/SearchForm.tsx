@@ -40,21 +40,21 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
             <h1>Search Games</h1>
             <article id="searchFilters">
                 <Select 
-                    title={"Category"} 
+                    title="Category" 
                     list={addAllOption(createFilterList("category"))} 
                     defaultOption={category} 
                     getOption={setCategory} 
                 />
                 
                 <Select 
-                    title={"Publisher"} 
+                    title="Publisher" 
                     list={addAllOption(createFilterList("publisher"))} 
                     defaultOption={publisher} 
                     getOption={setPublisher} 
                 />
                 
                 <Select 
-                    title={"Developer"} 
+                    title="Developer" 
                     list={addAllOption(createFilterList("developer"))} 
                     defaultOption={developer} 
                     getOption={setDeveloper} 
