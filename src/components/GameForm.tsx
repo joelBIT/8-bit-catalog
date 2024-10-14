@@ -1,9 +1,10 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { FileInput, Input, Select } from ".";
+import { FileInput, Input, Select, SelectPlayers } from ".";
 import { ACTION_OPTION_VALUE, createFilterList, createParagraphs, generateGameId, getPlayersList } from "../utils";
 import { DateInput } from "./DateInput";
 import { createGame } from "../data";
 import { Game } from "../interfaces";
+import { SelectCategory } from "./SelectCategory";
 
 export function GameForm({ buttonClass, onSubmit, errorText, successText }: { buttonClass: string, onSubmit: (game: Game) => void, errorText: string, successText: string }): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
@@ -40,12 +41,7 @@ export function GameForm({ buttonClass, onSubmit, errorText, successText }: { bu
             <Input id="developer" type="text" placeholder="Developer" />
             <Input id="publisher" type="text" placeholder="Publisher" />
 
-            <Select 
-                title="Category" 
-                list={createFilterList("category")} 
-                defaultOption={ACTION_OPTION_VALUE} 
-                getOption={setCategory} 
-            />
+            <SelectCategory defaultOption={ACTION_OPTION_VALUE} setCategory={setCategory} />
 
             <textarea 
                 id="description" 
@@ -57,12 +53,7 @@ export function GameForm({ buttonClass, onSubmit, errorText, successText }: { bu
 
             <FileInput id="gameCover" label="Cover" setFile={setFile} />
 
-            <Select 
-                title="Players" 
-                list={getPlayersList()} 
-                defaultOption={getPlayersList()[0]} 
-                getOption={setPlayers} 
-            />
+            <SelectPlayers defaultOption={getPlayersList()[0]} setPlayers={setPlayers} />
 
             <DateInput id="releaseDate" label="Released" value={date} setDate={setDate} />
             
