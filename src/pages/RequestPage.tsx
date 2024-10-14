@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
-import { FieldSetFrame, RequestForm } from "../components";
+import { FieldSetFrame, GameForm } from "../components";
+import { createRequest } from "../data";
 
 export function RequestPage(): ReactElement {
     return (
         <main id="requestPage">
-            <FieldSetFrame legend={"Create Request"} body={<RequestForm />} />
+            <FieldSetFrame legend={"Create Request"} body={<GameForm handleGame={createRequest} buttonClass={"gameButton"} />} />
         </main>
     );
 }

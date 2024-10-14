@@ -36,9 +36,9 @@ export function AddGameForm(): ReactElement {
         <section id="addGameInformation">
             <h1>Add Game</h1>
             <form id="addGameForm" onSubmit={create}>
-            <Input id={"gameTitle"} type={"text"} placeholder={"Game title"} />
-            <Input id={"developer"} type={"text"} placeholder={"Developer"} />
-            <Input id={"publisher"} type={"text"} placeholder={"Publisher"} />
+                <Input id={"gameTitle"} type={"text"} placeholder={"Game title"} />
+                <Input id={"developer"} type={"text"} placeholder={"Developer"} />
+                <Input id={"publisher"} type={"text"} placeholder={"Publisher"} />
 
                 <Select 
                     title={"Category"} 
@@ -69,7 +69,7 @@ export function AddGameForm(): ReactElement {
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
 
-                <button className="accountButton" type="submit">Create</button>
+                <button id="submitButton" className="accountButton" type="submit">Create</button>
             </form>
         </section>
     );

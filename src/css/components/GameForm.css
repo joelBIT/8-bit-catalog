@@ -1,0 +1,89 @@
+
+#gameForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+
+    input {
+        grid-column: 1;
+        width: 90%;
+    }
+
+    #submitButton {
+        grid-column: 2;
+        grid-row: 6;
+        width: fit-content;
+        justify-self: end;
+    }
+
+    #description {
+        grid-column: 1 / 3;
+    }
+
+    #playersSection, #categorySection, #coverSection, #releasedSection {
+        display: flex;
+        grid-column: 2;
+        align-items: center;
+        grid-row: 2;
+        gap: 1rem;
+
+        h2 {
+            font-size: 2rem;
+            font-family: "Arima Madurai", display;
+            font-weight: 100;
+        }
+    }
+
+    #categorySection {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    #coverSection {
+        grid-row: 1;
+    }
+
+    #releasedSection {
+        grid-row: 3;
+        align-items: self-start;
+        
+        #releaseDate {
+            width: auto;
+        }
+    }
+
+    .successMessage, .errorMessage {
+        grid-row: 6;
+    }
+}
+
+@media (max-width: 1110px) {
+    #gameForm {
+        .successMessage, .errorMessage {
+            grid-column: 1;
+        }
+    }
+}
+
+@media (max-width: 870px) {
+    #gameForm {
+        display: flex;
+        flex-direction: column;
+
+        #submitButton {
+            width: fit-content;
+            align-self: end;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    #gameForm {
+        #playersSection, #categorySection, #coverSection, #releasedSection {
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+        }
+    }
+}
