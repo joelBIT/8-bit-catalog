@@ -3,7 +3,7 @@ import { comparePasswords, setActiveUser, updateUser } from "../../data";
 import { User } from "../../interfaces";
 import { Input } from "..";
 
-export function AccountForm({ user }: { user: User }): ReactElement {
+export function EditAccountTab({ user }: { user: User }): ReactElement {
     const [ message, setMessage ] = useState<string>("");
     const [ errorMessage, setErrorMessage ] = useState<string>("");
 
@@ -30,7 +30,7 @@ export function AccountForm({ user }: { user: User }): ReactElement {
     }
 
     return (
-        <section id="accountInformation">
+        <section id="editAccountTab">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
                 <h1 id="updateAccountHeading">Update account information</h1>
                 <Input id="email" type="email" placeholder={user.email} />
