@@ -32,9 +32,7 @@ export function createAnonymousUser(): User {
         throw new Error(`User ${username} already exists!`);
     }
 
-    if (password !== passwordRepeat) {
-        throw new Error('Passwords do not match!');
-    }
+    comparePasswords(password, passwordRepeat);
 
      const user =  {
          id: generateUserId(),
@@ -74,6 +72,12 @@ export function authenticate(user: User): void {
 export function validatePassword(storedPassword: string, givenPassword: string): void {
     if(storedPassword !== givenPassword) {
         throw new Error('Incorrect password');
+    }
+}
+
+export function comparePasswords(password: string, passwordRepeat: string): void {
+    if (password !== passwordRepeat) {
+        throw new Error('Passwords do not match!');
     }
 }
 

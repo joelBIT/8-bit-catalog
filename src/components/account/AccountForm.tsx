@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { setActiveUser, updateUser } from "../../data";
+import { comparePasswords, setActiveUser, updateUser } from "../../data";
 import { User } from "../../interfaces";
 import { Input } from "..";
 
@@ -12,15 +12,10 @@ export function AccountForm({ user }: { user: User }): ReactElement {
         const form = event.target as HTMLFormElement;
 
         try {
-            const email = form.email.value;
             const password = form.password.value;
-            const passwordRepeat = form.passwordRepeat.value;
-            
-            if (password !== passwordRepeat) {
-                throw new Error('Passwords do not match!');
-            }
+            comparePasswords(password, form.passwordRepeat.value);
 
-            user.email = email;
+            user.email = form.email.value;
             user.password = password;
             setActiveUser(user);
             updateUser(user);
