@@ -20,17 +20,28 @@ export const URL_GAME_DETAILS_PAGE = "/gamedetails";
 export const URL_EDIT_GAME_DETAILS_PAGE = "/editgame";
 
 /**
- * Creates a list of option values for a Select filter. The list of option values is sorted
+ * Creates a list of option values for a Select component. The list of option values is sorted
  * alphabetically in the Select list, and empty values are removed.
  * 
  * @param property      the game property which values are to be included in an option values list
  * @returns             a list containing option values of a game property sorted alphabetically
  */
-export function createFilterList(property: string): string[] {
+export function createSelectList(property: string): string[] {
     let games = getAllGames().map((game: { [x: string]: any; }) => game[property]);
     games.sort();
     games = games.filter((element: any) => element != null);
     return Array.from(new Set(games));
+}
+
+/**
+ * Creates a list of options for a Filter component. This list contains the 'ALL' option so that
+ * filtering can be performed on all properties at the same time.
+ * 
+ * @param property      the game property which values are to be included in an option values list
+ * @returns             a list containing option values (as well as 'ALL') of a game property sorted alphabetically
+ */
+export function createFilterList(property: string): string[] {
+    return addAllOption(createSelectList(property));
 }
 
 /**

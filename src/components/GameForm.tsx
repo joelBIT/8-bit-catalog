@@ -1,6 +1,6 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { FileInput, Input, Select, SelectPlayers } from ".";
-import { ACTION_OPTION_VALUE, createFilterList, createParagraphs, generateGameId, getPlayersList } from "../utils";
+import { FileInput, Input, SelectPlayers } from ".";
+import { ACTION_OPTION_VALUE, createParagraphs, generateGameId, getPlayersList } from "../utils";
 import { DateInput } from "./DateInput";
 import { createGame } from "../data";
 import { Game } from "../interfaces";
