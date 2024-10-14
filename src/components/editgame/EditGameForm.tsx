@@ -1,8 +1,8 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { Game } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-import { EditDeveloper, EditPublisher, EditTitle, FileInput, Select } from "..";
-import { createFilterList, createParagraphs, getPlayersList, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../../utils";
+import { EditDeveloper, EditPublisher, EditTitle, FileInput, SelectCategory, SelectPlayers } from "..";
+import { createParagraphs, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../../utils";
 import { updateGame } from "../../data";
 import { DateInput } from "../DateInput";
 import { EditDescription } from "./EditDescription";
@@ -52,23 +52,12 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
             <EditDeveloper developer={developer} setDeveloper={setDeveloper} />
             <EditPublisher publisher={publisher} setPublisher={setPublisher} />
 
-            { category ? <Select 
-                            title="Category"
-                            list={createFilterList("category")} 
-                            defaultOption={category} 
-                            getOption={setCategory} 
-                        /> : <></> }
+            { category ? <SelectCategory defaultOption={category} setCategory={setCategory} /> : <></> }
             
             <EditDescription description={description} form="editGameForm" setDescription={setDescription} />
-
             <FileInput id="gameCover" label="Cover" setFile={setFile} />
 
-            { players ? <Select 
-                            title="Players"
-                            list={getPlayersList()} 
-                            defaultOption={players.toString()} 
-                            getOption={handlePlayers} 
-                        /> : <></> }
+            { players ? <SelectPlayers defaultOption={players.toString()} setPlayers={handlePlayers} /> : <></> }
             
             <DateInput id="releaseDate" label="Released" value={getDate()} setDate={setDate} />
             

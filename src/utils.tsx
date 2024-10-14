@@ -34,6 +34,17 @@ export function createFilterList(property: string): string[] {
 }
 
 /**
+ * Adds the 'ALL' option to the list so that a search can be performed on all games.
+ * 
+ * @param list      list of options in filter list
+ * @returns         list of options in filter list including the 'All' option
+ */
+export function addAllOption(list: string[]): string[] {
+    list.unshift(ALL_OPTION_VALUE);
+    return list;
+}
+
+/**
  * 
  * @returns   a list containing the choosable options for players in a game.
  */
