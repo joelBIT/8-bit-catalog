@@ -1,5 +1,6 @@
 import { Game, GameRequest, User } from "./interfaces";
 import games from './assets/database/games.json';
+import { generateUserId } from "./utils";
 
 export function getAllUsers(): User[] {
     return JSON.parse(localStorage.getItem('users') || '[]');
@@ -26,14 +27,22 @@ export function createAnonymousUser(): User {
      }
  }
  
- export function createNewUser(id: number, username: string, password: string, email: string, isAdmin: boolean): User {
+ export function createNewUser(username: string, password: string, passwordRepeat: string, email: string): User {
+    if (userExists(username)) {
+        throw new Error(`User ${username} already exists!`);
+    }
+
+    if (password !== passwordRepeat) {
+        throw new Error('Passwords do not match!');
+    }
+
      const user =  {
-         id: id,
+         id: generateUserId(),
          username : username,
          password : password,
-         isAdmin: isAdmin,
+         isAdmin: false,
          email: email,
-         isAuthenticated: true
+         isAuthenticated: false
      }
 
     const users = getAllUsers();
@@ -55,6 +64,17 @@ export function createAnonymousUser(): User {
 export function userExists(username: string): boolean {
     const users = getAllUsers();
     return users.find((user: { username: string; }) => user.username === username) ? true : false;
+}
+
+export function authenticate(user: User): void {
+    user.isAuthenticated = true;
+    setActiveUser(user);
+}
+
+export function validatePassword(storedPassword: string, givenPassword: string): void {
+    if(storedPassword !== givenPassword) {
+        throw new Error('Incorrect password');
+    }
 }
 
 /**
@@ -135,11 +155,11 @@ export function createRequest(game: Game): void {
     storeAllRequests(requests);
 }
 
-export function getAllRequests() {
+export function getAllRequests(): GameRequest[] {
     return JSON.parse(localStorage.getItem('requests') || '[]');
 }
 
-export function storeAllRequests(requests: GameRequest[]) {
+export function storeAllRequests(requests: GameRequest[]): void {
     localStorage.setItem('requests', JSON.stringify(requests));
 }
 
