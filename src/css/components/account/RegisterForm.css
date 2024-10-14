@@ -16,6 +16,11 @@
         margin-bottom: 1rem;
     }
 
+    .errorMessage {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
     #registerForm {
         display: flex;
         flex-direction: column;

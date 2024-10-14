@@ -1,4 +1,4 @@
-import { FormEvent, ReactElement, useContext } from "react";
+import { FormEvent, ReactElement, useContext, useState } from "react";
 import { authenticate, createNewUser } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
@@ -7,6 +7,7 @@ import { Input } from "..";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
+    const [ errorMessage, setErrorMessage ] = useState<string>("");
     const navigate = useNavigate();
 
     function register(event: FormEvent<HTMLFormElement>): void {
@@ -19,13 +20,16 @@ export function RegisterForm(): ReactElement {
             setUser(user);
             navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
         } catch (error: any) {
-            console.log(error);
+            setErrorMessage(error.message);
+            setTimeout(() => setErrorMessage(""), 5000);
         }
     }
 
     return (
         <section id="registerCard">
             <h1>Create Account</h1>
+            { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
+
             <form id="registerForm" onSubmit={register}>
                 <Input id="username" type="text" placeholder="Username" />
                 <Input id="email" type="email" placeholder="Email" />
