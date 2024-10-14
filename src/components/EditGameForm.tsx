@@ -76,7 +76,7 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
             />
 
             { category ? <Select 
-                            title={"Category"} 
+                            title="Category"
                             list={createFilterList("category")} 
                             defaultOption={category} 
                             getOption={setCategory} 
@@ -92,16 +92,16 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                 required 
             />
 
-            <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
+            <FileInput id="gameCover" label="Cover" setFile={setFile} />
 
             { players ? <Select 
-                            title={"Players"} 
+                            title="Players"
                             list={getPlayersList()} 
                             defaultOption={players.toString()} 
                             getOption={handlePlayers} 
                         /> : <></> }
             
-            <DateInput id={"releaseDate"} label={"Released"} value={getDate()} setDate={setDate} />
+            <DateInput id="releaseDate" label="Released" value={getDate()} setDate={setDate} />
             
             <div>
                 <button 

@@ -38,9 +38,9 @@ export function AccountForm({ user }: { user: User }): ReactElement {
         <section id="accountInformation">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
                 <h1 id="updateAccountHeading">Update account information</h1>
-                <Input id={"email"} type={"email"} placeholder={user.email} />
-                <Input id={"password"} type={"password"} placeholder={"Password"} />
-                <Input id={"passwordRepeat"} type={"password"} placeholder={"Re-type Password"} />
+                <Input id="email" type="email" placeholder={user.email} />
+                <Input id="password" type="password" placeholder="Password" />
+                <Input id="passwordRepeat" type="password" placeholder="Re-type Password" />
 
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }

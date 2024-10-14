@@ -5,9 +5,14 @@ import { storeGame } from "../../data";
 export function AddGameTab(): ReactElement {
 
     return (
-        <section id="addGameInformation">
+        <section id="addGameTab">
             <h1>Add Game</h1>
-            <GameForm buttonClass={"accountButton"} handleGame={storeGame}/>
+            <GameForm 
+                buttonClass="accountButton" 
+                onSubmit={storeGame}
+                errorText="Could not add new game"
+                successText="Game successfully added"
+            />
         </section>
     );
 }

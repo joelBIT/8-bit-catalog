@@ -38,8 +38,8 @@ export function LoginForm(): ReactElement {
         <section id="loginCard">
             <h1>Log in</h1>
             <form id="loginForm" onSubmit={login}>
-                <Input id={"username"} type={"text"} placeholder={"Username"} />
-                <Input id={"password"} type={"password"} placeholder={"Password"} />
+                <Input id="username" type="text" placeholder="Username" />
+                <Input id="password" type="password" placeholder="Password" />
                 
                 <button className="accountButton" type="submit">Login</button>
             </form>

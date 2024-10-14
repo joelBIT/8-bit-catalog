@@ -4,7 +4,7 @@ import { FieldSetFrame } from "../components";
 export function AboutPage(): ReactElement {
     return (
         <main id="aboutPage">
-            <FieldSetFrame legend={"About"} body={<Text />} />
+            <FieldSetFrame legend="About" body={<Text />} />
         </main>
     );
 }

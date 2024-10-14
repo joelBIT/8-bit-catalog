@@ -5,7 +5,7 @@ import { DateInput } from "./DateInput";
 import { createGame } from "../data";
 import { Game } from "../interfaces";
 
-export function GameForm({ buttonClass, handleGame }: { buttonClass: string, handleGame: (game: Game) => void}): ReactElement {
+export function GameForm({ buttonClass, onSubmit, errorText, successText }: { buttonClass: string, onSubmit: (game: Game) => void, errorText: string, successText: string }): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
     const [ category, setCategory ] = useState<string>("Action");
     const [ date, setDate ] = useState<string>("");
@@ -22,11 +22,11 @@ export function GameForm({ buttonClass, handleGame }: { buttonClass: string, han
             const game = createGame(generateGameId(), form.gameTitle.value, category, form.publisher.value, 
                                         form.developer.value, parseInt(date.slice(0, 4)), date, description, parseInt(players));
             
-            handleGame(game);
-            setMessage("Request successfully created");
+            onSubmit(game);
+            setMessage(successText);
             setTimeout(() => setMessage(""), 5000);
         } catch (error: any) {
-            setErrorMessage("Could not create request");
+            setErrorMessage(errorText);
             setTimeout(() => setErrorMessage(""), 5000);
         }
 
@@ -36,12 +36,12 @@ export function GameForm({ buttonClass, handleGame }: { buttonClass: string, han
 
     return (
         <form id="gameForm" onSubmit={submit}>
-            <Input id={"gameTitle"} type={"text"} placeholder={"Game title"} />
-            <Input id={"developer"} type={"text"} placeholder={"Developer"} />
-            <Input id={"publisher"} type={"text"} placeholder={"Publisher"} />
+            <Input id="gameTitle" type="text" placeholder="Game title" />
+            <Input id="developer" type="text" placeholder="Developer" />
+            <Input id="publisher" type="text" placeholder="Publisher" />
 
             <Select 
-                title={"Category"} 
+                title="Category" 
                 list={createFilterList("category")} 
                 defaultOption={ACTION_OPTION_VALUE} 
                 getOption={setCategory} 
@@ -55,16 +55,16 @@ export function GameForm({ buttonClass, handleGame }: { buttonClass: string, han
                 required 
             />
 
-            <FileInput id={"gameCover"} label={"Cover"} setFile={setFile} />
+            <FileInput id="gameCover" label="Cover" setFile={setFile} />
 
             <Select 
-                title={"Players"} 
+                title="Players" 
                 list={getPlayersList()} 
                 defaultOption={getPlayersList()[0]} 
                 getOption={setPlayers} 
             />
 
-            <DateInput id={"releaseDate"} label={"Released"} value={date} setDate={setDate} />
+            <DateInput id="releaseDate" label="Released" value={date} setDate={setDate} />
             
             { message ? <h4 className="successMessage">{message}</h4> : <></> }
             { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
