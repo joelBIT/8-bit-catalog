@@ -16,6 +16,11 @@
         margin-bottom: 2rem;
     }
 
+    .errorMessage {
+        font-size: 2rem;
+        text-align: center;
+    }
+
     #loginForm {
         display: flex;
         flex-direction: column;
