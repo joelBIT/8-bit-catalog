@@ -1,8 +1,8 @@
 import { FormEvent, ReactElement, useContext } from "react";
-import { createNewUser, setActiveUser, userExists } from "../../data";
+import { authenticate, createNewUser } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
-import { generateUserId, URL_ACCOUNT_PAGE } from "../../utils";
+import { URL_ACCOUNT_PAGE } from "../../utils";
 import { Input } from "..";
 
 export function RegisterForm(): ReactElement {
@@ -14,30 +14,13 @@ export function RegisterForm(): ReactElement {
         const form = event.target as HTMLFormElement;
 
         try {
-            const username = form.username.value;
-            const password = form.password.value;
-            const passwordRepeat = form.passwordRepeat.value;
-      
-            if (userExists(username)) {
-                throw new Error(`User ${username} already exists!`);
-            }
-      
-            if (password !== passwordRepeat) {
-                throw new Error('Passwords do not match!');
-            }
-      
-            registerUser(generateUserId(), username, password, form.email.value);
+            const user = createNewUser(form.username.value, form.password.value, form.passwordRepeat.value, form.email.value);
+            authenticate(user);
+            setUser(user);
+            navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
         } catch (error: any) {
             console.log(error);
         }
-    }
-
-    function registerUser(id: number, username: string, password: string, email: string): void {
-        const user = createNewUser(id, username, password, email, false);
-      
-        setActiveUser(user);
-        setUser(user);
-        navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
     }
 
     return (

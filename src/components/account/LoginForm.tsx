@@ -1,8 +1,7 @@
 import { FormEvent, ReactElement, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
-import { User } from "../../interfaces";
-import { getUser, setActiveUser } from "../../data";
+import { getUser, authenticate, validatePassword } from "../../data";
 import { Input } from "..";
 import { URL_ACCOUNT_PAGE, URL_REGISTER_PAGE } from "../../utils";
 
@@ -16,22 +15,14 @@ export function LoginForm(): ReactElement {
 
         try {
             const user = getUser(form.username.value);
-            
-            if(user.password !== form.password.value) {
-                throw new Error('Incorrect password');
-            }
+            validatePassword(user.password, form.password.value);
 
             authenticate(user);
+            setUser(user);
+            navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
         } catch (error: any) {
             console.log(error);
         }
-    }
-    
-    function authenticate(user: User): void {
-        user.isAuthenticated = true;
-        setActiveUser(user);
-        setUser(user);
-        navigate(`${URL_ACCOUNT_PAGE}/${user.id}`);
     }
 
     return (
