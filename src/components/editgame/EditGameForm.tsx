@@ -1,10 +1,11 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { Game } from "../interfaces";
+import { Game } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-import { FileInput, Select } from ".";
-import { createFilterList, createParagraphs, getPlayersList, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../utils";
-import { updateGame } from "../data";
-import { DateInput } from "./DateInput";
+import { EditDeveloper, EditPublisher, EditTitle, FileInput, Select } from "..";
+import { createFilterList, createParagraphs, getPlayersList, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../../utils";
+import { updateGame } from "../../data";
+import { DateInput } from "../DateInput";
+import { EditDescription } from "./EditDescription";
 
 export function EditGameForm({ game }: { game: Game }): ReactElement {
     const navigate = useNavigate();
@@ -47,33 +48,9 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
     
     return (
         <form id="editGameForm" onSubmit={saveChanges}>
-            <input 
-                id="gameTitle" 
-                type="text" 
-                value={title} 
-                onChange={(e) => setTitle(e.target.value)} 
-                placeholder="Game title" 
-                autoComplete="false" 
-                required 
-            />
-            <input 
-                id="developer" 
-                type="text" 
-                value={developer} 
-                onChange={(e) => setDeveloper(e.target.value)} 
-                placeholder="Developer" 
-                autoComplete="false" 
-                required 
-            />
-            <input 
-                id="publisher" 
-                type="text" 
-                value={publisher} 
-                onChange={(e) => setPublisher(e.target.value)} 
-                placeholder="Publisher" 
-                autoComplete="false" 
-                required 
-            />
+            <EditTitle title={title} setTitle={setTitle} />
+            <EditDeveloper developer={developer} setDeveloper={setDeveloper} />
+            <EditPublisher publisher={publisher} setPublisher={setPublisher} />
 
             { category ? <Select 
                             title="Category"
@@ -82,15 +59,7 @@ export function EditGameForm({ game }: { game: Game }): ReactElement {
                             getOption={setCategory} 
                         /> : <></> }
             
-            <textarea 
-                id="description" 
-                form="editGameForm" 
-                value={description} 
-                onChange={(e) => setDescription(e.target.value)} 
-                placeholder="Description" 
-                autoComplete="false" 
-                required 
-            />
+            <EditDescription description={description} form="editGameForm" setDescription={setDescription} />
 
             <FileInput id="gameCover" label="Cover" setFile={setFile} />
 

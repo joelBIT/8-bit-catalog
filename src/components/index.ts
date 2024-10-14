@@ -4,7 +4,11 @@ export * from "./account/EditAccountTab";
 export * from "./account/LoginForm";
 export * from "./account/RegisterForm";
 export * from "./App";
-export * from "./EditGameForm";
+export * from "./editgame/EditDescription"
+export * from "./editgame/EditDeveloper";
+export * from "./editgame/EditGameForm";
+export * from "./editgame/EditPublisher";
+export * from "./editgame/EditTitle";
 export * from "./FavouriteButton";
 export * from "./FieldSetFrame";
 export * from "./FileInput";

@@ -9,6 +9,7 @@
 @import url("./components/account/EditAccountTab.css");
 @import url("./components/account/LoginForm.css");
 @import url("./components/account/RegisterForm.css");
+@import url("./components/editgame/EditGameForm.css");
 @import url("./components/footer/Contact.css");
 @import url("./components/footer/Footer.css");
 @import url("./components/footer/OtherLinks.css");
@@ -21,7 +22,6 @@
 @import url("./components/search/SearchForm.css");
 @import url("./components/search/SearchResult.css");
 @import url("./components/App.css");
-@import url("./components/EditGameForm.css");
 @import url("./components/FavouriteButton.css");
 @import url("./components/FieldSetFrame.css");
 @import url("./components/GameCard.css");
