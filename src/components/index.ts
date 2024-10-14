@@ -1,6 +1,6 @@
 export * from "./account/AccountForm";
 export * from "./account/AccountTabs";
-export * from "./account/AddGameForm";
+export * from "./account/AddGameTab";
 export * from "./account/LoginForm";
 export * from "./account/RegisterForm";
 export * from "./App";

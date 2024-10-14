@@ -41,6 +41,7 @@
         padding: 2rem;
         border-radius: 0.5rem;
         border-top-left-radius: 0;
+        color: var(--color-black);
 
         h1 {
             margin: 0;
