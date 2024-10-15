@@ -160,8 +160,18 @@ export function createRequest(game: Game): void {
     storeAllRequests(requests);
 }
 
-export function getAllPendingRequests() {
+export function getAllPendingRequests(): GameRequest[] {
     return getAllRequests().filter(request => request.status === 'Pending');
+}
+
+export function getAllProcessedRequests(): GameRequest[] {
+    return getAllRequests().filter(request => request.status === 'Denied' || request.status === 'Accepted');
+}
+
+export function updateRequest(updatedRequest: GameRequest): void {
+    const requests = getAllRequests().filter(request => request.id !== updatedRequest.id);
+    requests.push(updatedRequest);
+    storeAllRequests(requests);
 }
 
 export function getAllRequests(): GameRequest[] {

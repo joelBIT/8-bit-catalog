@@ -8,7 +8,6 @@
 @import url("./components/account/AccountTabs.css");
 @import url("./components/account/EditAccountTab.css");
 @import url("./components/account/LoginForm.css");
-@import url("./components/account/PendingRequests.css");
 @import url("./components/account/RegisterForm.css");
 @import url("./components/common/FavouriteButton.css");
 @import url("./components/common/FieldSetFrame.css");
@@ -27,7 +26,6 @@
 @import url("./components/search/SearchForm.css");
 @import url("./components/search/SearchInput.css");
 @import url("./components/search/SearchResult.css");
-@import url("./components/App.css");
 @import url("./components/GameCard.css");
 @import url("./components/GameDetailsCard.css");
 @import url("./components/HeroCard.css");
@@ -46,6 +44,9 @@
 @import url("./pages/RequestPage.css");
 @import url("./pages/SearchPage.css");
 @import url("./pages/UserAccountPage.css");
+
+
+
 
 /******************
 * General Styling *
@@ -142,6 +143,9 @@ fieldset {
     color: red;
 }
 
+
+
+
 /************************
 * Common Button Classes *
 ************************/
@@ -177,4 +181,46 @@ fieldset {
 
 button:hover {
     background-color: var(--color-button-hover);
+}
+
+
+
+
+/************************
+* General Table Styling *
+************************/
+
+table {
+    border-collapse: collapse;
+    border: 2px solid var(--color-nintendo-gray);
+    font-family: 'Blinker';
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    caption {
+        caption-side: bottom;
+        padding: 10px;
+        font-weight: bold;
+    }
+    
+    thead {
+        background-color: var(--color-table-head);
+        text-align: center;
+        font-weight: bold;
+    }
+      
+    th, td {
+        border: 1px solid var(--color-nintendo-gray);
+        padding: 8px 10px;
+    }
+      
+    td:last-of-type {
+        text-align: center;
+    }
+    
+    tbody > tr:nth-of-type(even) {
+        background-color: var(--color-table-row);
+    }
 }
