@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export function EditDescription({ description, form, setDescription }: { description: string, form: string, setDescription: (description: string) => void}): ReactElement {
+export function EditDescription({ description, form, setDescription }: { description: string, form: string, setDescription: (description: string) => void }): ReactElement {
     return (
         <textarea 
             id="description" 

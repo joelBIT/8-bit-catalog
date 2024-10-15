@@ -1,5 +1,5 @@
 import { ReactElement, useContext, useEffect } from "react";
-import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../contexts";
 import { getActiveUser } from "../data";
 import { useRouteError } from "react-router-dom";
 

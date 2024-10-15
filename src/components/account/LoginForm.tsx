@@ -1,9 +1,9 @@
 import { FormEvent, ReactElement, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
 import { getUser, authenticate, validatePassword } from "../../data";
-import { Input } from "..";
+import { PasswordInput, UsernameInput } from "..";
 import { URL_ACCOUNT_PAGE, URL_REGISTER_PAGE } from "../../utils";
+import { AuthContext } from "../../contexts";
 
 export function LoginForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -33,8 +33,8 @@ export function LoginForm(): ReactElement {
             { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
             
             <form id="loginForm" onSubmit={login}>
-                <Input id="username" type="text" placeholder="Username" />
-                <Input id="password" type="password" placeholder="Password" />
+                <UsernameInput />
+                <PasswordInput />
                 
                 <button className="accountButton" type="submit">Login</button>
             </form>

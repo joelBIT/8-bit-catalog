@@ -1,6 +1,6 @@
 import { ReactElement, useContext } from "react";
-import { FavouritesContext } from "../contexts/FavouritesContextProvider";
-import { Game } from "../interfaces";
+import { FavouritesContext } from "../../contexts";
+import { Game } from "../../interfaces";
 
 export function FavouriteButton( {game}: {game: Game}): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import { AccountTabs } from "../components/account/AccountTabs";
 import { User } from "../interfaces";
 import { useLoaderData } from "react-router-dom";
+import { AccountTabs } from "../components";
 
 export function UserAccountPage(): ReactElement {
     const user = useLoaderData() as User;

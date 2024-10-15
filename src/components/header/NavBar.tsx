@@ -1,6 +1,6 @@
 import { ReactElement, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../../contexts";
 import { URL_ACCOUNT_PAGE, URL_FAVOURITES_PAGE, URL_LOGIN_PAGE, URL_LOGOUT_PAGE, URL_REQUEST_PAGE, URL_SEARCH_PAGE } from "../../utils";
 
 export function NavBar(): ReactElement {

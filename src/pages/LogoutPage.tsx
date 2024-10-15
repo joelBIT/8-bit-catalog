@@ -1,5 +1,5 @@
 import { ReactElement, useContext, useEffect } from "react";
-import { AuthContext } from "../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../contexts";
 import { createAnonymousUser, setActiveUser } from "../data";
 
 export function LogoutPage(): ReactElement {

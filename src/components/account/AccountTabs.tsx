@@ -1,8 +1,7 @@
 import { ReactElement } from "react";
-import { EditAccountTab } from "./EditAccountTab";
-import { AddGameTab } from "./AddGameTab";
 import { Tab } from "./Tab";
 import { User } from "../../interfaces";
+import { AddGameTab, EditAccountTab } from "..";
 
 export function AccountTabs({ user }: { user: User }): ReactElement {
 
