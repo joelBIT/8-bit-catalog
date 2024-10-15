@@ -3,7 +3,7 @@ import { authenticate, createNewUser } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts";
 import { URL_ACCOUNT_PAGE } from "../../utils";
-import { Input, PasswordInput, UsernameInput } from "..";
+import { EmailInput, PasswordInput, PasswordRepeatInput, UsernameInput } from "..";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -32,9 +32,9 @@ export function RegisterForm(): ReactElement {
 
             <form id="registerForm" onSubmit={register}>
                 <UsernameInput />
-                <Input id="email" type="email" placeholder="Email" />
+                <EmailInput placeholder="Email" />
                 <PasswordInput />
-                <Input id="passwordRepeat" type="password" placeholder="Re-type Password" />
+                <PasswordRepeatInput />
 
                 <button className="accountButton" type="submit">Register</button>
             </form>
