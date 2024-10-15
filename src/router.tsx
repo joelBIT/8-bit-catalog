@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden, ErrorPage } from "./pages";
+import { LoginPage, FavouritesPage, RequestPage, LandingPage, NotFound, SearchPage, GameDetailsPage, UserAccountPage, RegisterPage, AboutPage, EditGamePage, LogoutPage, Forbidden, ErrorPage, ReviewPage } from "./pages";
 import { App } from "./components";
-import { EditGameLoader, GameDetailsLoader, RandomGameLoader, UserAccountLoader } from "./loaders";
-import { URL_ABOUT_PAGE, URL_ACCOUNT_PAGE, URL_EDIT_GAME_DETAILS_PAGE, URL_FAVOURITES_PAGE, URL_FORBIDDEN_PAGE, URL_GAME_DETAILS_PAGE, URL_HOME, URL_LOGIN_PAGE, URL_LOGOUT_PAGE, URL_NOT_FOUND_PAGE, URL_REGISTER_PAGE, URL_REQUEST_PAGE, URL_SEARCH_PAGE } from "./utils";
+import { EditGameLoader, GameDetailsLoader, RandomGameLoader, RequestReviewLoader, UserAccountLoader } from "./loaders";
+import { URL_ABOUT_PAGE, URL_ACCOUNT_PAGE, URL_EDIT_GAME_DETAILS_PAGE, URL_FAVOURITES_PAGE, URL_FORBIDDEN_PAGE, URL_GAME_DETAILS_PAGE, URL_HOME, URL_LOGIN_PAGE, URL_LOGOUT_PAGE, URL_NOT_FOUND_PAGE, URL_REGISTER_PAGE, URL_REQUEST_PAGE, URL_REVIEW_PAGE, URL_SEARCH_PAGE } from "./utils";
 
 
 export const router = createBrowserRouter([
@@ -59,6 +59,12 @@ export const router = createBrowserRouter([
             {
 				path: URL_REQUEST_PAGE,
 				element: <RequestPage />
+			},
+			{
+				path: `${URL_REVIEW_PAGE}/:id`,
+				element: <ReviewPage />,
+				loader: RequestReviewLoader,
+				errorElement: <ErrorPage />
 			},
 			{
 				path: URL_SEARCH_PAGE,

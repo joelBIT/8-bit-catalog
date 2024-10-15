@@ -10,5 +10,6 @@ export * from "./LogoutPage";
 export * from "./NotFound";
 export * from "./RegisterPage";
 export * from "./RequestPage";
+export * from "./ReviewPage";
 export * from "./SearchPage";
 export * from "./UserAccountPage";
