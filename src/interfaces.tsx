@@ -26,6 +26,7 @@ export interface GameRequest {
     id: number,
     game: Game,
     submitter: User,
+    submitted: string,
     status: string
 }
 
