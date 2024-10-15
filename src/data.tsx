@@ -152,11 +152,16 @@ export function createRequest(game: Game): void {
         id: requests.length,
         game: game,
         submitter: getActiveUser(),
+        submitted: "2024-10-15",
         status: "Pending"
     }
 
     requests.push(request);
     storeAllRequests(requests);
+}
+
+export function getAllPendingRequests() {
+    return getAllRequests().filter(request => request.status === 'Pending');
 }
 
 export function getAllRequests(): GameRequest[] {

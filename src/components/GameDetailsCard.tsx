@@ -6,7 +6,7 @@ import { FavouritesContext } from "../contexts";
 import { useNavigate } from "react-router-dom";
 import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE, URL_SEARCH_PAGE } from "../utils";
 
-export function GameDetailsCard({game}: {game: Game}): ReactElement {
+export function GameDetailsCard({ game }: { game: Game }): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
     const navigate = useNavigate();
     const [ showModal, setShowModal ] = useState<boolean>(false);
