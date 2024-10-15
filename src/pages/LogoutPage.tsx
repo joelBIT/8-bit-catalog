@@ -1,6 +1,6 @@
 import { ReactElement, useContext, useEffect } from "react";
 import { AuthContext } from "../contexts";
-import { createAnonymousUser, setActiveUser } from "../data";
+import { createAnonymousUser, setActiveUser } from "../data/user";
 
 export function LogoutPage(): ReactElement {
     const { setUser } = useContext(AuthContext);

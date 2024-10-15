@@ -3,7 +3,7 @@ import { Game } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
 import { DateInput, EditDescription, EditDeveloper, EditPublisher, EditTitle, FileInput, SelectCategory, SelectPlayers } from "..";
 import { createParagraphs, joinParagraphs, URL_GAME_DETAILS_PAGE } from "../../utils";
-import { updateGame } from "../../data";
+import { updateGame } from "../../data/game";
 
 export function EditGameForm({ game }: { game: Game }): ReactElement {
     const navigate = useNavigate();

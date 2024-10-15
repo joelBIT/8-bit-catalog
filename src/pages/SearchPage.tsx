@@ -2,7 +2,7 @@ import { ReactElement, useState } from "react";
 import { SearchForm, SearchResult } from "../components";
 import { Game } from "../interfaces";
 import { ALL_OPTION_VALUE } from "../utils";
-import { getAllGames } from "../data";
+import { getAllGames } from "../data/game";
 
 export function SearchPage(): ReactElement {
     const [searchResult, setSearchResult] = useState<Game[]>([]);

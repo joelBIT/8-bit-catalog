@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
-import { getActiveUser } from "../data";
+import { getActiveUser } from "../data/user";
 import { User } from "../interfaces";
 import { URL_FORBIDDEN_PAGE } from "../utils";
 

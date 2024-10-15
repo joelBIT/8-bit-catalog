@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { GameForm } from "..";
-import { storeGame } from "../../data";
+import { storeGame } from "../../data/game";
 
 export function AddGameTab(): ReactElement {
 

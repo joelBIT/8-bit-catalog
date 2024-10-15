@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
-import { getGame } from "../data";
+import { getGame } from "../data/game";
 import { Game } from "../interfaces";
 import { URL_NOT_FOUND_PAGE } from "../utils";
 

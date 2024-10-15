@@ -1,6 +1,6 @@
 import { ReactElement, useContext, useEffect } from "react";
 import { AuthContext } from "../contexts";
-import { getActiveUser } from "../data";
+import { getActiveUser } from "../data/user";
 import { useRouteError } from "react-router-dom";
 
 export function ErrorPage(): ReactElement {
