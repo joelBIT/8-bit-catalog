@@ -5,6 +5,8 @@ export * from "./account/EmailInput";
 export * from "./account/LoginForm";
 export * from "./account/PasswordInput";
 export * from "./account/PasswordRepeatInput";
+export * from "./account/PendingRequests";
+export * from "./account/ProcessedRequests";
 export * from "./account/RegisterForm";
 export * from "./account/RequestsTab";
 export * from "./account/UsernameInput";
