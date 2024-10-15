@@ -8,6 +8,7 @@
 @import url("./components/account/AccountTabs.css");
 @import url("./components/account/EditAccountTab.css");
 @import url("./components/account/LoginForm.css");
+@import url("./components/account/PendingRequests.css");
 @import url("./components/account/RegisterForm.css");
 @import url("./components/common/FavouriteButton.css");
 @import url("./components/common/FieldSetFrame.css");
@@ -60,6 +61,8 @@
     --color-link-active: #CC8B21;
     --color-nintendo-gray: #9D99A0;
     --color-nintendo-gray-light: #ADA8AD;
+    --color-table-head: rgb(228 240 245);
+    --color-table-row: rgb(237 238 242);
     --color-white: #f0cca4;
 }
 

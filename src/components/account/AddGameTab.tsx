@@ -6,7 +6,7 @@ export function AddGameTab(): ReactElement {
 
     return (
         <section id="addGameTab">
-            <h1>Add Game</h1>
+            <h1 id="addGameHeading">Add Game</h1>
             <GameForm 
                 buttonClass="accountButton" 
                 onSubmit={storeGame}
