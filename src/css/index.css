@@ -50,15 +50,16 @@
 ******************/
 
 :root {
-    --color-white: #f0cca4;
+    --color-bar-purple: #4E69FA;
     --color-black: #101010;
+    --color-button-hover: #797679;
     --color-card-light: #F4D9B7;
+    --color-footer-heading: #D23C3C;
     --color-form: #D9D9D9;
+    --color-link-active: #CC8B21;
     --color-nintendo-gray: #9D99A0;
     --color-nintendo-gray-light: #ADA8AD;
-    --color-link-active: #CC8B21;
-    --color-bar-purple: #4E69FA;
-    --color-footer-heading: #D23C3C;
+    --color-white: #f0cca4;
 }
 
 * {
@@ -171,5 +172,5 @@ fieldset {
 }
 
 button:hover {
-    opacity: 0.7;
+    background-color: var(--color-button-hover);
 }

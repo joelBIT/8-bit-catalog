@@ -1,7 +1,7 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { comparePasswords, setActiveUser, updateUser } from "../../data";
 import { User } from "../../interfaces";
-import { Input, PasswordInput } from "..";
+import { EmailInput, PasswordInput, PasswordRepeatInput } from "..";
 
 export function EditAccountTab({ user }: { user: User }): ReactElement {
     const [ message, setMessage ] = useState<string>("");
@@ -33,9 +33,9 @@ export function EditAccountTab({ user }: { user: User }): ReactElement {
         <section id="editAccountTab">
             <form id="accountForm" onSubmit={event => saveChanges(event)}>
                 <h1 id="updateAccountHeading">Update account information</h1>
-                <Input id="email" type="email" placeholder={user.email} />
+                <EmailInput placeholder={user.email} />
                 <PasswordInput />
-                <Input id="passwordRepeat" type="password" placeholder="Re-type Password" />
+                <PasswordRepeatInput />
 
                 { message ? <h4 className="successMessage">{message}</h4> : <></> }
                 { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
