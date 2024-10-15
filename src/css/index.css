@@ -9,6 +9,10 @@
 @import url("./components/account/EditAccountTab.css");
 @import url("./components/account/LoginForm.css");
 @import url("./components/account/RegisterForm.css");
+@import url("./components/common/FavouriteButton.css");
+@import url("./components/common/FieldSetFrame.css");
+@import url("./components/common/GameForm.css");
+@import url("./components/common/Select.css");
 @import url("./components/editgame/EditGameForm.css");
 @import url("./components/footer/Contact.css");
 @import url("./components/footer/Footer.css");
@@ -23,14 +27,10 @@
 @import url("./components/search/SearchInput.css");
 @import url("./components/search/SearchResult.css");
 @import url("./components/App.css");
-@import url("./components/FavouriteButton.css");
-@import url("./components/FieldSetFrame.css");
 @import url("./components/GameCard.css");
 @import url("./components/GameDetailsCard.css");
-@import url("./components/GameForm.css");
 @import url("./components/HeroCard.css");
 @import url("./components/Modal.css");
-@import url("./components/Select.css");
 @import url("./pages/AboutPage.css");
 @import url("./pages/EditGamePage.css");
 @import url("./pages/ErrorPage.css");
