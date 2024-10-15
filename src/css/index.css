@@ -20,6 +20,7 @@
 @import url("./components/header/NavBar.css");
 @import url("./components/search/Pagination.css");
 @import url("./components/search/SearchForm.css");
+@import url("./components/search/SearchInput.css");
 @import url("./components/search/SearchResult.css");
 @import url("./components/App.css");
 @import url("./components/FavouriteButton.css");

@@ -1,9 +1,8 @@
-import { KeyboardEvent, ReactElement, useRef, useState } from "react";
-import { CategoryFilter, DeveloperFilter, PublisherFilter } from "..";
+import { ReactElement, useState } from "react";
+import { CategoryFilter, DeveloperFilter, PublisherFilter, SearchInput } from "..";
 import { ALL_OPTION_VALUE } from "../../utils";
 
-export function SearchForm( {search}: {search: Function} ): ReactElement {
-    const searchRef = useRef<HTMLInputElement>(null);
+export function SearchForm({ search }: { search: (title: string, category: string, publisher: string, developer: string) => void }): ReactElement {
     const [category, setCategory] = useState<string>(ALL_OPTION_VALUE);
     const [publisher, setPublisher] = useState<string>(ALL_OPTION_VALUE);
     const [developer, setDeveloper] = useState<string>(ALL_OPTION_VALUE);
@@ -12,16 +11,8 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
      * Performs a search based on given title text and filters. The search is executed either
      * when the button is pressed or when the Enter key is pressed in the input field.
      */
-    function executeSearch(): void {
-        if (searchRef.current) {
-            search(searchRef.current.value, category, publisher, developer);
-        }
-    }
-
-    function searchIfEnter(event: KeyboardEvent<HTMLInputElement>): void {
-        if (event.key === 'Enter') {
-            executeSearch();
-        }
+    function onSearch(title: string) {
+        search(title, category, publisher, developer);
     }
 
     return (
@@ -33,17 +24,7 @@ export function SearchForm( {search}: {search: Function} ): ReactElement {
                 <DeveloperFilter defaultOption={developer} setDeveloper={setDeveloper} />
             </article>
 
-            <article id="searchInput">
-                <input 
-                    id="searchTitle" 
-                    type="text" 
-                    placeholder="Game Title" 
-                    ref={searchRef} 
-                    onKeyDown={event => searchIfEnter(event)} 
-                />
-                
-                <button className="gameButton" onClick={() => executeSearch()}>Search</button>
-            </article>
+            <SearchInput onSearch={onSearch} />
         </section>
     );
 }

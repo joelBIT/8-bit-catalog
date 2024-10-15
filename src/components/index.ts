@@ -43,4 +43,5 @@ export * from "./search/DeveloperFilter";
 export * from "./search/Pagination";
 export * from "./search/PublisherFilter";
 export * from "./search/SearchForm";
+export * from "./search/SearchInput";
 export * from "./search/SearchResult";
