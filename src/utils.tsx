@@ -1,4 +1,5 @@
-import { getAllGames, getAllUsers } from "./data";
+import { getAllGames } from "./data/game";
+import { getAllUsers } from "./data/user";
 
 export const ALL_OPTION_VALUE = "All";
 export const ACTION_OPTION_VALUE = "Action";

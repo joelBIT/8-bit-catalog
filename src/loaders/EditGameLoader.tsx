@@ -1,7 +1,8 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
-import { getActiveUser, getGame } from "../data";
+import { getActiveUser } from "../data/user";
 import { Game } from "../interfaces";
 import { URL_FORBIDDEN_PAGE, URL_NOT_FOUND_PAGE } from "../utils";
+import { getGame } from "../data/game";
 
 /**
  * A user is redirected if not an admin due to regular users not being allowed to edit games.

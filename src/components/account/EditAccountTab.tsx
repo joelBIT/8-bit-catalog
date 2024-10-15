@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { comparePasswords, setActiveUser, updateUser } from "../../data";
+import { comparePasswords, setActiveUser, updateUser } from "../../data/user";
 import { User } from "../../interfaces";
 import { EmailInput, PasswordInput, PasswordRepeatInput } from "..";
 

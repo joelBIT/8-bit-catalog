@@ -1,7 +1,7 @@
 import { FormEvent, ReactElement, useState } from "react";
 import { DateInput, DescriptionInput, DeveloperInput, FileInput, PublisherInput, SelectCategory, SelectPlayers, TitleInput } from "..";
 import { ACTION_OPTION_VALUE, createParagraphs, generateGameId, getPlayersList } from "../../utils";
-import { createGame } from "../../data";
+import { createGame } from "../../data/game";
 import { Game } from "../../interfaces";
 
 export function GameForm({ buttonClass, onSubmit, errorText, successText }: { buttonClass: string, onSubmit: (game: Game) => void, errorText: string, successText: string }): ReactElement {

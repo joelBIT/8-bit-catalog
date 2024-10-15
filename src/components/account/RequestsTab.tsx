@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { PendingRequests, ProcessedRequests } from "..";
-import { getAllPendingRequests, getAllProcessedRequests, updateRequest } from "../../data";
+import { getAllPendingRequests, getAllProcessedRequests, updateRequest } from "../../data/request";
 import { GameRequest } from "../../interfaces";
 
 export function RequestsTab(): ReactElement {

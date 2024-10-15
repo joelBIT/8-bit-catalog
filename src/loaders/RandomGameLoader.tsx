@@ -1,4 +1,4 @@
-import { getAllGames } from "../data";
+import { getAllGames } from "../data/game";
 import { Game } from "../interfaces";
 
 export function RandomGameLoader(): Game {

@@ -1,6 +1,6 @@
 import { FormEvent, ReactElement, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getUser, authenticate, validatePassword } from "../../data";
+import { getUser, authenticate, validatePassword } from "../../data/user";
 import { PasswordInput, UsernameInput } from "..";
 import { URL_ACCOUNT_PAGE, URL_REGISTER_PAGE } from "../../utils";
 import { AuthContext } from "../../contexts";

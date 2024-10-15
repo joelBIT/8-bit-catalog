@@ -1,6 +1,6 @@
 import { createContext, ReactElement, useState } from "react";
 import { AuthContextProvider, ContextProviderChildren, User } from "../interfaces";
-import { activeUserExists, createAnonymousUser, getActiveUser } from "../data";
+import { activeUserExists, createAnonymousUser, getActiveUser } from "../data/user";
 
 export const AuthContext = createContext<AuthContextProvider>({} as AuthContextProvider);
 

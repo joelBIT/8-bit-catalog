@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement, useContext, useState } from "react";
-import { authenticate, createNewUser } from "../../data";
+import { authenticate, createNewUser } from "../../data/user";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts";
 import { URL_ACCOUNT_PAGE } from "../../utils";
