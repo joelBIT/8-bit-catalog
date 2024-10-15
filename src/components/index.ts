@@ -6,6 +6,7 @@ export * from "./account/LoginForm";
 export * from "./account/PasswordInput";
 export * from "./account/PasswordRepeatInput";
 export * from "./account/RegisterForm";
+export * from "./account/RequestsTab";
 export * from "./account/UsernameInput";
 export * from "./App";
 export * from "./common/DateInput";
