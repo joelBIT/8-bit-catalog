@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import { Game } from "../interfaces";
-import { FavouriteButton } from "./FavouriteButton";
 import { Link } from "react-router-dom";
 import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../utils";
+import { FavouriteButton } from ".";
 
-export function GameCard( {game}: {game: Game}): ReactElement {
+export function GameCard({ game }: { game: Game }): ReactElement {
     return (
         <Link to={`${URL_GAME_DETAILS_PAGE}/${game.id}`}>
             <section className="gameCard">

@@ -1,5 +1,5 @@
 import { ChangeEvent, ReactElement } from "react";
-import { fileTypes } from "../utils";
+import { fileTypes } from "../../utils";
 
 export function FileInput({ id, label, setFile }: { id: string, label: string, setFile: (arg0: File) => void}): ReactElement {
     

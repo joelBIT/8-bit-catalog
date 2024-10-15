@@ -1,6 +1,6 @@
 import { ReactElement, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../../contexts";
 import { URL_ABOUT_PAGE, URL_ACCOUNT_PAGE, URL_HOME, URL_LOGIN_PAGE } from "../../utils";
 
 export function SiteLinks(): ReactElement {

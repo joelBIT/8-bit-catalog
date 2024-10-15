@@ -1,10 +1,8 @@
 import { FormEvent, ReactElement, useState } from "react";
-import { FileInput, Input, SelectPlayers } from ".";
-import { ACTION_OPTION_VALUE, createParagraphs, generateGameId, getPlayersList } from "../utils";
-import { DateInput } from "./DateInput";
-import { createGame } from "../data";
-import { Game } from "../interfaces";
-import { SelectCategory } from "./SelectCategory";
+import { DateInput, DescriptionInput, DeveloperInput, FileInput, PublisherInput, SelectCategory, SelectPlayers, TitleInput } from "..";
+import { ACTION_OPTION_VALUE, createParagraphs, generateGameId, getPlayersList } from "../../utils";
+import { createGame } from "../../data";
+import { Game } from "../../interfaces";
 
 export function GameForm({ buttonClass, onSubmit, errorText, successText }: { buttonClass: string, onSubmit: (game: Game) => void, errorText: string, successText: string }): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
@@ -37,20 +35,13 @@ export function GameForm({ buttonClass, onSubmit, errorText, successText }: { bu
 
     return (
         <form id="gameForm" onSubmit={submit}>
-            <Input id="gameTitle" type="text" placeholder="Game title" />
-            <Input id="developer" type="text" placeholder="Developer" />
-            <Input id="publisher" type="text" placeholder="Publisher" />
+            <TitleInput />
+            <DeveloperInput />
+            <PublisherInput />
 
             <SelectCategory defaultOption={ACTION_OPTION_VALUE} setCategory={setCategory} />
 
-            <textarea 
-                id="description" 
-                form="gameForm" 
-                placeholder="Description" 
-                autoComplete="false" 
-                required 
-            />
-
+            <DescriptionInput form="gameForm" />
             <FileInput id="gameCover" label="Cover" setFile={setFile} />
 
             <SelectPlayers defaultOption={getPlayersList()[0]} setPlayers={setPlayers} />

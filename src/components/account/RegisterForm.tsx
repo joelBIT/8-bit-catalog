@@ -1,9 +1,9 @@
 import { FormEvent, ReactElement, useContext, useState } from "react";
 import { authenticate, createNewUser } from "../../data";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/ProtectedRouteContextProvider";
+import { AuthContext } from "../../contexts";
 import { URL_ACCOUNT_PAGE } from "../../utils";
-import { Input } from "..";
+import { Input, PasswordInput, UsernameInput } from "..";
 
 export function RegisterForm(): ReactElement {
     const { setUser } = useContext(AuthContext);
@@ -31,9 +31,9 @@ export function RegisterForm(): ReactElement {
             { errorMessage ? <h4 className="errorMessage">{errorMessage}</h4> : <></> }
 
             <form id="registerForm" onSubmit={register}>
-                <Input id="username" type="text" placeholder="Username" />
+                <UsernameInput />
                 <Input id="email" type="email" placeholder="Email" />
-                <Input id="password" type="password" placeholder="Password" />
+                <PasswordInput />
                 <Input id="passwordRepeat" type="password" placeholder="Re-type Password" />
 
                 <button className="accountButton" type="submit">Register</button>

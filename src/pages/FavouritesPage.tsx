@@ -1,5 +1,5 @@
 import { ReactElement, useContext } from "react";
-import { FavouritesContext } from "../contexts/FavouritesContextProvider";
+import { FavouritesContext } from "../contexts";
 import { GameCard } from "../components";
 
 export function FavouritesPage(): ReactElement {

@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
-import { FavouritesContexProvider } from '../contexts/FavouritesContextProvider';
+import { FavouritesContexProvider, ProtectedRouteContextProvider } from '../contexts';
 import { Footer, Header } from '.';
 import { Outlet } from 'react-router-dom';
-import { ProtectedRouteContextProvider } from '../contexts/ProtectedRouteContextProvider';
 
 export function App(): ReactElement {
 

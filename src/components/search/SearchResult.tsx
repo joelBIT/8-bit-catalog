@@ -1,8 +1,7 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Game } from "../../interfaces";
-import { GameCard } from "../GameCard";
-import { Pagination } from "./Pagination";
 import { PAGINATION_PAGE_SIZE } from "../../utils";
+import { GameCard, Pagination } from "..";
 
 export function SearchResult( {result, showHeading}: {result: Game[], showHeading: boolean} ): ReactElement {
     const [currentPage, setCurrentPage] = useState<number>(1);

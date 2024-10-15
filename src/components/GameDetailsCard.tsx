@@ -2,7 +2,7 @@ import { ReactElement, useContext, useState } from "react";
 import { Game } from "../interfaces";
 import { FavouriteButton, Modal } from ".";
 import { deleteGame, getActiveUser } from "../data";
-import { FavouritesContext } from "../contexts/FavouritesContextProvider";
+import { FavouritesContext } from "../contexts";
 import { useNavigate } from "react-router-dom";
 import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE, URL_SEARCH_PAGE } from "../utils";
 
