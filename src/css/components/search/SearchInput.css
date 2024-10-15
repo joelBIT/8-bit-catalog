@@ -1,0 +1,26 @@
+
+#searchInput {
+    display: flex;
+    align-self: center;
+    margin-top: 3rem;
+    gap: 2rem;
+    align-items: center;
+
+    input {
+        padding-left: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #searchInput {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    #searchInput {
+        #searchTitle {
+            width: 15rem;
+        }
+    }
+}
