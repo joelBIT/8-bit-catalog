@@ -9,6 +9,8 @@
 @import url("./components/account/EditAccountTab.css");
 @import url("./components/account/LoginForm.css");
 @import url("./components/account/RegisterForm.css");
+@import url("./components/account/ReviewCard.css");
+@import url("./components/account/ReviewModal.css");
 @import url("./components/common/FavouriteButton.css");
 @import url("./components/common/FieldSetFrame.css");
 @import url("./components/common/GameForm.css");
@@ -42,6 +44,7 @@
 @import url("./pages/NotFound.css");
 @import url("./pages/RegisterPage.css");
 @import url("./pages/RequestPage.css");
+@import url("./pages/ReviewPage.css");
 @import url("./pages/SearchPage.css");
 @import url("./pages/UserAccountPage.css");
 

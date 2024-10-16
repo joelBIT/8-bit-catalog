@@ -38,3 +38,13 @@ export function getAllRequests(): GameRequest[] {
 export function storeAllRequests(requests: GameRequest[]): void {
     localStorage.setItem('requests', JSON.stringify(requests));
 }
+
+export function getRequest(id: number): GameRequest {
+    const request = getAllRequests().find(request => request.id === id);
+
+    if (!request) {
+        throw new Error(`Could not find request with ID ${id}`);
+    }
+
+    return request;
+}

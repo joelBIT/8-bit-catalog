@@ -1,0 +1,6 @@
+
+#reviewPage {
+    background-image: url("../../assets/backgrounds/nes-controller-in-black.webp");
+    display: flex;
+    justify-content: center;
+}

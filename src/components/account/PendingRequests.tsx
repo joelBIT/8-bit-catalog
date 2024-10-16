@@ -1,8 +1,11 @@
 import { ReactElement } from "react";
 import { GameRequest } from "../../interfaces";
+import { URL_REVIEW_PAGE } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
-export function PendingRequests({ pendingRequests, process }: { pendingRequests: GameRequest[], process: (request: GameRequest) => void }): ReactElement {
-
+export function PendingRequests({ pendingRequests }: { pendingRequests: GameRequest[] }): ReactElement {
+    const navigate = useNavigate();
+    
     return (
         <section id="pendingRequests">
             <table>
@@ -27,7 +30,7 @@ export function PendingRequests({ pendingRequests, process }: { pendingRequests:
                             <td>{request.submitted}</td>
                             <td>{request.submitter.username}</td>
                             <td>{request.status}</td>
-                            <td><button className="gameButton" onClick={() => process(request)}>Review</button></td>
+                            <td><button className="gameButton" onClick={() => navigate(`${URL_REVIEW_PAGE}/${request.id}`)}>Review</button></td>
                         </tr>
                     )}
                 </tbody>

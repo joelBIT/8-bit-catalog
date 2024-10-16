@@ -9,6 +9,8 @@ export * from "./account/PendingRequests";
 export * from "./account/ProcessedRequests";
 export * from "./account/RegisterForm";
 export * from "./account/RequestsTab";
+export * from "./account/ReviewCard";
+export * from "./account/ReviewModal";
 export * from "./account/UsernameInput";
 export * from "./App";
 export * from "./common/DateInput";
