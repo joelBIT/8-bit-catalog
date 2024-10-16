@@ -7,7 +7,7 @@ export function ProcessedRequests({ processedRequests }: { processedRequests: Ga
         <section id="processedRequests">
             <table>
                 <caption>
-                    {processedRequests.length} Processed Requests
+                    {processedRequests.length} Processed {processedRequests.length === 1 ? "Request" : "Requests" }
                 </caption>
 
                 { processedRequests.length > 0 ? <thead>

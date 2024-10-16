@@ -10,7 +10,7 @@ export function PendingRequests({ pendingRequests }: { pendingRequests: GameRequ
         <section id="pendingRequests">
             <table>
                 <caption>
-                    {pendingRequests.length} Pending Requests
+                    {pendingRequests.length} Pending {pendingRequests.length === 1 ? "Request" : "Requests" }
                 </caption>
 
                 { pendingRequests.length > 0 ? <thead>
