@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { GameRequest } from "../../interfaces";
 
-export function ProcessedRequests({ processedRequests }: { processedRequests: GameRequest[] }): ReactElement {
+export function ProcessedRequests({ processedRequests, isAdmin }: { processedRequests: GameRequest[], isAdmin: boolean }): ReactElement {
 
     return (
         <section id="processedRequests">

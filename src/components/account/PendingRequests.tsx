@@ -3,7 +3,7 @@ import { GameRequest } from "../../interfaces";
 import { URL_REVIEW_PAGE } from "../../utils";
 import { useNavigate } from "react-router-dom";
 
-export function PendingRequests({ pendingRequests }: { pendingRequests: GameRequest[] }): ReactElement {
+export function PendingRequests({ pendingRequests, isAdmin }: { pendingRequests: GameRequest[], isAdmin: boolean }): ReactElement {
     const navigate = useNavigate();
     
     return (
