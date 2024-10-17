@@ -14,7 +14,7 @@ export function ReviewModal({ showModal, confirm }: { showModal: (arg0: boolean)
         <dialog id="reviewModal" open>
             <form id="reviewForm" method="dialog" onSubmit={denied}>
                 <p>Are you sure you want to deny the request? Type in a reason below</p>
-                <DescriptionInput form={"reviewForm"} />
+                <DescriptionInput form="reviewForm" />
                 <div className="buttons">
                     <button onClick={() => showModal(false)} className="gameButton">Cancel</button>
                     <button type="submit" className="gameButton">Confirm</button>

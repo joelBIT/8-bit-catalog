@@ -17,9 +17,9 @@ export function PendingRequests({ pendingRequests, isAdmin }: { pendingRequests:
                                                     <tr>
                                                         <th scope="col">Title</th>
                                                         <th scope="col">Submitted</th>
-                                                        <th scope="col">Submitter</th>
+                                                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
                                                         <th scope="col">Status</th>
-                                                        <th scope="col"></th>
+                                                        { isAdmin ? <th scope="col"></th> : <></> }
                                                     </tr>
                                                 </thead> : <></> }
 
@@ -28,9 +28,9 @@ export function PendingRequests({ pendingRequests, isAdmin }: { pendingRequests:
                         <tr key={index}>
                             <td>{request.game.title}</td>
                             <td>{request.submitted}</td>
-                            <td>{request.submitter.username}</td>
+                            { isAdmin ? <td>{request.submitter.username}</td> : <></> }
                             <td>{request.status}</td>
-                            <td><button className="gameButton" onClick={() => navigate(`${URL_REVIEW_PAGE}/${request.id}`)}>Review</button></td>
+                            { isAdmin ? <td><button className="gameButton" onClick={() => navigate(`${URL_REVIEW_PAGE}/${request.id}`)}>Review</button></td> : <></> }
                         </tr>
                     )}
                 </tbody>

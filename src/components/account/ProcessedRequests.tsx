@@ -14,7 +14,7 @@ export function ProcessedRequests({ processedRequests, isAdmin }: { processedReq
                                                     <tr>
                                                         <th scope="col">Title</th>
                                                         <th scope="col">Submitted</th>
-                                                        <th scope="col">Submitter</th>
+                                                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
                                                         <th scope="col">Status</th>
                                                     </tr>
                                                 </thead> : <></> }
@@ -24,7 +24,7 @@ export function ProcessedRequests({ processedRequests, isAdmin }: { processedReq
                         <tr key={index}>
                             <td>{request.game.title}</td>
                             <td>{request.submitted}</td>
-                            <td>{request.submitter.username}</td>
+                            { isAdmin ? <td>{request.submitter.username}</td> : <></> }
                             <td>{request.status}</td>
                         </tr>
                     )}
