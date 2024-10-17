@@ -1,7 +1,8 @@
 import { ReactElement, useState } from "react";
 import { PendingRequests, ProcessedRequests } from "..";
-import { getAllPendingRequests, getAllProcessedRequests } from "../../data/request";
+import { getAllPendingRequests, getAllPendingRequestsForUser, getAllProcessedRequests, getAllProcessedRequestsForUser } from "../../data/request";
 import { GameRequest } from "../../interfaces";
+import { getActiveUser } from "../../data/user";
 
 /**
  * The Requests Tab contains two tables; one for pending requests and one for processed
@@ -11,15 +12,18 @@ import { GameRequest } from "../../interfaces";
  * @returns     the Requests Tab
  */
 export function RequestsTab(): ReactElement {
-    const [ processedRequests ] = useState<GameRequest[]>(getAllProcessedRequests);
-    const [ pendingRequests ] = useState<GameRequest[]>(getAllPendingRequests());
+    const [ allProcessedRequests ] = useState<GameRequest[]>(getAllProcessedRequests());
+    const [ allPendingRequests ] = useState<GameRequest[]>(getAllPendingRequests());
+    const [ processedRequests ] = useState<GameRequest[]>(getAllProcessedRequestsForUser(getActiveUser().username));
+    const [ pendingRequests ] = useState<GameRequest[]>(getAllPendingRequestsForUser(getActiveUser().username));
+    const [ isAdmin ] = useState<boolean>(getActiveUser().isAdmin);
 
     return (
         <section id="requestsTab">
             <h1>Requests</h1>
             
-            <PendingRequests pendingRequests={pendingRequests} />
-            <ProcessedRequests processedRequests={processedRequests} />
+            <PendingRequests pendingRequests={isAdmin ? allPendingRequests : pendingRequests} isAdmin={isAdmin} />
+            <ProcessedRequests processedRequests={isAdmin ? allProcessedRequests : processedRequests} isAdmin={isAdmin} />
         </section>
     );
 }

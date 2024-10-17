@@ -25,6 +25,14 @@ export function getAllProcessedRequests(): GameRequest[] {
     return getAllRequests().filter(request => request.status === 'Denied' || request.status === 'Accepted');
 }
 
+export function getAllPendingRequestsForUser(username: string): GameRequest[] {
+    return getAllPendingRequests().filter(request => request.submitter.username === username);
+}
+
+export function getAllProcessedRequestsForUser(username: string): GameRequest[] {
+    return getAllProcessedRequests().filter(request => request.submitter.username === username);
+}
+
 export function updateRequest(updatedRequest: GameRequest): void {
     const requests = getAllRequests().filter(request => request.id !== updatedRequest.id);
     requests.push(updatedRequest);
