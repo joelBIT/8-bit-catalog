@@ -10,14 +10,14 @@ export function ProcessedRequests({ processedRequests, isAdmin }: { processedReq
                     {processedRequests.length} Processed {processedRequests.length === 1 ? "Request" : "Requests" }
                 </caption>
 
-                { processedRequests.length > 0 ? <thead>
-                                                    <tr>
-                                                        <th scope="col">Title</th>
-                                                        <th scope="col">Submitted</th>
-                                                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
-                                                        <th scope="col">Status</th>
-                                                    </tr>
-                                                </thead> : <></> }
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Submitted</th>
+                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
 
                 <tbody>
                     { processedRequests.map((request, index) => 
