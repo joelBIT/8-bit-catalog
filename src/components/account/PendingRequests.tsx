@@ -13,15 +13,15 @@ export function PendingRequests({ pendingRequests, isAdmin }: { pendingRequests:
                     {pendingRequests.length} Pending {pendingRequests.length === 1 ? "Request" : "Requests" }
                 </caption>
 
-                { pendingRequests.length > 0 ? <thead>
-                                                    <tr>
-                                                        <th scope="col">Title</th>
-                                                        <th scope="col">Submitted</th>
-                                                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
-                                                        <th scope="col">Status</th>
-                                                        { isAdmin ? <th scope="col"></th> : <></> }
-                                                    </tr>
-                                                </thead> : <></> }
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Submitted</th>
+                        { isAdmin ? <th scope="col">Submitter</th> : <></> }
+                        <th scope="col">Status</th>
+                        { isAdmin ? <th scope="col"></th> : <></> }
+                    </tr>
+                </thead>
 
                 <tbody>
                     { pendingRequests.map((request, index) => 
