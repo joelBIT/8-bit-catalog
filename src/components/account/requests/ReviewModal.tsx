@@ -1,5 +1,5 @@
 import { FormEvent, ReactElement } from "react";
-import { DescriptionInput } from "../common/DescriptionInput";
+import { DescriptionInput } from "../../common/DescriptionInput";
 
 export function ReviewModal({ showModal, confirm }: { showModal: (arg0: boolean) => void, confirm: (reason: string) => void }): ReactElement {
 

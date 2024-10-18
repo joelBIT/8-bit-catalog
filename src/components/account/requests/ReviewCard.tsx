@@ -1,10 +1,10 @@
 import { ReactElement, useState } from "react";
-import { Game, GameRequest } from "../../interfaces";
-import { updateRequest } from "../../data/request";
-import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../../utils";
-import { ReviewModal } from "..";
+import { Game, GameRequest } from "../../../interfaces";
+import { updateRequest } from "../../../data/request";
+import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../../../utils";
+import { ReviewModal } from "../..";
 import { useNavigate } from "react-router-dom";
-import { storeGame } from "../../data/game";
+import { storeGame } from "../../../data/game";
 
 export function ReviewCard({ request }: { request: GameRequest }): ReactElement {
     const [ showModal, setShowModal ] = useState<boolean>(false);

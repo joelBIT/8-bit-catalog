@@ -1,8 +1,8 @@
 import { ReactElement, useState } from "react";
-import { PendingRequests, ProcessedRequests } from "..";
-import { getAllPendingRequests, getAllPendingRequestsForUser, getAllProcessedRequests, getAllProcessedRequestsForUser } from "../../data/request";
-import { GameRequest } from "../../interfaces";
-import { getActiveUser } from "../../data/user";
+import { PendingRequests, ProcessedRequests } from "../..";
+import { getAllPendingRequests, getAllPendingRequestsForUser, getAllProcessedRequests, getAllProcessedRequestsForUser } from "../../../data/request";
+import { GameRequest } from "../../../interfaces";
+import { getActiveUser } from "../../../data/user";
 
 /**
  * The Requests Tab contains two tables; one for pending requests and one for processed
