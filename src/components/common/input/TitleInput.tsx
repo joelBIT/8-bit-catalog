@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Input } from "..";
+import { Input } from "../..";
 
 export function TitleInput(): ReactElement {
     return (

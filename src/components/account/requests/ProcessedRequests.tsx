@@ -9,7 +9,6 @@ export function ProcessedRequests({ processedRequests, isAdmin }: { processedReq
             <table>
                 <RequestsTableCaption text="Processed" requests={processedRequests} />
                 <RequestsTableHead isAdmin={isAdmin} />
-
                 <RequestsTableBody isAdmin={isAdmin} isPending={false} requests={processedRequests} />
             </table>
         </section>

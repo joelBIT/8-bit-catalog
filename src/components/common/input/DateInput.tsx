@@ -1,6 +1,6 @@
 import { ChangeEvent, ReactElement } from "react";
 
-export function DateInput({ id, label, value, setDate }: { id: string, label: string, value: string, setDate: (arg0: string) => void}): ReactElement {
+export function DateInput({ id, label, value, setDate }: { id: string, label: string, value: string, setDate: (arg0: string) => void }): ReactElement {
     
     function handleDate(event: ChangeEvent<HTMLInputElement>): void {
         setDate(event.target.value);
