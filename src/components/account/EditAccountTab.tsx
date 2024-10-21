@@ -7,6 +7,9 @@ export function EditAccountTab({ user }: { user: User }): ReactElement {
     const [ message, setMessage ] = useState<string>("");
     const [ errorMessage, setErrorMessage ] = useState<string>("");
 
+    /**
+     * Updates the user's account information after a password comparison has been performed.
+     */
     function saveChanges(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;

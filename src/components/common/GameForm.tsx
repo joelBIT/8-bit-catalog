@@ -12,6 +12,10 @@ export function GameForm({ buttonClass, onSubmit, errorText, successText }: { bu
     const [ message, setMessage ] = useState<string>("");
     const [ errorMessage, setErrorMessage ] = useState<string>("");
 
+    /**
+     * When the form is submitted a new game is created based on the supplied form input values. This newly created game
+     * is then used as an argument to a supplied function so that the form can be used for various purposes.
+     */
     function submit(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;

@@ -3,7 +3,7 @@ import { Game } from "../../interfaces";
 import { PAGINATION_PAGE_SIZE } from "../../utils";
 import { GameCard, Pagination } from "..";
 
-export function SearchResult( {result, showHeading}: {result: Game[], showHeading: boolean} ): ReactElement {
+export function SearchResult({ result, showHeading }: { result: Game[], showHeading: boolean }): ReactElement {
     const [currentPage, setCurrentPage] = useState<number>(1);
     let totalPages = Math.floor(result.length / PAGINATION_PAGE_SIZE) + 1;
 

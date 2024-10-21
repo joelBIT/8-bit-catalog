@@ -10,6 +10,10 @@ export function RegisterForm(): ReactElement {
     const [ errorMessage, setErrorMessage ] = useState<string>("");
     const navigate = useNavigate();
 
+    /**
+     * Creates a new user. The submitted username and password are validated before the user is created.
+     * When successfully registered, the user is automatically logged in and redirected to his account page.
+     */
     function register(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;

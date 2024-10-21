@@ -3,6 +3,12 @@ import { Tab } from "./Tab";
 import { User } from "../../interfaces";
 import { AddGameTab, EditAccountTab, RequestsTab } from "..";
 
+/**
+ * The tabs that a user can see in his account page.
+ * 
+ * @param user          the logged in user
+ * @returns             the tabs that the logged in user is authorized to see
+ */
 export function AccountTabs({ user }: { user: User }): ReactElement {
 
     return (
