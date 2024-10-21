@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../utils";
-import { Game } from "../interfaces";
+import { COVER_URL, URL_GAME_DETAILS_PAGE } from "../../utils";
+import { Game } from "../../interfaces";
 
 export function HeroCard({ game }: { game: Game }): ReactElement {
     return (

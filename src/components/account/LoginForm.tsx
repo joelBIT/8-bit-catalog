@@ -10,6 +10,10 @@ export function LoginForm(): ReactElement {
     const [ errorMessage, setErrorMessage ] = useState<string>("");
     const navigate = useNavigate();
 
+    /**
+     * A user is logged in if the user exists and the password validation is successful.
+     * The user is redirected to his account page.
+     */
     function login(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         const form = event.target as HTMLFormElement;

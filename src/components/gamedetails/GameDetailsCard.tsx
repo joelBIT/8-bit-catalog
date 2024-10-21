@@ -1,11 +1,11 @@
 import { ReactElement, useContext, useState } from "react";
-import { Game } from "../interfaces";
-import { FavouriteButton, Modal } from ".";
-import { getActiveUser } from "../data/user";
-import { FavouritesContext } from "../contexts";
+import { Game } from "../../interfaces";
+import { FavouriteButton, Modal } from "..";
+import { getActiveUser } from "../../data/user";
+import { FavouritesContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
-import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE, URL_SEARCH_PAGE } from "../utils";
-import { deleteGame } from "../data/game";
+import { COVER_URL, URL_EDIT_GAME_DETAILS_PAGE, URL_SEARCH_PAGE } from "../../utils";
+import { deleteGame } from "../../data/game";
 
 export function GameDetailsCard({ game }: { game: Game }): ReactElement {
     const {favouritesList, setFavouritesList} = useContext(FavouritesContext);
