@@ -8,8 +8,7 @@ import games from '../assets/database/games.json';
  */
 export function getAllGames(): Game[] {
     createGameData();
-    const games = localStorage.getItem('games') || "[]";
-    return JSON.parse(games);
+    return JSON.parse(localStorage.getItem('games') || "[]");
 }
 
 export function storeAllGames(games: Game[]): void {
@@ -30,6 +29,7 @@ export function createGameData(): void {
             return copyGame(game);
         });
 
+        cartridges.sort((a: { title: string; }, b: { title: any; }) => a.title.localeCompare(b.title));
         storeAllGames(cartridges);
     }
 }
@@ -69,6 +69,7 @@ export function createGame(id: number, title: string, category: string, publishe
 export function storeGame(game: Game): void {
     const games = getAllGames();
     games.push(game);
+    games.sort((a, b) => a.title.localeCompare(b.title));
     storeAllGames(games);
 }
 
