@@ -15,6 +15,11 @@ export function updateUser(updatedUser: User): void {
     storeAllUsers(users);
 }
 
+/**
+ * An anonymous user is created and used when a user of the application is not logged in.
+ * 
+ * @returns         an anonymous user
+ */
 export function createAnonymousUser(): User {
     return {
          id: -1,
@@ -26,7 +31,7 @@ export function createAnonymousUser(): User {
      }
  }
  
- export function createNewUser(username: string, password: string, passwordRepeat: string, email: string): User {
+export function createNewUser(username: string, password: string, passwordRepeat: string, email: string): User {
     if (userExists(username)) {
         throw new Error(`User ${username} already exists!`);
     }
@@ -49,7 +54,7 @@ export function createAnonymousUser(): User {
     return user;
  }
 
- export function getUser(username: string): User {
+export function getUser(username: string): User {
     const user = getAllUsers().find((user: { username: string; }) => user.username === username);
     if (user) {
         return user;
@@ -63,6 +68,11 @@ export function userExists(username: string): boolean {
     return users.find((user: { username: string; }) => user.username === username) ? true : false;
 }
 
+/**
+ * When a user is logged in the user becomes authenticated.
+ * 
+ * @param user      the user that logged in successfully
+ */
 export function authenticate(user: User): void {
     user.isAuthenticated = true;
     setActiveUser(user);
@@ -80,6 +90,11 @@ export function comparePasswords(password: string, passwordRepeat: string): void
     }
 }
 
+/**
+ * An active user is either the user that is currently logged in, or an anonymous user.
+ * 
+ * @returns     the user that is currently using the application
+ */
 export function getActiveUser(): User {
     const activeUser = localStorage.getItem('activeUser') || "{}";
     return JSON.parse(activeUser);

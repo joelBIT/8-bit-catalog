@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export function EditPublisher({ publisher, setPublisher }: { publisher: string, setPublisher: (publisher: string) => void}): ReactElement {
+export function EditPublisher({ publisher, setPublisher }: { publisher: string, setPublisher: (publisher: string) => void }): ReactElement {
     return (
         <input 
             id="publisher" 

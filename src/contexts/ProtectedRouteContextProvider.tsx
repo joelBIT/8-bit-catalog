@@ -4,12 +4,12 @@ import { activeUserExists, createAnonymousUser, getActiveUser } from "../data/us
 
 export const AuthContext = createContext<AuthContextProvider>({} as AuthContextProvider);
 
-export function ProtectedRouteContextProvider({children}: ContextProviderChildren): ReactElement {
-    const [user, setUser] = useState<User>(activeUserExists() ? getActiveUser() : createAnonymousUser());
+export function ProtectedRouteContextProvider({ children }: ContextProviderChildren): ReactElement {
+    const [ user, setUser ] = useState<User>(activeUserExists() ? getActiveUser() : createAnonymousUser());
 
     return (
         <AuthContext.Provider value={{ user, setUser }}>
-            {children}
+            { children }
         </AuthContext.Provider>
     );
 }

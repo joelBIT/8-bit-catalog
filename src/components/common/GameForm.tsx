@@ -6,7 +6,7 @@ import { Game } from "../../interfaces";
 
 export function GameForm({ buttonClass, onSubmit, errorText, successText }: { buttonClass: string, onSubmit: (game: Game) => void, errorText: string, successText: string }): ReactElement {
     const [ players, setPlayers ] = useState<string>("1");
-    const [ category, setCategory ] = useState<string>("Action");
+    const [ category, setCategory ] = useState<string>(ACTION_OPTION_VALUE);
     const [ date, setDate ] = useState<string>("");
     const [ file, setFile ] = useState<File | null>(null);
     const [ message, setMessage ] = useState<string>("");

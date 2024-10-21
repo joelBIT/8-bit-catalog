@@ -65,7 +65,12 @@ export function createGame(id: number, title: string, category: string, publishe
     }
 }
 
-
+/**
+ * Stores a new game to the list of all games. The list containing the new game is sorted alphabetically
+ * before being persisted.
+ * 
+ * @param game  the new game
+ */
 export function storeGame(game: Game): void {
     const games = getAllGames();
     games.push(game);
@@ -73,6 +78,12 @@ export function storeGame(game: Game): void {
     storeAllGames(games);
 }
 
+/**
+ * Retrieves an existing game. Throws an error if no game is found.
+ * 
+ * @param id        the ID of the game to retrieve
+ * @returns         the game or throws an error
+ */
 export function getGame(id: number): Game {
     const game =  getAllGames().find(game => game.id === id);
     if (!game) {
@@ -82,12 +93,22 @@ export function getGame(id: number): Game {
     return game;
 }
 
+/**
+ * Deletes an existing game by removing the copy of the game.
+ * 
+ * @param id    the ID of the game to delete
+ */
 export function deleteGame(id: number): void {
     const games = getAllGames();
     const updatedList = games.filter(game => game.id !== id);
     storeAllGames(updatedList);
 }
 
+/**
+ * Updates an existing game by replacing the old copy of the game with a new copy.
+ *  
+ * @param updatedGame       the updated copy of the game
+ */
 export function updateGame(updatedGame: Game): void {
     const games = getAllGames();
     const updatedList = games.filter(game => game.id !== updatedGame.id);

@@ -3,12 +3,12 @@ import { Game, FavouritesContextProvider, ContextProviderChildren } from "../int
 
 export const FavouritesContext = createContext<FavouritesContextProvider>({} as FavouritesContextProvider);
 
-export function FavouritesContexProvider({children}: ContextProviderChildren): ReactElement {
-    const [favouritesList, setFavouritesList] = useState<Game[]>([]);
+export function FavouritesContexProvider({ children }: ContextProviderChildren): ReactElement {
+    const [ favouritesList, setFavouritesList ] = useState<Game[]>([]);
 
     return (
-        <FavouritesContext.Provider value={{favouritesList, setFavouritesList}}>
-            {children}
+        <FavouritesContext.Provider value={{ favouritesList, setFavouritesList }}>
+            { children }
         </FavouritesContext.Provider>
     );
 }
