@@ -14,7 +14,7 @@ export function createRequest(game: Game): void {
         id: requests.length,
         game: game,
         submitter: getActiveUser(),
-        submitted: "2024-10-15",
+        submitted: new Date().toJSON().slice(0, 10),
         status: "Pending"
     }
 
